@@ -16,3 +16,4 @@ test/version_tmp
 tmp
 .tddium*
 .idea
+.DS_Store

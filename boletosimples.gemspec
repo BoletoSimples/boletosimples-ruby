@@ -8,15 +8,14 @@ Gem::Specification.new do |gem|
   gem.version       = BoletoSimples::VERSION
   gem.authors       = ['Kivanio Barbosa']
   gem.email         = ['']
-  gem.description   = ['An easy way to charge by bank billet.']
-  gem.summary       = ['An easy way to charge by bank billet.']
+  gem.description   = 'An easy way to charge by bank billet.'
+  gem.summary       = 'An easy way to charge by bank billet.'
   gem.homepage      = 'https://boletosimples.com.br/api/docs'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ['lib']
-
 
   # Gems that must be installed for sift to compile and build
   gem.add_development_dependency 'rspec', '~> 3.0.0'

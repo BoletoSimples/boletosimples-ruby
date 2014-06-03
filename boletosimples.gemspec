@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ['']
   gem.description   = 'An easy way to charge by bank billet.'
   gem.summary       = 'An easy way to charge by bank billet.'
-  gem.homepage      = 'https://boletosimples.com.br/api/docs'
+  gem.homepage      = 'http://api.boletosimples.com.br'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 require 'httparty'
 require 'multi_json'
 
@@ -5,15 +6,16 @@ module BoletoSimples
   class Client
     include HTTParty
 
-    BASE_URI = 'https://boletosimples.com/api/v1'
+    PRODUCTION_BASE_URI = 'https://boletosimples.com.br/api/v1'
+    SANDBOX_BASE_URI = 'https://sandbox.boletosimples.com.br/api/v1'
 
     def initialize(username, password, options={})
       @username = username
       @password = password
 
       # defaults
-      options[:base_uri] ||= BASE_URI
-      @base_uri = options[:base_uri]
+      @production = options.delete(:production)
+      @base_uri = (@production ? PRODUCTION_BASE_URI : SANDBOX_BASE_URI)
       @user_agent = options.delete(:user_agent)
 
       options[:format] ||= :json
@@ -85,16 +87,14 @@ module BoletoSimples
 
     def http_verb(verb, path, options={})
       request_options = {body: options.to_json}
-      headers = {
+      request_options[:headers] = {
         "Content-Type" => "application/json",
         "User-Agent" => @user_agent
       }
-      request_options[:headers] = headers
       request_options[:basic_auth] = {:username => @username, :password => @password}
-
-      result = self.class.send(verb, path, request_options)
-      result = JSON.parse(result.body)
-      result
+      uri = "#{@base_uri}#{path}"
+      response = self.class.send(verb, uri, request_options)
+      return JSON.parse(response.body)
     end
   end
 end

@@ -3,6 +3,9 @@ rvm:
   - '2.1.0'
   - '2.0.0'
   - '1.9.3'
+branches:
+  only:
+    - master
 addons:
   code_climate:
     repo_token: 9c2feef5a1d636d5b08d10561c53f9293783fc175c0cc44d152cdb05a65d1868

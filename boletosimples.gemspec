@@ -18,6 +18,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   # Gems that must be installed for sift to compile and build
+  gem.add_development_dependency 'pry', '0.9.12.6'
   gem.add_development_dependency 'rspec', '~> 3.0.0'
   gem.add_development_dependency 'rake'
 

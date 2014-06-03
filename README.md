@@ -1,8 +1,8 @@
-# Boleto simples
+# Boleto Simples
 
-Esta gem inclui todos os métodos disponíveis na [Boleto Simples JSON API](https://boletosimples.com.br/api/docs). 
+Esta gem inclui todos os métodos disponíveis na [Boleto Simples JSON API](http://api.boletosimples.com.br).
 
-Ela suporta [basic auth](https://boletosimples.com.br/docs/api/authentication) e OAuth 2.0 para ações realizadas por parceiros.
+Ela suporta Basic Auth e OAuth 2.0 para ações realizadas por parceiros.
 
 ## Instalação
 

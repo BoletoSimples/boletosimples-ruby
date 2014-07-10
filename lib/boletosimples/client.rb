@@ -15,7 +15,7 @@ module BoletoSimples
 
       # defaults
       @production = options.delete(:production)
-      @base_uri = (@production ? PRODUCTION_BASE_URI : SANDBOX_BASE_URI)
+      @base_uri = options[:base_uri] || (@production ? PRODUCTION_BASE_URI : SANDBOX_BASE_URI)
       @user_agent = options.delete(:user_agent)
 
       options[:format] ||= :json

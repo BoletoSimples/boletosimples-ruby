@@ -2,6 +2,17 @@ $: << File.expand_path('../../lib', __FILE__)
 require 'boletosimples'
 require 'pp'
 
+# you can get a access token with app_id and app_secret
+# def get_access_token
+#   response = RestClient.post 'http://sandbox.boletosimples.com.br/api/v1/oauth2/token', {
+#     grant_type: 'client_credentials',
+#     client_id: ENV['APP_ID'],
+#     client_secret:  ENV['APP_TOKEN']
+#   }
+#
+#   JSON.parse(response)["access_token"]
+# end
+
 credentials = {
   :token => 'access token'
 }

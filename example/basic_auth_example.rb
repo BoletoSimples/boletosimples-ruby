@@ -52,16 +52,3 @@ client = BoletoSimples::Client.new('seu email', 'sua senha', {user_agent: 'Meu e
 #     notification_url: 'http://example.com.br/notify',
 #   }
 # })
-
-
-# pp client.partner_create_user(
-#   {
-#     user: {
-#       email: 'email@example.com',
-#       notification_url: 'http://example.com.br/notify'
-#     }
-#   }
-# )
-#
-
-

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    boletosimples (0.0.1)
+    boletosimples (0.0.2)
       httparty (>= 0.13.1)
       multi_json (>= 1.10.1)
       oauth2 (~> 0.9.4)

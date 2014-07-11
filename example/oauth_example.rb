@@ -2,29 +2,57 @@ $: << File.expand_path('../../lib', __FILE__)
 require 'boletosimples'
 require 'pp'
 
+# If you need create users in Boleto Simples
 # you can get a access token with app_id and app_secret
 # def get_access_token
 #   response = RestClient.post 'http://sandbox.boletosimples.com.br/api/v1/oauth2/token', {
 #     grant_type: 'client_credentials',
-#     client_id: ENV['APP_ID'],
-#     client_secret:  ENV['APP_TOKEN']
+#     client_id: 'app_id',
+#     client_secret: 'app_secret'
 #   }
 #
-#   JSON.parse(response)["access_token"]
+#   access_app_token = JSON.parse(response)["access_token"]
 # end
 
 credentials = {
-  :token => 'access token'
+  :token => 'access_app_token'
 }
+
 client_options = {
   user_agent: 'Meu e-Commerce (meuecommerce@example.com)'
 }
 
-client = BoletoSimples::OAuthClient.new('api id',
-  'api secret',
+client = BoletoSimples::OAuthClient.new('app_id',
+  'app_secret',
   credentials,
   client_options)
+  
+# create user with oauth
+# pp client.partner_create_user(
+#   {
+#     user: {
+#       email: 'new_user@example.com'
+#     }
+#   }
+# )
 
+
+# Other operations need access tokens from user oatuh autorization process
+# Use our omniauth-boletosimples (https://github.com/BoletoSimples/omniauth-boletosimples) to archive these tokens
+
+credentials = {
+  :token => 'access token'
+}
+
+client_options = {
+  user_agent: 'Meu e-Commerce (meuecommerce@example.com)'
+}
+
+client = BoletoSimples::OAuthClient.new('app_id',
+  'app_secret',
+  credentials,
+  client_options)
+  
 # pp client.userinfo
 
 # pp client.transactions
@@ -73,16 +101,3 @@ client = BoletoSimples::OAuthClient.new('api id',
 #     notification_url: 'http://example.com.br/notify',
 #   }
 # })
-
-# pp client.partner_create_user(
-#   {
-#     user: {
-#       email: 'email@example.com',
-#       notification_url: 'http://example.com.br/notify'
-#     }
-#   }
-# )
-
-
-
-

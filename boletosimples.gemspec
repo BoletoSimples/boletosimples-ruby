@@ -18,12 +18,12 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   # Gems that must be installed for sift to compile and build
-  gem.add_development_dependency 'pry', '0.9.12.6'
+  gem.add_development_dependency 'pry', '~> 0.10.0'
   gem.add_development_dependency 'rspec', '~> 3.0.0'
   gem.add_development_dependency 'rake'
 
   # Gems that must be intalled for sift to work
-  gem.add_dependency 'httparty', '>= 0.13.1'
-  gem.add_dependency 'multi_json', '>= 1.10.1'
-  gem.add_dependency 'oauth2', '~> 0.9.4'
+  gem.add_dependency 'httparty', '~> 0.13.1'
+  gem.add_dependency 'multi_json', '~> 1.10.1'
+  gem.add_dependency 'oauth2', '~> 1.0.0'
 end

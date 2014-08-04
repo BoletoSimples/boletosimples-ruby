@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    boletosimples (0.0.2)
+    boletosimples (0.0.3)
       httparty (~> 0.13.1)
       multi_json (~> 1.10.1)
       oauth2 (~> 1.0.0)
@@ -9,7 +9,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    codeclimate-test-reporter (0.3.0)
+    codeclimate-test-reporter (0.4.0)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
     coveralls (0.7.0)
@@ -74,8 +74,8 @@ PLATFORMS
 
 DEPENDENCIES
   boletosimples!
-  codeclimate-test-reporter
-  coveralls
+  codeclimate-test-reporter (= 0.4.0)
+  coveralls (= 0.7.0)
   pry (~> 0.10.0)
   rake
   rspec (~> 3.0.0)

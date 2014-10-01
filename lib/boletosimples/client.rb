@@ -6,7 +6,7 @@ module BoletoSimples
     include HTTParty
 
     PRODUCTION_BASE_URI = 'https://boletosimples.com.br/api/v1'
-    SANDBOX_BASE_URI = 'https://staging.boletosimples.com.br/api/v1'
+    SANDBOX_BASE_URI = 'https://sandbox.boletosimples.com.br/api/v1'
 
     def initialize(access_token, options = {})
       @access_token = access_token

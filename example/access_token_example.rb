@@ -2,7 +2,7 @@ $LOAD_PATH << File.expand_path('../../lib', __FILE__)
 require 'boletosimples'
 require 'pp'
 
-client = BoletoSimples::Client.new('seu email', 'sua senha', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
+client = BoletoSimples::Client.new('access_token', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
 
 # pp client.userinfo
 

@@ -6,11 +6,10 @@ module BoletoSimples
     include HTTParty
 
     PRODUCTION_BASE_URI = 'https://boletosimples.com.br/api/v1'
-    SANDBOX_BASE_URI = 'https://sandbox.boletosimples.com.br/api/v1'
+    SANDBOX_BASE_URI = 'https://staging.boletosimples.com.br/api/v1'
 
-    def initialize(username, password, options = {})
-      @username = username
-      @password = password
+    def initialize(access_token, options = {})
+      @access_token = access_token
 
       # defaults
       @production = options.delete(:production)
@@ -24,18 +23,11 @@ module BoletoSimples
     end
 
     # Users
-
     def userinfo(options = {})
       get '/userinfo', options
     end
 
-    # Users
-    def partner_create_user(options = {})
-      post '/partner/users', options
-    end
-
     # Transactions
-
     def transactions(page = 1, options = {})
       get '/transactions', { page: page }.merge(options)
     end
@@ -90,7 +82,9 @@ module BoletoSimples
         'Content-Type' => 'application/json',
         'User-Agent' => @user_agent
       }
-      request_options[:basic_auth] = { username: @username, password: @password }
+      request_options[:query] ||= {}
+      request_options[:query].merge!(access_token: @access_token)
+
       uri = "#{@base_uri}#{path}"
       response = self.class.send(verb, uri, request_options)
       JSON.parse(response.body)

@@ -7,8 +7,8 @@ require 'boletosimples/version'
 Gem::Specification.new do |gem|
   gem.name          = 'boletosimples'
   gem.version       = BoletoSimples::VERSION
-  gem.authors       = ['Kivanio Barbosa', 'Rafael Lima']
-  gem.email         = ['kivanio@gmail.com', 'contato@rafael.adm.br']
+  gem.authors       = ['Kivanio Barbosa', 'Rafael Lima', 'Thiago Belem']
+  gem.email         = ['kivanio@gmail.com', 'contato@rafael.adm.br', 'contato@thiagobelem.net']
   gem.description   = 'An easy way to charge by bank billet.'
   gem.summary       = 'An easy way to charge by bank billet.'
   gem.homepage      = 'http://api.boletosimples.com.br'

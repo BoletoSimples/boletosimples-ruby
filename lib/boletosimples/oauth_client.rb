@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 require 'oauth2'
 
 module BoletoSimples
@@ -16,43 +15,43 @@ module BoletoSimples
     #
     # Please note access tokens will be automatically refreshed when expired
     # Use the credentials method when finished with the client to retrieve up-to-date credentials
-    def initialize(client_id, client_secret, user_credentials, options={})
+    def initialize(client_id, client_secret, user_credentials, options = {})
       @production = options.delete(:production)
       @base_uri = options[:base_uri] || (@production ? PRODUCTION_BASE_URI : SANDBOX_BASE_URI)
       client_opts = {
-        :site => @base_uri,
-        :authorize_url => options[:authorize_url] || "#{@base_uri}/oauth/authorize",
-        :token_url => options[:token_url] || "#{@base_uri}/oauth/token",
-        :raise_errors => false
+        site: @base_uri,
+        authorize_url: options[:authorize_url] || "#{@base_uri}/oauth/authorize",
+        token_url: options[:token_url] || "#{@base_uri}/oauth/token",
+        raise_errors: false
       }
       @user_agent = options.delete(:user_agent)
       @oauth_client = OAuth2::Client.new(client_id, client_secret, client_opts)
       token_hash = user_credentials.dup
       token_hash[:access_token] ||= token_hash[:token]
       token_hash.delete :expires
-      raise "No access token provided" unless token_hash[:access_token]
+      fail 'No access token provided' unless token_hash[:access_token]
       @oauth_token = OAuth2::AccessToken.from_hash(@oauth_client, token_hash)
     end
 
-    def http_verb(verb, path, options={})
+    def http_verb(verb, path, options = {})
       path = remove_leading_slash(path)
-      request_options = {headers: {
-        "Accept-Charset" => "UTF-8",
-        "Content-Type" => "application/json",
-        "User-Agent" => @user_agent
-      }, body: options.to_json}
+      request_options = { headers: {
+        'Accept-Charset' => 'UTF-8',
+        'Content-Type' => 'application/json',
+        'User-Agent' => @user_agent
+      }, body: options.to_json }
 
       response = oauth_token.request(verb, path, request_options)
-      return JSON.parse(response.body)
+      JSON.parse(response.body)
     end
 
     def refresh!
-      raise "Access token not initialized." unless @oauth_token
+      fail 'Access token not initialized.' unless @oauth_token
       @oauth_token = @oauth_token.refresh!
     end
 
     def oauth_token
-      raise "Access token not initialized." unless @oauth_token
+      fail 'Access token not initialized.' unless @oauth_token
       refresh! if @oauth_token.expired?
       @oauth_token
     end

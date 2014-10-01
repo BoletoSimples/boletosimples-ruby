@@ -1,4 +1,4 @@
-$: << File.expand_path('../../lib', __FILE__)
+$LOAD_PATH << File.expand_path('../../lib', __FILE__)
 require 'boletosimples'
 require 'pp'
 
@@ -15,7 +15,7 @@ require 'pp'
 # end
 
 credentials = {
-  :token => 'access_app_token'
+  token: 'access_app_token'
 }
 
 client_options = {
@@ -23,10 +23,10 @@ client_options = {
 }
 
 client = BoletoSimples::OAuthClient.new('app_id',
-  'app_secret',
-  credentials,
-  client_options)
-  
+                                        'app_secret',
+                                        credentials,
+                                        client_options)
+
 # create user with oauth
 # pp client.partner_create_user(
 #   {
@@ -36,12 +36,11 @@ client = BoletoSimples::OAuthClient.new('app_id',
 #   }
 # )
 
-
 # Other operations need access tokens from user oatuh autorization process
 # Use our omniauth-boletosimples (https://github.com/BoletoSimples/omniauth-boletosimples) to archive these tokens
 
 credentials = {
-  :token => 'access token'
+  token: 'access token'
 }
 
 client_options = {
@@ -49,10 +48,10 @@ client_options = {
 }
 
 client = BoletoSimples::OAuthClient.new('app_id',
-  'app_secret',
-  credentials,
-  client_options)
-  
+                                        'app_secret',
+                                        credentials,
+                                        client_options)
+
 # pp client.userinfo
 
 # pp client.transactions

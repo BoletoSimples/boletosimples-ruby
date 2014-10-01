@@ -18,13 +18,15 @@ Gem::Specification.new do |gem|
 
   gem.required_ruby_version = '>= 1.9'
 
-  # Gems that must be installed for boletosimples to compile and build
-  gem.add_development_dependency 'pry', '~> 0.10.0'
-  gem.add_development_dependency 'rspec', '~> 3.0.0'
-  gem.add_development_dependency 'rake'
-
   # Gems that must be intalled for boletosimples to work
   gem.add_dependency 'httparty', '~> 0.13.1'
   gem.add_dependency 'multi_json', '~> 1.10.1'
   gem.add_dependency 'oauth2', '~> 1.0.0'
+
+  # Gems that must be installed for boletosimples to compile and build
+  gem.add_development_dependency 'pry'
+  gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'coveralls'
+  gem.add_development_dependency 'codeclimate-test-reporter'
 end

@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.email         = ['kivanio@gmail.com', 'contato@rafael.adm.br', 'contato@thiagobelem.net']
   gem.description   = 'An easy way to charge by bank billet.'
   gem.summary       = 'An easy way to charge by bank billet.'
-  gem.homepage      = 'http://api.boletosimples.com.br'
+  gem.homepage      = 'https://boletosimples.com.br'
 
   gem.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   gem.executables   = gem.files.grep(/^bin\//).map { |f| File.basename(f) }

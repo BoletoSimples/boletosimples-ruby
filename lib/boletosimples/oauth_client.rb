@@ -32,6 +32,11 @@ module BoletoSimples
       fail 'No access token provided' unless token_hash[:access_token]
       @oauth_token = OAuth2::AccessToken.from_hash(@oauth_client, token_hash)
     end
+    
+    # Users
+    def partner_create_user(options = {})
+      post '/partner/users', options
+    end
 
     def http_verb(verb, path, options = {})
       path = remove_leading_slash(path)

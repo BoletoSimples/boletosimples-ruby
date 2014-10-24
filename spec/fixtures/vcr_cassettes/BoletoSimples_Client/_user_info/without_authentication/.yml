@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/userinfo?access_token=
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Meu e-Commerce (meuecommerce@example.com)
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Fri, 24 Oct 2014 16:53:01 GMT
+      Status:
+      - 401 Unauthorized
+      Strict-Transport-Security:
+      - max-age=2592000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Www-Authenticate:
+      - Basic realm="Boleto Simples"
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 11e5d0ee-1ecd-4e0f-9d91-6bd3ae9e811d
+      X-Runtime:
+      - '0.211845'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvciI6IlZvY8OqIHByZWNpc2Egc2UgbG9nYXIgb3UgcmVnaXN0cmFy
+        IGFudGVzIGRlIHByb3NzZWd1aXIuIn0=
+    http_version: 
+  recorded_at: Fri, 24 Oct 2014 16:53:01 GMT
+recorded_with: VCR 2.9.3

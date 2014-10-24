@@ -164,4 +164,106 @@ RSpec.describe BoletoSimples::Client do
       it { expect(client.customer(32)).to eq(customer) }
     end
   end
+
+  describe '#create_bank_billet' do
+
+    context 'with valid data', vcr: { cassette_name: 'BoletoSimples_Client/_create_bank_billet/with_valid_data' } do
+      let(:payload) do
+        {
+          "amount" => 9.01,
+          "created_via_api" => true,
+          "customer_address" => "Rua quinhentos",
+          "customer_address_complement" => "Sala 4",
+          "customer_address_number" => "111",
+          "customer_city_name" => "Rio de Janeiro",
+          "customer_cnpj_cpf" => "012.345.678-90",
+          "customer_email" => "cliente@bom.com",
+          "customer_neighborhood" => "Sao Francisco",
+          "customer_person_name" => "Joao da Silva",
+          "customer_person_type" => "individual",
+          "customer_phone_number" => "2112123434",
+          "customer_state" => "RJ",
+          "customer_zipcode" => "12312-123",
+          "description" => "Despesas do contrato 0012",
+          "expire_at" => "2014-01-01",
+          "id" => 113,
+          "notification_url" => "http://example.com.br/notify",
+          "paid_amount" => 0.0,
+          "paid_at" => nil,
+          "send_email_on_creation" => nil,
+          "shorten_url" => nil,
+          "status" => "generating"
+        }
+      end
+
+      def create_bank_billet
+        client.create_bank_billet({
+          "bank_billet" => {
+            "amount" => 9.01,
+            "customer_address" => 'Rua quinhentos',
+            "customer_address_complement" => 'Sala 4',
+            "customer_address_number" => '111',
+            "customer_city_name" => 'Rio de Janeiro',
+            "customer_cnpj_cpf" => '012.345.678-90',
+            "customer_email" => 'cliente@bom.com',
+            "customer_neighborhood" => 'Sao Francisco',
+            "customer_person_name" => 'Joao da Silva',
+            "customer_person_type" => 'individual',
+            "customer_phone_number" => '2112123434',
+            "customer_state" => 'RJ',
+            "customer_zipcode" => '12312-123',
+            "description" => 'Despesas do contrato 0012',
+            "expire_at" => '2014-01-01',
+            "notification_url" => 'http://example.com.br/notify'
+          }
+        })
+      end
+
+      it { expect(create_bank_billet).to eq(payload) }
+    end
+
+    context 'with invalid data', vcr: { cassette_name: 'BoletoSimples_Client/_create_bank_billet/with_invalid_data' } do
+      let(:payload) do
+        {
+          "errors"=> {
+            "customer_cnpj_cpf" => ["não pode ficar em branco"],
+            "customer_email" => ["não é válido"],
+            "customer" => [
+              {
+                "cnpj_cpf" => ["não pode ficar em branco"],
+                "phone_number" => ["é muito curto (mínimo: 10 caracteres)"],
+                "email" => ["não é válido"]
+              }
+            ],
+            "amount"=>["deve ser menor ou igual a 10"]
+          }
+        }
+      end
+
+      def create_bank_billet
+        client.create_bank_billet({
+          "bank_billet" => {
+            "amount" => 19.01,
+            "customer_address" => 'Rua quinhentos',
+            "customer_address_complement" => 'Sala 4',
+            "customer_address_number" => '111',
+            "customer_city_name" => 'Rio de Janeiro',
+            "customer_cnpj_cpf" => '34567890',
+            "customer_email" => 'cliente',
+            "customer_neighborhood" => 'Sao Francisco',
+            "customer_person_name" => 'Joao da Silva',
+            "customer_person_type" => 'individual',
+            "customer_phone_number" => '123434',
+            "customer_state" => 'RJ',
+            "customer_zipcode" => '12312',
+            "description" => 'Despesas do contrato 0012',
+            "expire_at" => '2014-01-01',
+            "notification_url" => 'http://example.com.br/notify'
+          }
+        })
+      end
+
+      it { expect(create_bank_billet).to eq(payload) }
+    end
+  end
 end

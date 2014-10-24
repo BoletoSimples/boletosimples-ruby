@@ -4,7 +4,7 @@ require 'spec_helper'
 
 RSpec.describe BoletoSimples::Client do
 
-  describe '#user_info' do
+  describe '#userinfo' do
 
     context 'without authentication', :vcr do
       let(:client) { BoletoSimples::Client.new(nil, user_agent: 'Meu e-Commerce (meuecommerce@example.com)') }

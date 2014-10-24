@@ -4,9 +4,9 @@ require 'spec_helper'
 
 RSpec.describe BoletoSimples::OAuthClient do
 
-  describe :userinfo do
+  describe '#userinfo' do
 
-    context :without_authentication do
+    context 'without authentication', :vcr do
       let(:credentials) { { token: 'invalid-token' } }
       let(:client_options) { { user_agent: 'Meu e-Commerce (meuecommerce@example.com)' } }
       let(:client) { BoletoSimples::OAuthClient.new(nil, nil, credentials, client_options) }

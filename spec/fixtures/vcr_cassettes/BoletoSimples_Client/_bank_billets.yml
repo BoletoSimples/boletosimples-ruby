@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets?access_token=9e616874dbf0674ace28170a748c9258ac1f0f87e0a544441ebffe976645bc09
+    body:
+      encoding: UTF-8
+      string: '{"page":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Meu e-Commerce (meuecommerce@example.com)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Fri, 24 Oct 2014 20:21:58 GMT
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=2592000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Total:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"dc33a4d50beba22a570588267b96c1a3"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 38b1861c-0c65-49fc-ab54-d7000d879b49
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '499'
+      X-Runtime:
+      - '0.052646'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":113,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"http://staging.bole.to/nhhvauui","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@bom.com","notification_url":"http://example.com.br/notify","send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01}]'
+    http_version: 
+  recorded_at: Fri, 24 Oct 2014 20:21:58 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.boletosimples.com.br/api/v1/customers?access_token=9e616874dbf0674ace28170a748c9258ac1f0f87e0a544441ebffe976645bc09
+    body:
+      encoding: UTF-8
+      string: '{"customer":{"person_name":"Joao da Silva","cnpj_cpf":"foo","email":"cliente@bom.com","address":"Rua
+        quinhentos","city_name":"Rio de Janeiro","state":"RJ","neighborhood":"bairro","zipcode":"123","address_number":"111","address_complement":"Sala
+        4","phone_number":"2123434"}}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Meu e-Commerce (meuecommerce@example.com)
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Fri, 24 Oct 2014 18:06:42 GMT
+      Status:
+      - 422 Unprocessable Entity
+      Strict-Transport-Security:
+      - max-age=2592000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - aca78138-b786-4179-9186-796e5a67d273
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '499'
+      X-Runtime:
+      - '0.035539'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiY25wal9jcGYiOlsibsOjbyBwb2RlIGZpY2FyIGVtIGJy
+        YW5jbyJdLCJwaG9uZV9udW1iZXIiOlsiw6kgbXVpdG8gY3VydG8gKG3DrW5p
+        bW86IDEwIGNhcmFjdGVyZXMpIl19fQ==
+    http_version: 
+  recorded_at: Fri, 24 Oct 2014 18:06:42 GMT
+recorded_with: VCR 2.9.3

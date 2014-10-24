@@ -133,4 +133,35 @@ RSpec.describe BoletoSimples::Client do
 
     it { expect(client.customers).to eq([customer]) }
   end
+
+  describe '#customer' do
+
+    context "not found", vcr: { cassette_name: 'BoletoSimples_Client/_customer/not_found' } do
+      it { expect(client.customer(42)).to eq({"status"=>"404", "error"=>"Not Found"}) }
+    end
+
+    context "existing customer", vcr: { cassette_name: 'BoletoSimples_Client/_customer/existing_customer' } do
+      let(:customer) do
+         {
+           "id"=>32,
+           "city_name" => "Rio de Janeiro",
+           "person_name" => "Joao da Silva",
+           "address" => "Rua quinhentos",
+           "address_complement" => "Sala 4",
+           "address_number" => "111",
+           "mobile_number" => nil,
+           "cnpj_cpf" => "012.345.678-90",
+           "email" => "cliente@bom.com",
+           "neighborhood" => "bairro",
+           "person_type" => "individual",
+           "phone_number" => "2112123434",
+           "zipcode" => "12312-123",
+           "mobile_local_code" => nil,
+           "state" => "RJ"
+         }
+      end
+
+      it { expect(client.customer(32)).to eq(customer) }
+    end
+  end
 end

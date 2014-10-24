@@ -6,6 +6,7 @@ RSpec.describe BoletoSimples::Client do
   subject(:client) do
     BoletoSimples::Client.new(access_token, user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
   end
+
   let(:access_token) { '9e616874dbf0674ace28170a748c9258ac1f0f87e0a544441ebffe976645bc09' }
 
   describe '#userinfo' do
@@ -336,4 +337,6 @@ RSpec.describe BoletoSimples::Client do
       it { expect(client.bank_billet(113)).to eq(bank_billet) }
     end
   end
+
+  #TODO tests for #transactions
 end

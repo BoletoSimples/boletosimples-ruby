@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/transactions?access_token=9e616874dbf0674ace28170a748c9258ac1f0f87e0a544441ebffe976645bc09
+    body:
+      encoding: UTF-8
+      string: '{"page":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Meu e-Commerce (meuecommerce@example.com)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Mon, 03 Nov 2014 22:35:47 GMT
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=2592000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Total:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"44e7beba54834116cc3eb1cbfc5c0b89"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9520fe3c-9f4d-4bab-ad35-3ada0fff892a
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '499'
+      X-Runtime:
+      - '0.073431'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3siaWQiOjE1LCJhbW91bnQiOjkuMDEsImNyZWF0ZWRfYXQiOiIyMDE0LTEx
+        LTAzIiwiZGVzY3JpcHRpb24iOiJCb2xldG8gQmFuY8OhcmlvIDExMyIsImtp
+        bmQiOiJjcmVkaXQiLCJwcm9jZXNzZWRfYXQiOm51bGwsInNlbnRfYXQiOm51
+        bGwsInN0YXR1cyI6InVucHJvY2Vzc2VkIiwiY3JlZGl0X2F0IjoiMjAxNC0x
+        MS0wNiJ9LHsiaWQiOjE2LCJhbW91bnQiOi01LjAsImNyZWF0ZWRfYXQiOiIy
+        MDE0LTExLTAzIiwiZGVzY3JpcHRpb24iOiJCb2xldG8gQmFuY8OhcmlvIDEx
+        MyIsImtpbmQiOiJmZWUiLCJwcm9jZXNzZWRfYXQiOm51bGwsInNlbnRfYXQi
+        Om51bGwsInN0YXR1cyI6InVucHJvY2Vzc2VkIiwiY3JlZGl0X2F0IjoiMjAx
+        NC0xMS0wNiJ9XQ==
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 22:35:47 GMT
+recorded_with: VCR 2.9.3

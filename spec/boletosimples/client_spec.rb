@@ -338,5 +338,35 @@ RSpec.describe BoletoSimples::Client do
     end
   end
 
-  #TODO tests for #transactions
+  describe '#transactions', vcr: { cassette_name: 'BoletoSimples_Client/_transactions' } do
+    let(:credit_tx) do
+      {
+        "id"=>15,
+        "amount"=>9.01,
+        "created_at"=>"2014-11-03",
+        "description"=>"Boleto Bancário 113",
+        "kind"=>"credit",
+        "processed_at"=>nil,
+        "sent_at"=>nil,
+        "status"=>"unprocessed",
+        "credit_at"=>"2014-11-06"
+      }
+    end
+
+    let(:fee_tx) do
+      {
+        "id"=>16,
+        "amount"=>-5.0,
+        "created_at"=>"2014-11-03",
+        "description"=>"Boleto Bancário 113",
+        "kind"=>"fee",
+        "processed_at"=>nil,
+        "sent_at"=>nil,
+        "status"=>"unprocessed",
+        "credit_at"=>"2014-11-06"
+      }
+    end
+
+    it { expect(client.transactions).to match_array([fee_tx, credit_tx]) }
+  end
 end

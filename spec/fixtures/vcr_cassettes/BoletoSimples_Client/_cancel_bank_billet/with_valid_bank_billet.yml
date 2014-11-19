@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets/245/cancel?access_token=9e616874dbf0674ace28170a748c9258ac1f0f87e0a544441ebffe976645bc09
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Meu e-Commerce (meuecommerce@example.com)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Wed, 19 Nov 2014 20:40:20 GMT
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=2592000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"11a2dbe45f5d1334dcbf6ebdf78128f1"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5b2eab95-5d38-4c29-b3b8-e43db1db6753
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '499'
+      X-Runtime:
+      - '0.195508'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6MjQ1LCJleHBpcmVfYXQiOiIyMDE0LTEwLTE5IiwicGFpZF9hdCI6
+        bnVsbCwiZGVzY3JpcHRpb24iOiJmb28iLCJzdGF0dXMiOiJjYW5jZWxlZCIs
+        InNob3J0ZW5fdXJsIjoiaHR0cDovL3N0YWdpbmcuYm9sZS50by9uaThqYXYx
+        dyIsImN1c3RvbWVyX3BlcnNvbl90eXBlIjoianVyaWRpY2FsIiwiY3VzdG9t
+        ZXJfcGVyc29uX25hbWUiOiJtYXJjaW8ganVuaW9yIiwiY3VzdG9tZXJfY25w
+        al9jcGYiOiIzMy4zNjguNzUxLzAwMDEtMTQiLCJjdXN0b21lcl9hZGRyZXNz
+        IjoiUnVhIEpvc8OpIFNjaGV1ZXIiLCJjdXN0b21lcl9zdGF0ZSI6IlNDIiwi
+        Y3VzdG9tZXJfbmVpZ2hib3Job29kIjoiQW1pemFkZSIsImN1c3RvbWVyX3pp
+        cGNvZGUiOiI4OTI1NS04MDAiLCJjdXN0b21lcl9hZGRyZXNzX251bWJlciI6
+        IjEyIiwiY3VzdG9tZXJfYWRkcmVzc19jb21wbGVtZW50IjoiIiwiY3VzdG9t
+        ZXJfcGhvbmVfbnVtYmVyIjoiIiwiY3VzdG9tZXJfZW1haWwiOiJmb29AYmFy
+        LmNvbSIsIm5vdGlmaWNhdGlvbl91cmwiOm51bGwsInNlbmRfZW1haWxfb25f
+        Y3JlYXRpb24iOm51bGwsImNyZWF0ZWRfdmlhX2FwaSI6ZmFsc2UsImN1c3Rv
+        bWVyX2NpdHlfbmFtZSI6IkphcmFndcOhIGRvIFN1bCIsInBhaWRfYW1vdW50
+        IjowLjAsImFtb3VudCI6MTAuMH0=
+    http_version: 
+  recorded_at: Wed, 19 Nov 2014 20:40:20 GMT
+recorded_with: VCR 2.9.3

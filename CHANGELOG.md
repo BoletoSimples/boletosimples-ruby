@@ -4,6 +4,8 @@
 
 ### features
 
+- Created `client.cancel_bank_billet(id, options)` to cancel bank billets
+
 ### improvements
 
 - Changed `client.create_customer({ "customer" => params })` to `client.create_customer(params)`

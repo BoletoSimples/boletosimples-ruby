@@ -54,12 +54,16 @@ module BoletoSimples
       post '/bank_billets', bank_billet: options
     end
 
-    def bank_billet(id = 1, options = {})
+    def bank_billet(id, options = {})
       get "/bank_billets/#{id}", options
     end
 
-    # Wrappers for the main HTTP verbs
+    def cancel_bank_billet(id, options = {})
+      #TODO change to put, when the api be updated
+      patch "/bank_billets/#{id}/cancel", options
+    end
 
+    # Wrappers for the main HTTP verbs 
     def get(path, options = {})
       http_verb :get, path, options
     end
@@ -70,6 +74,10 @@ module BoletoSimples
 
     def put(path, options = {})
       http_verb :put, path, options
+    end
+
+    def patch(path, options = {})
+      http_verb :patch, path, options
     end
 
     def delete(path, options = {})

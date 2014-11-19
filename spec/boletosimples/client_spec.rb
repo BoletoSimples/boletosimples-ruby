@@ -330,6 +330,49 @@ RSpec.describe BoletoSimples::Client do
     end
   end
 
+  describe '#cancel_bank_billet' do
+    context 'with valid bank billet', vcr: { cassette_name: 'BoletoSimples_Client/_cancel_bank_billet/with_valid_bank_billet' } do
+      let(:canceled_bank_billet) do
+        {
+          "amount" => 10.0,
+          "created_via_api" => false,
+          "customer_address" => "Rua José Scheuer",
+          "customer_address_complement" => "",
+          "customer_address_number" => "12",
+          "customer_city_name" => "Jaraguá do Sul",
+          "customer_cnpj_cpf" => "33.368.751/0001-14",
+          "customer_email" => "foo@bar.com",
+          "customer_neighborhood" => "Amizade",
+          "customer_person_name" => "marcio junior",
+          "customer_person_type" => "juridical",
+          "customer_phone_number" => "",
+          "customer_state" => "SC",
+          "customer_zipcode" => "89255-800",
+          "description" => "foo",
+          "expire_at" => "2014-10-19",
+          "id" => 245,
+          "notification_url" => nil,
+          "paid_amount" => 0.0,
+          "paid_at" => nil,
+          "send_email_on_creation" => nil,
+          "shorten_url" => "http://staging.bole.to/ni8jav1w",
+          "status" => "canceled"
+        }
+      end
+
+      it{ expect(client.cancel_bank_billet(245)).to eq(canceled_bank_billet) }
+    end
+
+    context 'with invalid bank billet', vcr: { cassette_name: 'BoletoSimples_Client/_cancel_bank_billet/with_invalid_bank_billet' } do
+      let(:error) do
+        {"errors"=>{"status"=>["cannot transition via cancel"]}}
+      end
+
+      it{ expect(client.cancel_bank_billet(113)).to eq(error) }
+    end
+
+  end
+
   describe '#transactions', vcr: { cassette_name: 'BoletoSimples_Client/_transactions' } do
     let(:credit_tx) do
       {

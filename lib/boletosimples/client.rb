@@ -38,7 +38,7 @@ module BoletoSimples
     end
 
     def create_customer(options = {})
-      post '/customers', options
+      post '/customers', customer: options
     end
 
     def customer(id = 1, options = {})
@@ -51,7 +51,7 @@ module BoletoSimples
     end
 
     def create_bank_billet(options = {})
-      post '/bank_billets', options
+      post '/bank_billets', bank_billet: options
     end
 
     def bank_billet(id = 1, options = {})

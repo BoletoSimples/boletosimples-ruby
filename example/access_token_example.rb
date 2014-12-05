@@ -12,7 +12,7 @@ client = BoletoSimples::Client.new('access_token', user_agent: 'Meu e-Commerce (
 
 # pp client.customer 2
 #
-# pp client.create_customer({:customer =>
+# pp client.create_customer(
 #   {
 #     person_name: "Joao da Silva",
 #     cnpj_cpf: "012.345.678-90",
@@ -26,13 +26,13 @@ client = BoletoSimples::Client.new('access_token', user_agent: 'Meu e-Commerce (
 #     address_complement: "Sala 4",
 #     phone_number: "2112123434"
 #   }
-# })
+# )
 
 # pp client.bank_billets
 
 # pp client.bank_billet 3
 
-# pp client.create_bank_billet({bank_billet:
+# pp client.create_bank_billet(
 #   {
 #     amount: 41.01,
 #     customer_address: 'Rua quinhentos',
@@ -51,4 +51,4 @@ client = BoletoSimples::Client.new('access_token', user_agent: 'Meu e-Commerce (
 #     expire_at: '2014-01-01',
 #     notification_url: 'http://example.com.br/notify',
 #   }
-# })
+# )

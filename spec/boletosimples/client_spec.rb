@@ -82,7 +82,7 @@ RSpec.describe BoletoSimples::Client do
       let(:payload) do
         {
           "errors" => {
-            "cnpj_cpf" => ["não pode ficar em branco"], 
+            "cnpj_cpf" => ["não pode ficar em branco"],
             "phone_number" => ["é muito curto (mínimo: 10 caracteres)"]
           }
         }
@@ -134,7 +134,7 @@ RSpec.describe BoletoSimples::Client do
   describe '#customer' do
 
     context "not found", vcr: { cassette_name: 'BoletoSimples_Client/_customer/not_found' } do
-      it { expect(client.customer(42)).to eq({"status"=>"404", "error"=>"Not Found"}) }
+      it { expect(client.customer(42)).to eq({"status"=>404, "error"=>"Not Found"}) }
     end
 
     context "existing customer", vcr: { cassette_name: 'BoletoSimples_Client/_customer/existing_customer' } do
@@ -369,6 +369,14 @@ RSpec.describe BoletoSimples::Client do
       end
 
       it{ expect(client.cancel_bank_billet(113)).to eq(error) }
+    end
+
+    context 'already canceled', vcr: { cassette_name: 'BoletoSimples_Client/_cancel_bank_billet/already_canceled' } do
+      let(:error) do
+        {"errors"=>{"status"=>["cannot transition via cancel"]}}
+      end
+
+      it{ expect(client.cancel_bank_billet(245)).to eq(error) }
     end
 
   end

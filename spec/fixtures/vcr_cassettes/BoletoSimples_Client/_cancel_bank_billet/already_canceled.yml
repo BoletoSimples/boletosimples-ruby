@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/customers/42?access_token=9e616874dbf0674ace28170a748c9258ac1f0f87e0a544441ebffe976645bc09
+    method: put
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets/245/cancel?access_token=9e616874dbf0674ace28170a748c9258ac1f0f87e0a544441ebffe976645bc09
     body:
       encoding: UTF-8
       string: "{}"
@@ -13,17 +13,17 @@ http_interactions:
       - Meu e-Commerce (meuecommerce@example.com)
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 422
+      message: Unprocessable Entity
     headers:
       Server:
       - Cowboy
       Connection:
       - close
       Date:
-      - Fri, 05 Dec 2014 20:18:46 GMT
+      - Fri, 05 Dec 2014 20:14:08 GMT
       Status:
-      - 404 Not Found
+      - 422 Unprocessable Entity
       Strict-Transport-Security:
       - max-age=2592000
       X-Frame-Options:
@@ -37,22 +37,22 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - a977a921-e10f-4cdb-b64a-ee9b527f4e21
+      - 4183cec5-8a18-4630-b104-e7821f61fcff
       X-Ratelimit-Limit:
       - '500'
       X-Ratelimit-Remaining:
       - '499'
       X-Runtime:
-      - '0.020316'
+      - '0.024256'
       X-Rack-Cache:
-      - miss
+      - invalidate, pass
       Vary:
       - Accept-Encoding
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"status":404,"error":"Not Found"}'
+      string: '{"errors":{"status":["cannot transition via cancel"]}}'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 20:18:47 GMT
+  recorded_at: Fri, 05 Dec 2014 20:14:08 GMT
 recorded_with: VCR 2.9.3

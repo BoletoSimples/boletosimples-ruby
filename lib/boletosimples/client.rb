@@ -59,8 +59,7 @@ module BoletoSimples
     end
 
     def cancel_bank_billet(id, options = {})
-      #TODO change to put, when the api be updated
-      patch "/bank_billets/#{id}/cancel", options
+      put "/bank_billets/#{id}/cancel", options
     end
 
     # Wrappers for the main HTTP verbs 

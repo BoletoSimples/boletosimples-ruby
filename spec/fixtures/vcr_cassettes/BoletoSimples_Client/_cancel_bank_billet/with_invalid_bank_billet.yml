@@ -1,7 +1,7 @@
 ---
 http_interactions:
 - request:
-    method: patch
+    method: PUT
     uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets/113/cancel?access_token=9e616874dbf0674ace28170a748c9258ac1f0f87e0a544441ebffe976645bc09
     body:
       encoding: UTF-8

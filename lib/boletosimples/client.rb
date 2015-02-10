@@ -1,6 +1,3 @@
-require 'httparty'
-require 'multi_json'
-
 module BoletoSimples
   class Client
     include HTTParty
@@ -62,7 +59,7 @@ module BoletoSimples
       put "/bank_billets/#{id}/cancel", options
     end
 
-    # Wrappers for the main HTTP verbs 
+    # Wrappers for the main HTTP verbs
     def get(path, options = {})
       http_verb :get, path, options
     end

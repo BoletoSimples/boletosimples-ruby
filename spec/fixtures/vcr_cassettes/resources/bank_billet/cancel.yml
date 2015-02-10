@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets/688?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets/689?access_token=BOLETOSIMPLES_ACCESS_TOKEN
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.0.7 (contato@boletosimples.com.br)
+      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
       Authorization:
       - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
       Accept-Encoding:
@@ -33,15 +33,15 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '497'
       Etag:
-      - '"eed3cdf840ee3dc0cbc1d216eff4af07"'
+      - '"2809362ec58393cc0748d98d8a517674"'
       Cache-Control:
       - must-revalidate, private, max-age=0
       X-Request-Id:
-      - 7578716b-2097-4dda-bfec-34326856a4e2
+      - e9e588c1-4bab-4df5-b579-375c794b6132
       X-Runtime:
-      - '0.040008'
+      - '0.047746'
       Date:
-      - Tue, 10 Feb 2015 07:21:17 GMT
+      - Tue, 10 Feb 2015 14:29:12 GMT
       X-Rack-Cache:
       - miss
       Vary:
@@ -52,23 +52,23 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":688,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
-        do contrato 0012","status":"opened","shorten_url":"http://staging.bole.to/ni1zav8m","customer_person_type":"individual","customer_person_name":"Joao
+      string: '{"id":689,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"generating","shorten_url":null,"customer_person_type":"individual","customer_person_name":"Joao
         da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
         Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
         4","customer_phone_number":"2112123434","customer_email":"cliente@bom.com","notification_url":"http://example.com.br/notify","send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
-        de Janeiro","paid_amount":0.0,"amount":9.01,"parcel":1,"parent_id":null,"all_parcels_ids":[688]}'
+        de Janeiro","paid_amount":0.0,"amount":9.01,"parcel":1,"parent_id":null,"all_parcels_ids":[689]}'
     http_version: 
-  recorded_at: Tue, 10 Feb 2015 07:21:18 GMT
+  recorded_at: Tue, 10 Feb 2015 14:29:12 GMT
 - request:
     method: put
-    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets/688/cancel?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets/689/cancel?access_token=BOLETOSIMPLES_ACCESS_TOKEN
     body:
       encoding: UTF-8
       string: ''
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.0.7 (contato@boletosimples.com.br)
+      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
       Authorization:
       - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
       Content-Type:
@@ -79,8 +79,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 422
+      message: Unprocessable Entity
     headers:
       Server:
       - Cowboy
@@ -94,16 +94,14 @@ http_interactions:
       - '500'
       X-Ratelimit-Remaining:
       - '496'
-      Etag:
-      - '"5d595d54c814bd9d69f91cc890898eb8"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - f674d699-8131-43c2-9462-c56b6fec6ac5
+      - fc440bee-4c61-4a5b-bc87-1a816c372f97
       X-Runtime:
-      - '0.474920'
+      - '0.067116'
       Date:
-      - Tue, 10 Feb 2015 07:21:19 GMT
+      - Tue, 10 Feb 2015 14:29:13 GMT
       X-Rack-Cache:
       - invalidate, pass
       Vary:
@@ -114,12 +112,7 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":688,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
-        do contrato 0012","status":"canceled","shorten_url":"http://staging.bole.to/ni1zav8m","customer_person_type":"individual","customer_person_name":"Joao
-        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
-        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
-        4","customer_phone_number":"2112123434","customer_email":"cliente@bom.com","notification_url":"http://example.com.br/notify","send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
-        de Janeiro","paid_amount":0.0,"amount":9.01,"parcel":1,"parent_id":null,"all_parcels_ids":[688]}'
+      string: '{"errors":{"status":["cannot transition via cancel"]}}'
     http_version: 
-  recorded_at: Tue, 10 Feb 2015 07:21:19 GMT
+  recorded_at: Tue, 10 Feb 2015 14:29:13 GMT
 recorded_with: VCR 2.9.3

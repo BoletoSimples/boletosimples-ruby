@@ -77,9 +77,15 @@ ENV['BOLETOSIMPLES_ACCESS_TOKEN']
 })
 
 # Criar um novo boleto instanciando o objeto
-@bank_billet = BoletoSimples::BankBillet.new(amount: 199.99, expire_at: '2020-01-01')
+@bank_billet = BoletoSimples::BankBillet.new(amount: '199,99', expire_at: '2020-01-01')
 @bank_billet.description = 'Cobrança XPTO'
 @bank_billet.save
+
+# Mensagens de erro na criação do boleto
+@bank_billet = BoletoSimples::BankBillet.new(amount: 199.99)
+@bank_billet.response_errors
+  # {:expire_at=>["não pode ficar em branco", "não é uma data válida"], :customer_person_name=>["não pode ficar em branco"], :customer_cnpj_cpf=>["não pode ficar em branco", "não é um CPNJ ou CPF válido"], :description=>["não pode ficar em branco"], :customer_zipcode=>["não pode ficar em branco"], :amount=>["está em um formato de moeda inválido"]
+
 
 # Listar todos os boletos
 @bank_billets = BoletoSimples::BankBillet.all
@@ -115,6 +121,11 @@ end
   address_complement: "Sala 4",
   phone_number: "2112123434"
 })
+
+# Mensagens de erro na criação do cliente
+@customer = BoletoSimples::Customer.new(person_name: '')
+@customer.response_errors
+  # {:person_name=>["não pode ficar em branco"], :cnpj_cpf=>["não pode ficar em branco"], :zipcode=>["não pode ficar em branco"]}
 
 # Listar todos os clientes
 @customers = BoletoSimples::Customer.all

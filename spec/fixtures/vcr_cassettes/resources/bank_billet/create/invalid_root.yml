@@ -1,24 +1,26 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/customers/59?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    method: post
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets?access_token=BOLETOSIMPLES_ACCESS_TOKEN
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     headers:
       User-Agent:
       - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
       Authorization:
       - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Content-Type:
+      - application/x-www-form-urlencoded
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 422
+      message: Unprocessable Entity
     headers:
       Server:
       - Cowboy
@@ -31,19 +33,17 @@ http_interactions:
       X-Ratelimit-Limit:
       - '500'
       X-Ratelimit-Remaining:
-      - '486'
-      Etag:
-      - '"6f3f5f0000e461f0f052b3a997450fdd"'
+      - '494'
       Cache-Control:
-      - must-revalidate, private, max-age=0
+      - no-cache
       X-Request-Id:
-      - e1e861a1-75d5-435e-affd-c0156ad18da0
+      - e140c53f-bbbe-47b9-914c-5aa04d1ea7f8
       X-Runtime:
-      - '0.076947'
+      - '0.021184'
       Date:
-      - Tue, 10 Feb 2015 14:37:38 GMT
+      - Tue, 10 Feb 2015 14:29:15 GMT
       X-Rack-Cache:
-      - miss
+      - invalidate, pass
       Vary:
       - Accept-Encoding
       Transfer-Encoding:
@@ -52,8 +52,7 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":59,"city_name":"Rio de Janeiro","person_name":"Maria José","address":"Rua
-        quinhentos","address_complement":"Sala 4","address_number":"111","mobile_number":null,"cnpj_cpf":"79.563.027/0001-42","email":"cliente@bom.com","neighborhood":"bairro","person_type":"juridical","phone_number":"2112123434","zipcode":"12312-123","mobile_local_code":null,"state":"RJ","created_via_api":true}'
+      string: '{"errors":{"bank_billet":["não pode ficar em branco"]}}'
     http_version: 
-  recorded_at: Tue, 10 Feb 2015 14:37:38 GMT
+  recorded_at: Tue, 10 Feb 2015 14:29:15 GMT
 recorded_with: VCR 2.9.3

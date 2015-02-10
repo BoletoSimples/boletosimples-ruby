@@ -12,7 +12,6 @@ RSpec.describe BoletoSimples::Transaction do
   }
   describe 'all', vcr: { cassette_name: 'resources/transaction/all'} do
     subject { BoletoSimples::Transaction.all }
-    it { expect(subject.size).to eq(2) }
-    it { expect(subject.first.attributes).to eq({"amount"=>9.01, "created_at"=>"2015-02-10", "description"=>"Boleto Bancário 688", "kind"=>"credit", "processed_at"=>nil, "sent_at"=>nil, "status"=>"unprocessed", "credit_at"=>"2015-02-19", "id"=>59}) }
+    it { expect(subject.first).to be_a_kind_of(BoletoSimples::Transaction) }
   end
 end

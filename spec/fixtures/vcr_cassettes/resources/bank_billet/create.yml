@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: UTF-8
+      string: bank_billet%5Bamount%5D=9%2C01&bank_billet%5Bcustomer_address%5D=Rua+quinhentos&bank_billet%5Bcustomer_address_complement%5D=Sala+4&bank_billet%5Bcustomer_address_number%5D=111&bank_billet%5Bcustomer_city_name%5D=Rio+de+Janeiro&bank_billet%5Bcustomer_cnpj_cpf%5D=012.345.678-90&bank_billet%5Bcustomer_email%5D=cliente%40bom.com&bank_billet%5Bcustomer_neighborhood%5D=Sao+Francisco&bank_billet%5Bcustomer_person_name%5D=Joao+da+Silva&bank_billet%5Bcustomer_person_type%5D=individual&bank_billet%5Bcustomer_phone_number%5D=2112123434&bank_billet%5Bcustomer_state%5D=RJ&bank_billet%5Bcustomer_zipcode%5D=12312-123&bank_billet%5Bdescription%5D=Despesas+do+contrato+0012&bank_billet%5Bexpire_at%5D=2014-01-01&bank_billet%5Bnotification_url%5D=http%3A%2F%2Fexample.com.br%2Fnotify
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.0.7 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+      Location:
+      - https://sandbox.boletosimples.com.br/api/v1/bank_billets/688
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '494'
+      Etag:
+      - '"9d3926b0ed031814617a1641f8133db3"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7237b8a9-34f5-44f2-a75f-16d0babb945d
+      X-Runtime:
+      - '0.311670'
+      Date:
+      - Tue, 10 Feb 2015 06:53:28 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":688,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"generating","shorten_url":null,"customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@bom.com","notification_url":"http://example.com.br/notify","send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"parcel":1,"parent_id":null,"all_parcels_ids":[688]}'
+    http_version: 
+  recorded_at: Tue, 10 Feb 2015 06:53:29 GMT
+recorded_with: VCR 2.9.3

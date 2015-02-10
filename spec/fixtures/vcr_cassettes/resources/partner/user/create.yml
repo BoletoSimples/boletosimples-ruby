@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.boletosimples.com.br/api/v1/oauth2/token
+    body:
+      encoding: UTF-8
+      string: client_id=BOLETOSIMPLES_APP_ID&client_secret=BOLETOSIMPLES_APP_SECRET&grant_type=client_credentials
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.0.7 (contato@boletosimples.com.br)
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"485b91116ae60e9ff9158c37fb285327"'
+      X-Request-Id:
+      - 4b5ba2a0-2655-4037-81fc-88e3fb142a69
+      X-Runtime:
+      - '0.024773'
+      Date:
+      - Tue, 10 Feb 2015 06:03:57 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"BOLETOSIMPLES_CLIENT_CREDENTIALS_TOKEN","token_type":"bearer","scope":"login","created_at":1423548237}'
+    http_version:
+  recorded_at: Tue, 10 Feb 2015 06:03:57 GMT
+- request:
+    method: post
+    uri: https://sandbox.boletosimples.com.br/api/v1/partner/users?access_token=BOLETOSIMPLES_CLIENT_CREDENTIALS_TOKEN
+    body:
+      encoding: UTF-8
+      string: user%5Bemail%5D=user1%40example.com
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.0.7 (email@example.com)
+      Authorization:
+      - Token token="BOLETOSIMPLES_CLIENT_CREDENTIALS_TOKEN"
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '498'
+      Etag:
+      - '"3c40446e7fd05f21ed5e1fa91835c29c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fb054e13-dc2d-4470-908b-7633975fafdd
+      X-Runtime:
+      - '4.349732'
+      Date:
+      - Tue, 10 Feb 2015 06:04:02 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":53,"email":"user1@example.com","account_type":null,"sex":null,"cpf":null,"address_street_name":null,"address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":null,"address_complement":null,"phone_number":null,"withdrawal_period":"biweekly","notification_url":null,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":null,"business_type":null,"business_cnpj":null,"address_city_name":null,"full_name":null,"login_url":"https://sandbox.boletosimples.com.br/welcome?email=user1%40example.com\u0026token=Dx6tDtrP_v9_CcDjMRmr","mother_name":null,"father_name":null,"application_access_token":"7f613c03c3ac0ca6744daf1f8b3f02b7586b4124527e82ba86e563709ca7ebad"}'
+    http_version:
+  recorded_at: Tue, 10 Feb 2015 06:04:02 GMT
+recorded_with: VCR 2.9.3

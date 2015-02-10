@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.boletosimples.com.br/api/v1/oauth2/token
+    body:
+      encoding: UTF-8
+      string: client_id=BOLETOSIMPLES_APP_ID&client_secret=BOLETOSIMPLES_APP_SECRET&grant_type=client_credentials
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.0.7 (contato@boletosimples.com.br)
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"eebc65ccdc3c98e274ced77efeb71a8a"'
+      X-Request-Id:
+      - 78e4622d-d988-4d9f-bf9a-4e5a066ce988
+      X-Runtime:
+      - '0.019978'
+      Date:
+      - Tue, 10 Feb 2015 06:10:33 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"ec1be386aa3ffc2f4bc0065ad6a56c72fb524276a3fb83f20ebb96bd212c5288","token_type":"bearer","scope":"login","created_at":1423548633}'
+    http_version:
+  recorded_at: Tue, 10 Feb 2015 06:10:34 GMT
+recorded_with: VCR 2.9.3

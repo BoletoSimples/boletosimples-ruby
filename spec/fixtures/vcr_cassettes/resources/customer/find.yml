@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/customers/57?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.0.7 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '492'
+      Etag:
+      - '"a45b3f7e14bf2b79649be57e21c8a980"'
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - cd57a50b-7bcf-4b16-bd17-2d35e7ed6bb9
+      X-Runtime:
+      - '0.027299'
+      Date:
+      - Tue, 10 Feb 2015 07:33:36 GMT
+      X-Rack-Cache:
+      - miss
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":57,"city_name":"Rio de Janeiro","person_name":"Joao da Silva","address":"Rua
+        quinhentos","address_complement":"Sala 4","address_number":"111","mobile_number":null,"cnpj_cpf":"012.345.678-90","email":"cliente@bom.com","neighborhood":"Sao
+        Francisco","person_type":"individual","phone_number":"2112123434","zipcode":"12312-123","mobile_local_code":null,"state":"RJ","created_via_api":true}'
+    http_version: 
+  recorded_at: Tue, 10 Feb 2015 07:33:36 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.0.7 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+      Total:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '498'
+      Etag:
+      - '"fddb5188c17af9114fceb0085acd04e7"'
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - b8e59224-2ced-40d7-b897-5895fb9dbe92
+      X-Runtime:
+      - '0.040721'
+      Date:
+      - Tue, 10 Feb 2015 04:53:17 GMT
+      X-Rack-Cache:
+      - miss
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":7,"expire_at":"2014-04-01","paid_at":null,"description":"Testes
+        da GEM","status":"opened","shorten_url":"http://staging.bole.to/2l8v7y1i","customer_person_type":"individual","customer_person_name":"Renata
+        Celi","customer_cnpj_cpf":"103.326.587-08","customer_address":"Av. Rui Barbosa","customer_state":"RJ","customer_neighborhood":"São
+        Francisco","customer_zipcode":"24360-440","customer_address_number":"457","customer_address_complement":"301","customer_phone_number":"21994912476","customer_email":"contato@rafael.adm.br","notification_url":null,"send_email_on_creation":null,"created_via_api":false,"customer_city_name":"Niterói","paid_amount":0.0,"amount":10.0,"parcel":1,"parent_id":null,"all_parcels_ids":[7]}]'
+    http_version:
+  recorded_at: Tue, 10 Feb 2015 04:53:17 GMT
+recorded_with: VCR 2.9.3

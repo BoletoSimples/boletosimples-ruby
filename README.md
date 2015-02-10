@@ -46,7 +46,7 @@ end
 Você também pode configurar as variáveis de ambiente a seguir e não será necessário chamar `BoletoSimples.configure`
 
 ```bash
-ENV['BOLETOSIMPLES_ENVIRONMENT']
+ENV['BOLETOSIMPLES_ENV']
 ENV['BOLETOSIMPLES_APP_ID']
 ENV['BOLETOSIMPLES_APP_SECRET']
 ENV['BOLETOSIMPLES_ACCESS_TOKEN']

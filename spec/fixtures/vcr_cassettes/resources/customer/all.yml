@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/customers?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+      Total:
+      - '3'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '483'
+      Etag:
+      - '"1e2cf7bac2a788cf7ad67efbcf988903"'
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 6f5aabc2-cb49-469d-bd41-e8e81e351f48
+      X-Runtime:
+      - '0.031115'
+      Date:
+      - Tue, 10 Feb 2015 14:37:41 GMT
+      X-Rack-Cache:
+      - miss
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":57,"city_name":"Rio de Janeiro","person_name":"Joao da Silva","address":"Rua
+        quinhentos","address_complement":"Sala 4","address_number":"111","mobile_number":null,"cnpj_cpf":"012.345.678-90","email":"cliente@bom.com","neighborhood":"Sao
+        Francisco","person_type":"individual","phone_number":"2112123434","zipcode":"12312-123","mobile_local_code":null,"state":"RJ","created_via_api":true},{"id":58,"city_name":"Rio
+        de Janeiro","person_name":"Maria José","address":"Rua quinhentos","address_complement":"Sala
+        4","address_number":"111","mobile_number":null,"cnpj_cpf":"223.886.692-27","email":"cliente@bom.com","neighborhood":"bairro","person_type":"individual","phone_number":"2112123434","zipcode":"12312-123","mobile_local_code":null,"state":"RJ","created_via_api":true},{"id":59,"city_name":"Rio
+        de Janeiro","person_name":"Maria José","address":"Rua quinhentos","address_complement":"Sala
+        4","address_number":"111","mobile_number":null,"cnpj_cpf":"79.563.027/0001-42","email":"cliente@bom.com","neighborhood":"bairro","person_type":"juridical","phone_number":"2112123434","zipcode":"12312-123","mobile_local_code":null,"state":"RJ","created_via_api":true}]'
+    http_version: 
+  recorded_at: Tue, 10 Feb 2015 14:37:41 GMT
+recorded_with: VCR 2.9.3

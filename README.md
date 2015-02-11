@@ -14,8 +14,6 @@
 
 Esta gem inclui todos os métodos disponíveis na [Boleto Simples JSON API](http://api.boletosimples.com.br).
 
-Ela suporta Basic Auth e OAuth 2.0 para ações realizadas por parceiros.
-
 ## Instalação
 
 Adicione a linha a baixo no seu Gemfile:
@@ -30,9 +28,127 @@ Ou instale você mesmo:
 
     $ gem install boletosimples
 
+## Configuração
+
+```ruby
+require 'boletosimples'
+
+BoletoSimples.configure do |c|
+  c.environment = :production # defaut :sandbox
+  c.application_id = 'app-id'
+  c.application_secret = 'app-secret'
+  c.access_token = 'access-token'
+end
+```
+
+### Variáveis de ambiente
+
+Você também pode configurar as variáveis de ambiente a seguir e não será necessário chamar `BoletoSimples.configure`
+
+```bash
+ENV['BOLETOSIMPLES_ENV']
+ENV['BOLETOSIMPLES_APP_ID']
+ENV['BOLETOSIMPLES_APP_SECRET']
+ENV['BOLETOSIMPLES_ACCESS_TOKEN']
+```
+
 ## Exemplos
 
-Veja a [lista de métodos aqui](https://github.com/boletosimples/boletosimples-ruby/blob/master/example)
+### Boletos Bancários
+
+```ruby
+# Criar um boleto
+@bank_billet = BoletoSimples::BankBillet.create({
+  amount: '9,01',
+  description: 'Despesas do contrato 0012',
+  expire_at: '2014-01-01',
+  customer_address: 'Rua quinhentos',
+  customer_address_complement: 'Sala 4',
+  customer_address_number: '111',
+  customer_city_name: 'Rio de Janeiro',
+  customer_cnpj_cpf: '012.345.678-90',
+  customer_email: 'cliente@bom.com',
+  customer_neighborhood: 'Sao Francisco',
+  customer_person_name: 'Joao da Silva',
+  customer_person_type: 'individual',
+  customer_phone_number: '2112123434',
+  customer_state: 'RJ',
+  customer_zipcode: '12312-123',
+  notification_url: 'http://example.com.br/notify'
+})
+
+# Criar um novo boleto instanciando o objeto
+@bank_billet = BoletoSimples::BankBillet.new(amount: '199,99', expire_at: '2020-01-01')
+@bank_billet.description = 'Cobrança XPTO'
+@bank_billet.save
+
+# Mensagens de erro na criação do boleto
+@bank_billet = BoletoSimples::BankBillet.new(amount: 199.99)
+@bank_billet.response_errors
+  # {:expire_at=>["não pode ficar em branco", "não é uma data válida"], :customer_person_name=>["não pode ficar em branco"], :customer_cnpj_cpf=>["não pode ficar em branco", "não é um CPNJ ou CPF válido"], :description=>["não pode ficar em branco"], :customer_zipcode=>["não pode ficar em branco"], :amount=>["está em um formato de moeda inválido"]
+
+
+# Listar todos os boletos
+@bank_billets = BoletoSimples::BankBillet.all
+@bank_billet.each do |bank_billet|
+  puts bank_billet.id
+end
+
+# Atualizar um boleto
+@bank_billet = BoletoSimples::BankBillet.find(1)
+@bank_billet.description = 'Nova descrição'
+@bank_billet.save
+
+# Cancelar um boleto
+@bank_billet = BoletoSimples::BankBillet.find(1)
+@bank_billet.cancel
+
+```
+
+### Clientes
+
+```ruby
+# Criar um cliente
+@customer = BoletoSimples::Customer.create({
+  person_name: "Joao da Silva",
+  cnpj_cpf: "012.345.678-90",
+  email: "cliente@bom.com",
+  address: "Rua quinhentos",
+  city_name: "Rio de Janeiro",
+  state: "RJ",
+  neighborhood: "bairro",
+  zipcode: "12312-123",
+  address_number: "111",
+  address_complement: "Sala 4",
+  phone_number: "2112123434"
+})
+
+# Mensagens de erro na criação do cliente
+@customer = BoletoSimples::Customer.new(person_name: '')
+@customer.response_errors
+  # {:person_name=>["não pode ficar em branco"], :cnpj_cpf=>["não pode ficar em branco"], :zipcode=>["não pode ficar em branco"]}
+
+# Listar todos os clientes
+@customers = BoletoSimples::Customer.all
+@customers.each do |customer|
+  puts customer.id
+end
+
+# Atualizar um cliente
+@customer = BoletoSimples::Customer.find(1)
+@customer.person_name = 'Novo nome'
+@customer.save
+```
+
+### Extrato
+
+```ruby
+# Listar todas as transações
+@transactions = BoletoSimples::Transaction.all
+@transactions.each do |transaction|
+  puts transaction.id
+end
+```
 
 ## OAuth 2.0 Authentication (para acessar as contas dos usuários)
 

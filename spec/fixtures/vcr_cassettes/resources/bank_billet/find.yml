@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets/689?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '495'
+      Etag:
+      - '"2809362ec58393cc0748d98d8a517674"'
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 7b4a8108-a8bf-423f-903e-9cfffa14873f
+      X-Runtime:
+      - '0.026932'
+      Date:
+      - Tue, 10 Feb 2015 14:29:14 GMT
+      X-Rack-Cache:
+      - miss
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":689,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"generating","shorten_url":null,"customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@bom.com","notification_url":"http://example.com.br/notify","send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"parcel":1,"parent_id":null,"all_parcels_ids":[689]}'
+    http_version: 
+  recorded_at: Tue, 10 Feb 2015 14:29:14 GMT
+recorded_with: VCR 2.9.3

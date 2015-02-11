@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/transactions?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.0.7 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+      Total:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '490'
+      Etag:
+      - '"e047e1305c63d330cccbfb633803636e"'
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - ec2cb286-cd13-4221-a398-19edd51d615e
+      X-Runtime:
+      - '0.039110'
+      Date:
+      - Tue, 10 Feb 2015 07:38:35 GMT
+      X-Rack-Cache:
+      - miss
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":59,"amount":9.01,"created_at":"2015-02-10","description":"Boleto
+        Bancário 688","kind":"credit","processed_at":null,"sent_at":null,"status":"unprocessed","credit_at":"2015-02-19"},{"id":60,"amount":-5.0,"created_at":"2015-02-10","description":"Boleto
+        Bancário 688","kind":"fee","processed_at":null,"sent_at":null,"status":"unprocessed","credit_at":"2015-02-19"}]'
+    http_version: 
+  recorded_at: Tue, 10 Feb 2015 07:38:35 GMT
+recorded_with: VCR 2.9.3

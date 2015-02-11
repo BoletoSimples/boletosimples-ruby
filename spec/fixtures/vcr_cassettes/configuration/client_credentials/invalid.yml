@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://boletosimples.com.br/api/v1/oauth2/token
+    body:
+      encoding: UTF-8
+      string: client_id=app-id&client_secret=app-secret&grant_type=client_credentials
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.0.7 (contato@boletosimples.com.br)
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Www-Authenticate:
+      - !binary |-
+        QmVhcmVyIHJlYWxtPSJCb2xldG9TaW1wbGVzIiwgZXJyb3I9ImludmFsaWRf
+        Y2xpZW50IiwgZXJyb3JfZGVzY3JpcHRpb249IkF1dGVudGljYcOnw6NvIGRv
+        IGNsaWVudGUgZmFsaG91IGRldmlkbyBow6EgdW0gY2xpZW50ZSBkZXNjb25o
+        ZWNpZG8sIG5lbmh1bSBjbGllbnRlIGRlIGF1dGVudGljYcOnw6NvIGluY2x1
+        c28sIG91IG3DqXRvZG8gZGUgYXV0ZW50aWNhw6fDo28gbsOjbyBzdXBvcnRh
+        ZG8uIg==
+      X-Request-Id:
+      - fc8ccf3b-3506-4f0c-9cca-39256f6234d7
+      X-Runtime:
+      - '0.014395'
+      Date:
+      - Tue, 10 Feb 2015 06:10:32 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":"invalid_client","error_description":"Autenticação do cliente
+        falhou devido há um cliente desconhecido, nenhum cliente de autenticação incluso,
+        ou método de autenticação não suportado."}'
+    http_version:
+  recorded_at: Tue, 10 Feb 2015 06:10:32 GMT
+recorded_with: VCR 2.9.3

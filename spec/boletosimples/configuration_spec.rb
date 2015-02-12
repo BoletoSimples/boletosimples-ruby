@@ -1,6 +1,3 @@
-# encoding: utf-8
-require 'spec_helper'
-
 # encoding: UTF-8
 require 'spec_helper'
 

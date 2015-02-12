@@ -15,6 +15,7 @@ RSpec.describe BoletoSimples::Configuration do
     it { expect(subject.application_id).to be_nil }
     it { expect(subject.application_secret).to be_nil }
     it { expect(subject.access_token).to be_nil }
+    it { expect(subject.cache).to be_nil }
     it { expect(subject).not_to be_access_token }
   end
   describe 'environment variables' do
@@ -31,14 +32,20 @@ RSpec.describe BoletoSimples::Configuration do
     it { expect(subject.application_secret).to eq('app-secret') }
     it { expect(subject.access_token).to eq('access-token') }
     it { expect(subject).to be_access_token }
+    describe 'cache' do
+      it { expect(subject.cache).to be_nil }
+      it { expect(Her::API.default_api.connection.builder.handlers).not_to include(FaradayMiddleware::Caching,) }
+    end
   end
   describe 'configuration' do
+    let(:cache_object) { double('Dalli') }
     before {
       BoletoSimples.configure do |c|
         c.environment = :production
         c.application_id = 'app-id'
         c.application_secret = 'app-secret'
         c.access_token = 'access-token'
+        c.cache = cache_object
       end
     }
     subject { BoletoSimples.configuration }
@@ -48,6 +55,10 @@ RSpec.describe BoletoSimples::Configuration do
     it { expect(subject.application_id).to eq('app-id') }
     it { expect(subject.application_secret).to eq('app-secret') }
     it { expect(subject.access_token).to eq('access-token') }
+    describe 'cache' do
+      it { expect(subject.cache).to eq(cache_object) }
+      it { expect(Her::API.default_api.connection.builder.handlers).to include(FaradayMiddleware::Caching,) }
+    end
     describe 'client credentials' do
       context 'invalid credentials', vcr: { cassette_name: 'configuration/client_credentials/invalid'} do
         it { expect{subject.client_credentials}.to raise_error(BoletoSimples::ResponseError, "401 POST https://boletosimples.com.br/api/v1/oauth2/token (invalid_client)") }

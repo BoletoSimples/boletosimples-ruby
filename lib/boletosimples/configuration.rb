@@ -2,7 +2,7 @@
 module BoletoSimples
 
   class Configuration
-    attr_accessor :environment, :application_id, :application_secret, :access_token
+    attr_accessor :environment, :application_id, :application_secret, :access_token, :cache
 
 
     BASE_URI = {
@@ -15,6 +15,7 @@ module BoletoSimples
       @application_id = ENV['BOLETOSIMPLES_APP_ID']
       @application_secret = ENV['BOLETOSIMPLES_APP_SECRET']
       @access_token = ENV['BOLETOSIMPLES_ACCESS_TOKEN']
+      @cache = nil
     end
 
     def base_uri
@@ -57,6 +58,7 @@ module BoletoSimples
         c.use BoletoSimples::Middleware::UserAgent
         c.use FaradayMiddleware::OAuth2, BoletoSimples.configuration.access_token if BoletoSimples.configuration.access_token?
         c.use Faraday::Request::UrlEncoded
+        c.use FaradayMiddleware::Caching, BoletoSimples.configuration.cache if BoletoSimples.configuration.cache
 
         # Response
         c.use BoletoSimples::Middleware::RaiseError

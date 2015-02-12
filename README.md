@@ -35,8 +35,6 @@ require 'boletosimples'
 
 BoletoSimples.configure do |c|
   c.environment = :production # defaut :sandbox
-  c.application_id = 'app-id'
-  c.application_secret = 'app-secret'
   c.access_token = 'access-token'
 end
 ```
@@ -50,6 +48,22 @@ ENV['BOLETOSIMPLES_ENV']
 ENV['BOLETOSIMPLES_APP_ID']
 ENV['BOLETOSIMPLES_APP_SECRET']
 ENV['BOLETOSIMPLES_ACCESS_TOKEN']
+```
+
+### Configurando cache
+
+É altamente recomendável utilizar o cache para evitar chegar no [limite de requisições](http://api.boletosimples.com.br/#limite-de-requisicoes)
+
+Para isso recomendamos a utilização da gem [Dalli](https://github.com/mperham/dalli)
+
+Exemplo:
+
+```ruby
+  require 'dalli'
+
+  BoletoSimples.configure do |c|
+    c.cache = Dalli::Client.new('localhost:11211', namespace: 'boletosimples_client', compress: true)
+  end
 ```
 
 ## Exemplos

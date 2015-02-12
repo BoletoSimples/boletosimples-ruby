@@ -108,6 +108,14 @@ Exemplo:
   puts bank_billet.id
 end
 
+ # Após realizar a chamada na listagem, você terá acesso aos seguintes dados:
+
+BoletoSimples.last_request.total # número total de boletos
+BoletoSimples.last_request.links[:first] # url da primeira página
+BoletoSimples.last_request.links[:prev] # url da página anterior
+BoletoSimples.last_request.links[:next] # url da próxima página
+BoletoSimples.last_request.links[:last] # url da última página
+
 # Atualizar um boleto
 @bank_billet = BoletoSimples::BankBillet.find(1)
 @bank_billet.description = 'Nova descrição'
@@ -147,6 +155,14 @@ end
 @customers.each do |customer|
   puts customer.id
 end
+
+ # Após realizar a chamada na listagem, você terá acesso aos seguintes dados:
+
+BoletoSimples.last_request.total # número total de clientes
+BoletoSimples.last_request.links[:first] # url da primeira página
+BoletoSimples.last_request.links[:prev] # url da página anterior
+BoletoSimples.last_request.links[:next] # url da próxima página
+BoletoSimples.last_request.links[:last] # url da última página
 
 # Atualizar um cliente
 @customer = BoletoSimples::Customer.find(1)

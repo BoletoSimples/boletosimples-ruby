@@ -7,6 +7,8 @@ module BoletoSimples
   autoload :Configuration, 'boletosimples/configuration'
   autoload :Extra, 'boletosimples/extra'
   autoload :ResponseError, 'boletosimples/response_error'
+  autoload :LastRequest, 'boletosimples/last_request'
+
   autoload :BankBillet, 'boletosimples/resources/bank_billet'
   autoload :Customer, 'boletosimples/resources/customer'
   autoload :Transaction, 'boletosimples/resources/transaction'
@@ -19,10 +21,11 @@ module BoletoSimples
   module Middleware
     autoload :UserAgent, 'boletosimples/middlewares/user_agent'
     autoload :RaiseError, 'boletosimples/middlewares/raise_error'
+    autoload :LastRequest, 'boletosimples/middlewares/last_request'
   end
 
   class << self
-    attr_accessor :configuration
+    attr_accessor :configuration, :last_request
 
     def configure
       @configuration = Configuration.new

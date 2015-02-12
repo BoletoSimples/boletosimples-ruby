@@ -48,6 +48,7 @@ module BoletoSimples
         c.use Faraday::HttpCache, store: BoletoSimples.configuration.cache if BoletoSimples.configuration.cache
 
         # Response
+        c.use BoletoSimples::Middleware::LastRequest
         c.use BoletoSimples::Middleware::RaiseError
         c.use Her::Middleware::DefaultParseJSON
 

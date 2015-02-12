@@ -36,6 +36,7 @@ module BoletoSimples
         c.use Faraday::Request::UrlEncoded
 
         # Response
+        c.use BoletoSimples::Middleware::RaiseError
         c.use Her::Middleware::DefaultParseJSON
 
         # Adapter
@@ -58,6 +59,7 @@ module BoletoSimples
         c.use Faraday::Request::UrlEncoded
 
         # Response
+        c.use BoletoSimples::Middleware::RaiseError
         c.use Her::Middleware::DefaultParseJSON
 
         # Adapter

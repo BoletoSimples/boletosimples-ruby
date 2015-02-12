@@ -4,6 +4,7 @@ require 'boletosimples/version'
 
 module BoletoSimples
   autoload :Configuration, 'boletosimples/configuration'
+  autoload :ResponseError, 'boletosimples/response_error'
   autoload :BankBillet, 'boletosimples/resources/bank_billet'
   autoload :Customer, 'boletosimples/resources/customer'
   autoload :Transaction, 'boletosimples/resources/transaction'
@@ -15,6 +16,7 @@ module BoletoSimples
 
   module Middleware
     autoload :UserAgent, 'boletosimples/middlewares/user_agent'
+    autoload :RaiseError, 'boletosimples/middlewares/raise_error'
   end
 
   class << self

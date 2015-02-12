@@ -61,13 +61,20 @@ RSpec.describe BoletoSimples::Configuration do
     end
     describe 'client credentials' do
       context 'invalid credentials', vcr: { cassette_name: 'configuration/client_credentials/invalid'} do
-        it { expect{subject.client_credentials}.to raise_error(BoletoSimples::ResponseError, "401 POST https://boletosimples.com.br/api/v1/oauth2/token (invalid_client)") }
-      end
-      context 'valid credentials', vcr: { cassette_name: 'configuration/client_credentials/valid'} do
-        # Before running this spec again, you need to set environment variable BOLETOSIMPLES_CLIENT_CREDENTIALS_TOKEN
         before {
           BoletoSimples.configure do |c|
-            c.access_token = ENV['BOLETOSIMPLES_CLIENT_CREDENTIALS_TOKEN']
+            c.application_id = 'app-id'
+            c.application_secret = 'app-secret'
+            c.access_token = nil
+          end
+        }
+        it { expect{subject.client_credentials}.to raise_error(BoletoSimples::ResponseError, "401 POST https://sandbox.boletosimples.com.br/api/v1/oauth2/token (invalid_client)") }
+      end
+      context 'valid credentials', vcr: { cassette_name: 'configuration/client_credentials/valid'} do
+        # Before running this spec again, you need to set environment variable BOLETOSIMPLES_APP_ID and BOLETOSIMPLES_APP_SECRET
+        before {
+          BoletoSimples.configure do |c|
+            c.access_token = nil
           end
         }
         it { expect(subject.client_credentials).to include(:access_token) }

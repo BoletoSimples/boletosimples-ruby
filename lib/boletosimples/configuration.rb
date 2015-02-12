@@ -31,20 +31,7 @@ module BoletoSimples
     end
 
     def client_credentials
-      conn = Faraday.new(url: BoletoSimples.configuration.base_uri) do |c|
-        # Request
-        c.use BoletoSimples::Middleware::UserAgent
-        c.use Faraday::Request::UrlEncoded
-
-        # Response
-        c.use BoletoSimples::Middleware::RaiseError
-        c.use Her::Middleware::DefaultParseJSON
-
-        # Adapter
-        c.use Faraday::Adapter::NetHttp
-      end
-
-      response = conn.post 'oauth2/token', {
+      response = Her::API.default_api.connection.post 'oauth2/token', {
         grant_type: 'client_credentials',
         client_id: application_id,
         client_secret: application_secret

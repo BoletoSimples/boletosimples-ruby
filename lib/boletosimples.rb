@@ -4,6 +4,7 @@ require 'boletosimples/version'
 
 module BoletoSimples
   autoload :Configuration, 'boletosimples/configuration'
+  autoload :Extra, 'boletosimples/extra'
   autoload :ResponseError, 'boletosimples/response_error'
   autoload :BankBillet, 'boletosimples/resources/bank_billet'
   autoload :Customer, 'boletosimples/resources/customer'

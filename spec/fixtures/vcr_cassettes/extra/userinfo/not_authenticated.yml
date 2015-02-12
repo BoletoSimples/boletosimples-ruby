@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/userinfo.json?access_token=invalid
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="invalid"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+      Www-Authenticate:
+      - Basic realm="Boleto Simples"
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache, private
+      X-Request-Id:
+      - 0c2cfc93-76e8-4a4b-908e-e012c5569f8b
+      X-Runtime:
+      - '0.015539'
+      Date:
+      - Thu, 12 Feb 2015 00:06:27 GMT
+      X-Rack-Cache:
+      - miss
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":"Você precisa se logar ou registrar antes de prosseguir."}'
+    http_version: 
+  recorded_at: Thu, 12 Feb 2015 00:06:27 GMT
+recorded_with: VCR 2.9.3

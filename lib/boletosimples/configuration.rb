@@ -45,7 +45,7 @@ module BoletoSimples
         c.use BoletoSimples::Middleware::UserAgent
         c.use FaradayMiddleware::OAuth2, BoletoSimples.configuration.access_token if BoletoSimples.configuration.access_token?
         c.use Faraday::Request::UrlEncoded
-        c.use FaradayMiddleware::Caching, BoletoSimples.configuration.cache if BoletoSimples.configuration.cache
+        c.use Faraday::HttpCache, store: BoletoSimples.configuration.cache if BoletoSimples.configuration.cache
 
         # Response
         c.use BoletoSimples::Middleware::RaiseError

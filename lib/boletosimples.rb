@@ -1,5 +1,6 @@
 require 'her'
 require 'faraday_middleware'
+require 'faraday-http-cache'
 require 'boletosimples/version'
 
 module BoletoSimples

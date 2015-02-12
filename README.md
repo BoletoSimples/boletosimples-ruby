@@ -62,7 +62,7 @@ Exemplo:
   require 'dalli'
 
   BoletoSimples.configure do |c|
-    c.cache = Dalli::Client.new('localhost:11211', namespace: 'boletosimples_client', compress: true)
+    c.cache = ActiveSupport::Cache.lookup_store(:dalli_store, ['localhost:11211'], namespace: 'boletosimples_client', compress: true)
   end
 ```
 

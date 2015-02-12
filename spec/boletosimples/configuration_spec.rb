@@ -34,7 +34,7 @@ RSpec.describe BoletoSimples::Configuration do
     it { expect(subject).to be_access_token }
     describe 'cache' do
       it { expect(subject.cache).to be_nil }
-      it { expect(Her::API.default_api.connection.builder.handlers).not_to include(FaradayMiddleware::Caching,) }
+      it { expect(Her::API.default_api.connection.builder.handlers).not_to include(Faraday::HttpCache) }
     end
   end
   describe 'configuration' do
@@ -57,7 +57,7 @@ RSpec.describe BoletoSimples::Configuration do
     it { expect(subject.access_token).to eq('access-token') }
     describe 'cache' do
       it { expect(subject.cache).to eq(cache_object) }
-      it { expect(Her::API.default_api.connection.builder.handlers).to include(FaradayMiddleware::Caching,) }
+      it { expect(Her::API.default_api.connection.builder.handlers).to include(Faraday::HttpCache) }
     end
     describe 'client credentials' do
       context 'invalid credentials', vcr: { cassette_name: 'configuration/client_credentials/invalid'} do

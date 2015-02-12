@@ -1,6 +1,6 @@
 module BoletoSimples
   class LastRequest
-    attr_reader :body, :total, :ratelimit_limit, :ratelimit_remaining, :links
+    attr_reader :body, :response_headers, :total, :ratelimit_limit, :ratelimit_remaining, :links
 
     def initialize(env)
       @env = env
@@ -8,6 +8,10 @@ module BoletoSimples
 
     def body
       @body ||= @env[:body][:data]
+    end
+
+    def response_headers
+      @response_headers ||= @env[:response_headers]
     end
 
     def total

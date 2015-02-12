@@ -14,6 +14,7 @@ RSpec.describe BoletoSimples::LastRequest do
     it { expect(subject).to be_kind_of(BoletoSimples::LastRequest) }
     it { expect(subject.body).to be_kind_of(Array) }
     it { expect(subject.body.first).to be_kind_of(Hash) }
+    it { expect(subject.response_headers).to be_kind_of(Hash) }
     it { expect(subject.total).to be_kind_of(Integer) }
     it { expect(subject.ratelimit_limit).to be_kind_of(Integer) }
     it { expect(subject.ratelimit_remaining).to be_kind_of(Integer) }
@@ -24,6 +25,7 @@ RSpec.describe BoletoSimples::LastRequest do
     subject { BoletoSimples.last_request }
     it { expect(subject).to be_kind_of(BoletoSimples::LastRequest) }
     it { expect(subject.body).to be_kind_of(Hash) }
+    it { expect(subject.response_headers).to be_kind_of(Hash) }
     it { expect(subject.total).to eq(0) }
     it { expect(subject.ratelimit_limit).to be_kind_of(Integer) }
     it { expect(subject.ratelimit_remaining).to be_kind_of(Integer) }

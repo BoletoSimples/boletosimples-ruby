@@ -97,10 +97,15 @@ Exemplo:
 @bank_billet.save
 
 # Mensagens de erro na criação do boleto
-@bank_billet = BoletoSimples::BankBillet.new(amount: 199.99)
+@bank_billet = BoletoSimples::BankBillet.create(amount: 199.99)
 @bank_billet.response_errors
   # {:expire_at=>["não pode ficar em branco", "não é uma data válida"], :customer_person_name=>["não pode ficar em branco"], :customer_cnpj_cpf=>["não pode ficar em branco", "não é um CPNJ ou CPF válido"], :description=>["não pode ficar em branco"], :customer_zipcode=>["não pode ficar em branco"], :amount=>["está em um formato de moeda inválido"]
 
+# Pegar informações de um boleto
+@bank_billet = BoletoSimples::BankBillet.find(1) # onde 1 é o id do boleto.
+
+ # Se o não for encontrado nenhum boleto com o id informado, uma exceção será levantada com a mensagem:
+ # Couldn't find BankBillet with 'id'=1
 
 # Listar os boletos
 @bank_billets = BoletoSimples::BankBillet.all(page: 1, per_page: 50)
@@ -115,11 +120,6 @@ BoletoSimples.last_request.links[:first] # url da primeira página
 BoletoSimples.last_request.links[:prev] # url da página anterior
 BoletoSimples.last_request.links[:next] # url da próxima página
 BoletoSimples.last_request.links[:last] # url da última página
-
-# Atualizar um boleto
-@bank_billet = BoletoSimples::BankBillet.find(1)
-@bank_billet.description = 'Nova descrição'
-@bank_billet.save
 
 # Cancelar um boleto
 @bank_billet = BoletoSimples::BankBillet.find(1)

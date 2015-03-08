@@ -1,4 +1,4 @@
-# Boleto Simples
+# Boleto Simples Ruby
 
 [![Gem Version](http://img.shields.io/gem/v/boletosimples.svg)][gem]
 [![Build Status](http://img.shields.io/travis/BoletoSimples/boletosimples-ruby.svg)][travis]
@@ -12,7 +12,7 @@
 [codeclimate]: https://codeclimate.com/github/BoletoSimples/boletosimples-ruby
 [coveralls]: https://coveralls.io/r/BoletoSimples/boletosimples-ruby
 
-Esta gem inclui todos os métodos disponíveis na [Boleto Simples JSON API](http://api.boletosimples.com.br).
+Biblioteca Ruby para acessar informações do [Boleto Simples](http://boletosimples.com.br) através da [API](http://api.boletosimples.com.br).
 
 ## Instalação
 

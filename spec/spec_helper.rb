@@ -10,12 +10,12 @@ require 'rspec'
 require 'pry'
 require 'boletosimples'
 
-if(ENV['BOLETOSIMPLES_ACCESS_TOKEN'].empty?)
+if(ENV['BOLETOSIMPLES_ACCESS_TOKEN'].nil?)
   puts "\e[31mWarning: Environment variable BOLETOSIMPLES_ACCESS_TOKEN is not set. Tests will run and pass, but if you delete vcr cassettes you need to set this variable before running tests.\e[0m"
   ENV['BOLETOSIMPLES_ACCESS_TOKEN'] = 'any-token'
 end
 
-if(ENV['BOLETOSIMPLES_CLIENT_CREDENTIALS_TOKEN'].empty?)
+if(ENV['BOLETOSIMPLES_CLIENT_CREDENTIALS_TOKEN'].nil?)
   puts "\e[31mWarning: Environment variable BOLETOSIMPLES_CLIENT_CREDENTIALS_TOKEN is not set. Tests will run and pass, but if you delete vcr cassettes you need to set this variable before running tests.\e[0m"
   ENV['BOLETOSIMPLES_CLIENT_CREDENTIALS_TOKEN'] = 'any-token'
 end

@@ -16,7 +16,7 @@ RSpec.describe BoletoSimples::Customer do
         @customer = BoletoSimples::Customer.create({
           person_name: "Maria José",
           cnpj_cpf: "811.536.151-85",
-          email: "cliente@bom.com",
+          email: "cliente@example.com",
           address: "Rua quinhentos",
           city_name: "Rio de Janeiro",
           state: "RJ",

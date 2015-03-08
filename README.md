@@ -133,7 +133,7 @@ BoletoSimples.last_request.links[:last] # url da última página
 @customer = BoletoSimples::Customer.create({
   person_name: "Joao da Silva",
   cnpj_cpf: "012.345.678-90",
-  email: "cliente@bom.com",
+  email: "cliente@example.com",
   address: "Rua quinhentos",
   city_name: "Rio de Janeiro",
   state: "RJ",

@@ -81,14 +81,13 @@ Exemplo:
   customer_address_number: '111',
   customer_city_name: 'Rio de Janeiro',
   customer_cnpj_cpf: '012.345.678-90',
-  customer_email: 'cliente@bom.com',
+  customer_email: 'cliente@example.com',
   customer_neighborhood: 'Sao Francisco',
   customer_person_name: 'Joao da Silva',
   customer_person_type: 'individual',
   customer_phone_number: '2112123434',
   customer_state: 'RJ',
-  customer_zipcode: '12312-123',
-  notification_url: 'http://example.com.br/notify'
+  customer_zipcode: '12312-123'
 })
 
 # Criar um novo boleto instanciando o objeto

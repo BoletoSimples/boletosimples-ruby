@@ -180,6 +180,13 @@ BoletoSimples.last_request.links[:last] # url da última página
 end
 ```
 
+### Extras
+
+```ruby
+# Dados do usuário logado
+@userinfo = BoletoSimples::Extra.userinfo
+```
+
 ## OAuth 2.0 Authentication (para acessar as contas dos usuários)
 
 Comece [solicitando um cadastro de OAuth 2.0 application](http://suporte.boletosimples.com.br)

@@ -108,8 +108,8 @@ Exemplo:
 
 # Listar os boletos
 @bank_billets = BoletoSimples::BankBillet.all(page: 1, per_page: 50)
-@bank_billet.each do |bank_billet|
-  puts bank_billet.id
+@bank_billets.each do |bank_billet|
+  puts bank_billet.attributes
 end
 
  # Após realizar a chamada na listagem, você terá acesso aos seguintes dados:
@@ -152,7 +152,7 @@ BoletoSimples.last_request.links[:last] # url da última página
 # Listar os clientes
 @customers = BoletoSimples::Customer.all(page: 1, per_page: 50)
 @customers.each do |customer|
-  puts customer.id
+  puts customer.attributes
 end
 
  # Após realizar a chamada na listagem, você terá acesso aos seguintes dados:
@@ -175,7 +175,7 @@ BoletoSimples.last_request.links[:last] # url da última página
 # Listar todas as transações
 @transactions = BoletoSimples::Transaction.all
 @transactions.each do |transaction|
-  puts transaction.id
+  puts transaction.attributes
 end
 ```
 

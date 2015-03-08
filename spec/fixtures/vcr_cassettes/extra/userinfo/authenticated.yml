@@ -31,17 +31,17 @@ http_interactions:
       X-Ratelimit-Limit:
       - '500'
       X-Ratelimit-Remaining:
-      - '499'
+      - '472'
       Etag:
-      - '"2d2f54e118a16fc72383e7533ebcfeb1"'
+      - W/"2d2f54e118a16fc72383e7533ebcfeb1"
       Cache-Control:
       - must-revalidate, private, max-age=0
       X-Request-Id:
-      - 24e8ae66-e587-4b90-aa29-47815f62100a
+      - 0ee42794-98d4-45ac-a044-44b68359e921
       X-Runtime:
-      - '0.063905'
+      - '0.098253'
       Date:
-      - Thu, 12 Feb 2015 00:04:59 GMT
+      - Sun, 08 Mar 2015 19:55:24 GMT
       X-Rack-Cache:
       - miss
       Vary:
@@ -54,5 +54,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"id":53,"login_url":"https://sandbox.boletosimples.com.br/welcome?email=user1%40example.com\u0026token=Dx6tDtrP_v9_CcDjMRmr","email":"user1@example.com","account_type":null,"first_name":null,"middle_name":null,"last_name":null,"full_name":null,"cpf":null,"date_of_birth":null,"mother_name":null,"father_name":null,"account_level":2,"phone_number":null,"address_street_name":null,"address_number":null,"address_complement":null,"address_neighborhood":null,"address_postal_code":null,"address_city_name":null,"address_state":null,"business_name":null,"business_cnpj":null,"business_legal_name":null}'
     http_version: 
-  recorded_at: Thu, 12 Feb 2015 00:04:59 GMT
+  recorded_at: Sun, 08 Mar 2015 19:55:23 GMT
 recorded_with: VCR 2.9.3

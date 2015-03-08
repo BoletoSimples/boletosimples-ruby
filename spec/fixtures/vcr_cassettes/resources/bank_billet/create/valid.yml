@@ -5,14 +5,17 @@ http_interactions:
     uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets?access_token=BOLETOSIMPLES_ACCESS_TOKEN
     body:
       encoding: UTF-8
-      string: bank_billet%5Bamount%5D=9%2C01&bank_billet%5Bcustomer_address%5D=Rua+quinhentos&bank_billet%5Bcustomer_address_complement%5D=Sala+4&bank_billet%5Bcustomer_address_number%5D=111&bank_billet%5Bcustomer_city_name%5D=Rio+de+Janeiro&bank_billet%5Bcustomer_cnpj_cpf%5D=012.345.678-90&bank_billet%5Bcustomer_email%5D=cliente%40bom.com&bank_billet%5Bcustomer_neighborhood%5D=Sao+Francisco&bank_billet%5Bcustomer_person_name%5D=Joao+da+Silva&bank_billet%5Bcustomer_person_type%5D=individual&bank_billet%5Bcustomer_phone_number%5D=2112123434&bank_billet%5Bcustomer_state%5D=RJ&bank_billet%5Bcustomer_zipcode%5D=12312-123&bank_billet%5Bdescription%5D=Despesas+do+contrato+0012&bank_billet%5Bexpire_at%5D=2014-01-01&bank_billet%5Bnotification_url%5D=http%3A%2F%2Fexample.com.br%2Fnotify
+      string: '{"bank_billet":{"amount":9.01,"description":"Despesas do contrato 0012","expire_at":"2014-01-01","customer_address":"Rua
+        quinhentos","customer_address_complement":"Sala 4","customer_address_number":"111","customer_city_name":"Rio
+        de Janeiro","customer_cnpj_cpf":"012.345.678-90","customer_email":"cliente@bom.com","customer_neighborhood":"Sao
+        Francisco","customer_person_name":"Joao da Silva","customer_person_type":"individual","customer_phone_number":"2112123434","customer_state":"RJ","customer_zipcode":"12312-123","notification_url":"http://example.com.br/notify"}}'
     headers:
       User-Agent:
       - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
       Authorization:
       - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -29,23 +32,23 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=2592000
       Location:
-      - https://sandbox.boletosimples.com.br/api/v1/bank_billets/689
+      - https://sandbox.boletosimples.com.br/api/v1/bank_billets/851
       Content-Type:
       - application/json; charset=utf-8
       X-Ratelimit-Limit:
       - '500'
       X-Ratelimit-Remaining:
-      - '498'
+      - '466'
       Etag:
-      - '"2809362ec58393cc0748d98d8a517674"'
+      - W/"041ade0c7ea0750fb941604dfe6bf868"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 73524e87-5def-4468-8f37-b82de22d73ba
+      - 5af00da9-557a-4907-a3fb-f1ed7a5b970e
       X-Runtime:
-      - '0.364647'
+      - '0.225879'
       Date:
-      - Tue, 10 Feb 2015 14:29:10 GMT
+      - Sun, 08 Mar 2015 19:55:32 GMT
       X-Rack-Cache:
       - invalidate, pass
       Vary:
@@ -56,12 +59,12 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":689,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
+      string: '{"id":851,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
         do contrato 0012","status":"generating","shorten_url":null,"customer_person_type":"individual","customer_person_name":"Joao
         da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
         Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
         4","customer_phone_number":"2112123434","customer_email":"cliente@bom.com","notification_url":"http://example.com.br/notify","send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
-        de Janeiro","paid_amount":0.0,"amount":9.01,"parcel":1,"parent_id":null,"all_parcels_ids":[689]}'
+        de Janeiro","paid_amount":0.0,"amount":9.01}'
     http_version: 
-  recorded_at: Tue, 10 Feb 2015 14:29:11 GMT
+  recorded_at: Sun, 08 Mar 2015 19:55:32 GMT
 recorded_with: VCR 2.9.3

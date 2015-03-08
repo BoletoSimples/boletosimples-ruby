@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.0.7 (contato@boletosimples.com.br)
+      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
       Authorization:
       - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
       Accept-Encoding:
@@ -33,17 +33,17 @@ http_interactions:
       X-Ratelimit-Limit:
       - '500'
       X-Ratelimit-Remaining:
-      - '490'
+      - '467'
       Etag:
-      - '"e047e1305c63d330cccbfb633803636e"'
+      - W/"2e1210e97d24b7cdbb9fc07792ae2aed"
       Cache-Control:
       - must-revalidate, private, max-age=0
       X-Request-Id:
-      - ec2cb286-cd13-4221-a398-19edd51d615e
+      - 13ec92f4-227a-4a3b-b9bd-132b34206857
       X-Runtime:
-      - '0.039110'
+      - '0.103404'
       Date:
-      - Tue, 10 Feb 2015 07:38:35 GMT
+      - Sun, 08 Mar 2015 19:55:31 GMT
       X-Rack-Cache:
       - miss
       Vary:
@@ -55,8 +55,8 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '[{"id":59,"amount":9.01,"created_at":"2015-02-10","description":"Boleto
-        Bancário 688","kind":"credit","processed_at":null,"sent_at":null,"status":"unprocessed","credit_at":"2015-02-19"},{"id":60,"amount":-5.0,"created_at":"2015-02-10","description":"Boleto
-        Bancário 688","kind":"fee","processed_at":null,"sent_at":null,"status":"unprocessed","credit_at":"2015-02-19"}]'
+        Bancário 688","kind":"credit","processed_at":"2015-02-19","sent_at":null,"status":"processed","credit_at":"2015-02-19"},{"id":60,"amount":-5.0,"created_at":"2015-02-10","description":"Boleto
+        Bancário 688","kind":"fee","processed_at":"2015-02-19","sent_at":null,"status":"processed","credit_at":"2015-02-19"}]'
     http_version: 
-  recorded_at: Tue, 10 Feb 2015 07:38:35 GMT
+  recorded_at: Sun, 08 Mar 2015 19:55:31 GMT
 recorded_with: VCR 2.9.3

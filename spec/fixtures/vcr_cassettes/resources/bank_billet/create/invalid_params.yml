@@ -5,14 +5,14 @@ http_interactions:
     uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets?access_token=BOLETOSIMPLES_ACCESS_TOKEN
     body:
       encoding: UTF-8
-      string: bank_billet%5Bamount%5D=9.1
+      string: '{"bank_billet":{"amount":9.1}}'
     headers:
       User-Agent:
       - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
       Authorization:
       - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -33,15 +33,15 @@ http_interactions:
       X-Ratelimit-Limit:
       - '500'
       X-Ratelimit-Remaining:
-      - '493'
+      - '464'
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 48413877-7a16-4466-bd8e-5f5f6eed0b05
+      - 06416084-e98b-4810-b538-e23526138773
       X-Runtime:
-      - '0.069131'
+      - '0.122267'
       Date:
-      - Tue, 10 Feb 2015 14:29:16 GMT
+      - Sun, 08 Mar 2015 19:55:34 GMT
       X-Rack-Cache:
       - invalidate, pass
       Vary:
@@ -54,9 +54,8 @@ http_interactions:
       encoding: UTF-8
       string: '{"errors":{"expire_at":["não pode ficar em branco","não é uma data
         válida"],"customer_person_name":["não pode ficar em branco"],"customer_cnpj_cpf":["não
-        pode ficar em branco","não é um CPNJ ou CPF válido"],"description":["não pode
-        ficar em branco"],"customer_zipcode":["não pode ficar em branco"],"amount":["está
-        em um formato de moeda inválido"]}}'
+        pode ficar em branco"],"description":["não pode ficar em branco"],"customer_zipcode":["não
+        pode ficar em branco"]}}'
     http_version: 
-  recorded_at: Tue, 10 Feb 2015 14:29:16 GMT
+  recorded_at: Sun, 08 Mar 2015 19:55:34 GMT
 recorded_with: VCR 2.9.3

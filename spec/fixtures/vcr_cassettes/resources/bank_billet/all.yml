@@ -26,24 +26,28 @@ http_interactions:
       - keep-alive
       Strict-Transport-Security:
       - max-age=2592000
+      Link:
+      - <https://sandbox.boletosimples.com.br/api/v1/bank_billets?access_token=BOLETOSIMPLES_ACCESS_TOKEN&page=5>;
+        rel="last", <https://sandbox.boletosimples.com.br/api/v1/bank_billets?access_token=BOLETOSIMPLES_ACCESS_TOKEN&page=2>;
+        rel="next"
       Total:
-      - '2'
+      - '112'
       Content-Type:
       - application/json; charset=utf-8
       X-Ratelimit-Limit:
       - '500'
       X-Ratelimit-Remaining:
-      - '492'
+      - '463'
       Etag:
-      - '"f8489c30ccd2cf98d370090b61da7454"'
+      - W/"9e2d03ef9ae3b3f4fc3e329c90b3141a"
       Cache-Control:
       - must-revalidate, private, max-age=0
       X-Request-Id:
-      - 2ce34491-a938-4d69-994c-902319acba2a
+      - a02eae3e-694f-4ba6-ba28-c895cb77fa2b
       X-Runtime:
-      - '0.047570'
+      - '0.091243'
       Date:
-      - Tue, 10 Feb 2015 14:29:17 GMT
+      - Sun, 08 Mar 2015 19:55:35 GMT
       X-Rack-Cache:
       - miss
       Vary:
@@ -54,17 +58,75 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":688,"expire_at":"2014-01-01","paid_at":"2015-02-10","description":"Despesas
-        do contrato 0012","status":"paid","shorten_url":"http://staging.bole.to/ni1zav8m","customer_person_type":"individual","customer_person_name":"Joao
+      string: '[{"id":851,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"http://staging.bole.to/nirjavew","customer_person_type":"individual","customer_person_name":"Joao
         da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
         Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
         4","customer_phone_number":"2112123434","customer_email":"cliente@bom.com","notification_url":"http://example.com.br/notify","send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
-        de Janeiro","paid_amount":9.01,"amount":9.01,"parcel":1,"parent_id":null,"all_parcels_ids":[688]},{"id":689,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
-        do contrato 0012","status":"generating","shorten_url":null,"customer_person_type":"individual","customer_person_name":"Joao
+        de Janeiro","paid_amount":0.0,"amount":9.01},{"id":850,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"canceled","shorten_url":"http://staging.bole.to/niriavev","customer_person_type":"individual","customer_person_name":"Joao
         da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
         Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
         4","customer_phone_number":"2112123434","customer_email":"cliente@bom.com","notification_url":"http://example.com.br/notify","send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
-        de Janeiro","paid_amount":0.0,"amount":9.01,"parcel":1,"parent_id":null,"all_parcels_ids":[689]}]'
+        de Janeiro","paid_amount":0.0,"amount":9.01},{"id":799,"expire_at":"2015-01-01","paid_at":null,"description":"Cobrança
+        XPTO","status":"opened","shorten_url":"http://staging.bole.to/niq5avd4","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@bom.com","notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.99},{"id":798,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"canceled","shorten_url":"http://staging.bole.to/niq6avd3","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@bom.com","notification_url":"http://example.com.br/notify","send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01},{"id":797,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"http://staging.bole.to/niq7avd2","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@bom.com","notification_url":"http://example.com.br/notify","send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01},{"id":796,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"http://staging.bole.to/niq8avd1","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@bom.com","notification_url":"http://example.com.br/notify","send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01},{"id":793,"expire_at":"2015-01-02","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/nioiavbv","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":7.2},{"id":792,"expire_at":"2015-01-02","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/niojavbw","customer_person_type":"individual","customer_person_name":"Fernanda
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":7.2},{"id":791,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/nioaavbn","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":790,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/niozavbm","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":789,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/nioyavbl","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":788,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/nioxavbk","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":787,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/niowavbj","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":786,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/niovavbi","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":785,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/niouavbh","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":784,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/niotavbg","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":783,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/nioravbe","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":782,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/niosavbf","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":781,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/niopavbc","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":780,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/nionavba","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":779,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/niooavbb","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":778,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/nio1avb8","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":777,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/nio1avb9","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":776,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/nio2avb7","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1},{"id":775,"expire_at":"2015-01-01","paid_at":null,"description":"Teste
+        de geração de boleto","status":"opened","shorten_url":"http://staging.bole.to/nio3avb6","customer_person_type":"individual","customer_person_name":"Rodolfo
+        Lima","customer_cnpj_cpf":"748.885.399-79","customer_address":null,"customer_state":null,"customer_neighborhood":null,"customer_zipcode":"24360-440","customer_address_number":null,"customer_address_complement":null,"customer_phone_number":null,"customer_email":null,"notification_url":null,"send_email_on_creation":null,"created_via_api":true,"customer_city_name":null,"paid_amount":0.0,"amount":9.1}]'
     http_version: 
-  recorded_at: Tue, 10 Feb 2015 14:29:17 GMT
+  recorded_at: Sun, 08 Mar 2015 19:55:35 GMT
 recorded_with: VCR 2.9.3

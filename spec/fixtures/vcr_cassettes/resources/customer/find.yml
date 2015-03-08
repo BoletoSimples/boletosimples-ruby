@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/customers/59?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/customers/65?access_token=BOLETOSIMPLES_ACCESS_TOKEN
     body:
       encoding: US-ASCII
       string: ''
@@ -31,17 +31,17 @@ http_interactions:
       X-Ratelimit-Limit:
       - '500'
       X-Ratelimit-Remaining:
-      - '486'
+      - '457'
       Etag:
-      - '"6f3f5f0000e461f0f052b3a997450fdd"'
+      - W/"f198f003d0efa5f1e98adab6fe1a196f"
       Cache-Control:
       - must-revalidate, private, max-age=0
       X-Request-Id:
-      - e1e861a1-75d5-435e-affd-c0156ad18da0
+      - c9e2002f-00e7-42b3-840e-2c29874fcc20
       X-Runtime:
-      - '0.076947'
+      - '0.087909'
       Date:
-      - Tue, 10 Feb 2015 14:37:38 GMT
+      - Sun, 08 Mar 2015 19:59:19 GMT
       X-Rack-Cache:
       - miss
       Vary:
@@ -52,8 +52,8 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":59,"city_name":"Rio de Janeiro","person_name":"Maria José","address":"Rua
-        quinhentos","address_complement":"Sala 4","address_number":"111","mobile_number":null,"cnpj_cpf":"79.563.027/0001-42","email":"cliente@bom.com","neighborhood":"bairro","person_type":"juridical","phone_number":"2112123434","zipcode":"12312-123","mobile_local_code":null,"state":"RJ","created_via_api":true}'
+      string: '{"id":65,"city_name":"Rio de Janeiro","person_name":"Maria José","address":"Rua
+        quinhentos","address_complement":"Sala 4","address_number":"111","mobile_number":null,"cnpj_cpf":"811.536.151-85","email":"cliente@bom.com","neighborhood":"bairro","person_type":"individual","phone_number":"2112123434","zipcode":"12312-123","mobile_local_code":null,"state":"RJ","created_via_api":true}'
     http_version: 
-  recorded_at: Tue, 10 Feb 2015 14:37:38 GMT
+  recorded_at: Sun, 08 Mar 2015 19:59:18 GMT
 recorded_with: VCR 2.9.3

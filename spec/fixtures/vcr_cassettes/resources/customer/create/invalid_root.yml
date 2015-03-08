@@ -5,14 +5,14 @@ http_interactions:
     uri: https://sandbox.boletosimples.com.br/api/v1/customers?access_token=BOLETOSIMPLES_ACCESS_TOKEN
     body:
       encoding: UTF-8
-      string: ''
+      string: '{"customer":{}}'
     headers:
       User-Agent:
       - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
       Authorization:
       - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -33,15 +33,15 @@ http_interactions:
       X-Ratelimit-Limit:
       - '500'
       X-Ratelimit-Remaining:
-      - '484'
+      - '456'
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 77fe8d40-2f7a-471b-a6af-062b461458a2
+      - 1119bf7c-038c-4c5a-a2c2-e5c5c66097fd
       X-Runtime:
-      - '0.020512'
+      - '0.119195'
       Date:
-      - Tue, 10 Feb 2015 14:37:40 GMT
+      - Sun, 08 Mar 2015 19:59:20 GMT
       X-Rack-Cache:
       - invalidate, pass
       Vary:
@@ -54,5 +54,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"errors":{"customer":["não pode ficar em branco"]}}'
     http_version: 
-  recorded_at: Tue, 10 Feb 2015 14:37:40 GMT
+  recorded_at: Sun, 08 Mar 2015 19:59:19 GMT
 recorded_with: VCR 2.9.3

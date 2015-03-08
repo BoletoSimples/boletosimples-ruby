@@ -5,12 +5,12 @@ http_interactions:
     uri: https://sandbox.boletosimples.com.br/api/v1/oauth2/token
     body:
       encoding: UTF-8
-      string: client_id=BOLETOSIMPLES_APP_ID&client_secret=BOLETOSIMPLES_APP_SECRET&grant_type=client_credentials
+      string: '{"grant_type":"client_credentials","client_id":"BOLETOSIMPLES_APP_ID","client_secret":"BOLETOSIMPLES_APP_SECRET"}'
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.0.7 (contato@boletosimples.com.br)
+      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -33,13 +33,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - '"eebc65ccdc3c98e274ced77efeb71a8a"'
+      - W/"c8eefa19fc4751fc6480c046e90ccd10"
       X-Request-Id:
-      - 78e4622d-d988-4d9f-bf9a-4e5a066ce988
+      - 9c0e3e45-1548-4148-bdbb-c1e21ae63929
       X-Runtime:
-      - '0.019978'
+      - '0.063431'
       Date:
-      - Tue, 10 Feb 2015 06:10:33 GMT
+      - Sun, 08 Mar 2015 20:00:22 GMT
       X-Rack-Cache:
       - invalidate, pass
       Vary:
@@ -50,7 +50,7 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"access_token":"ec1be386aa3ffc2f4bc0065ad6a56c72fb524276a3fb83f20ebb96bd212c5288","token_type":"bearer","scope":"login","created_at":1423548633}'
+      string: '{"access_token":"xxx","token_type":"bearer","scope":"login","created_at":1425844822}'
     http_version:
-  recorded_at: Tue, 10 Feb 2015 06:10:34 GMT
+  recorded_at: Sun, 08 Mar 2015 20:00:22 GMT
 recorded_with: VCR 2.9.3

@@ -73,7 +73,7 @@ Exemplo:
 ```ruby
 # Criar um boleto
 @bank_billet = BoletoSimples::BankBillet.create({
-  amount: '9,01',
+  amount: 9.01,
   description: 'Despesas do contrato 0012',
   expire_at: '2014-01-01',
   customer_address: 'Rua quinhentos',
@@ -92,14 +92,14 @@ Exemplo:
 })
 
 # Criar um novo boleto instanciando o objeto
-@bank_billet = BoletoSimples::BankBillet.new(amount: '199,99', expire_at: '2020-01-01')
+@bank_billet = BoletoSimples::BankBillet.new(amount: 199.99, expire_at: '2020-01-01')
 @bank_billet.description = 'Cobrança XPTO'
 @bank_billet.save
 
 # Mensagens de erro na criação do boleto
 @bank_billet = BoletoSimples::BankBillet.create(amount: 199.99)
 @bank_billet.response_errors
-  # {:expire_at=>["não pode ficar em branco", "não é uma data válida"], :customer_person_name=>["não pode ficar em branco"], :customer_cnpj_cpf=>["não pode ficar em branco", "não é um CPNJ ou CPF válido"], :description=>["não pode ficar em branco"], :customer_zipcode=>["não pode ficar em branco"], :amount=>["está em um formato de moeda inválido"]
+  # {:expire_at=>["não pode ficar em branco", "não é uma data válida"], :customer_person_name=>["não pode ficar em branco"], :customer_cnpj_cpf=>["não pode ficar em branco", "não é um CPNJ ou CPF válido"], :description=>["não pode ficar em branco"], :customer_zipcode=>["não pode ficar em branco"]
 
 # Pegar informações de um boleto
 @bank_billet = BoletoSimples::BankBillet.find(1) # onde 1 é o id do boleto.

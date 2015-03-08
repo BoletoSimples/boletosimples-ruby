@@ -9,9 +9,11 @@ RSpec.describe BoletoSimples::Partner::User do
       c.access_token = ENV['BOLETOSIMPLES_CLIENT_CREDENTIALS_TOKEN']
     end
   }
+  # ATENÇÃO: Após rodar este teste, edite o vcr_cassette e remova o token do login_url e substitua o application_access_token para xxx
   describe 'create', vcr: { cassette_name: 'resources/partner/user/create'} do
-    subject { BoletoSimples::Partner::User.create(email: 'user1@example.com') }
+    subject { BoletoSimples::Partner::User.create(email: 'user2@example.com') }
     it { expect(subject.id).not_to be_nil }
-    it { expect(subject.attributes).to eq({"email"=>"user1@example.com", "id"=>53, "account_type"=>nil, "sex"=>nil, "cpf"=>nil, "address_street_name"=>nil, "address_state"=>nil, "address_neighborhood"=>nil, "address_postal_code"=>nil, "address_number"=>nil, "address_complement"=>nil, "phone_number"=>nil, "withdrawal_period"=>"biweekly", "notification_url"=>nil, "first_name"=>nil, "middle_name"=>nil, "last_name"=>nil, "date_of_birth"=>nil, "business_category"=>nil, "business_subcategory"=>nil, "business_website"=>nil, "business_name"=>nil, "business_legal_name"=>nil, "business_type"=>nil, "business_cnpj"=>nil, "address_city_name"=>nil, "full_name"=>nil, "login_url"=>"https://sandbox.boletosimples.com.br/welcome?email=user1%40example.com&token=Dx6tDtrP_v9_CcDjMRmr", "mother_name"=>nil, "father_name"=>nil, "application_access_token"=>"7f613c03c3ac0ca6744daf1f8b3f02b7586b4124527e82ba86e563709ca7ebad"}) }
+    it { expect(subject.response_errors).to eq({}) }
+    it { expect(subject.attributes.keys).to eq(["email", "id", "account_type", "sex", "cpf", "address_street_name", "address_state", "address_neighborhood", "address_postal_code", "address_number", "address_complement", "phone_number", "withdrawal_period", "notification_url", "first_name", "middle_name", "last_name", "date_of_birth", "business_category", "business_subcategory", "business_website", "business_name", "business_legal_name", "business_type", "business_cnpj", "address_city_name", "full_name", "login_url", "mother_name", "father_name", "application_access_token"]) }
   end
 end

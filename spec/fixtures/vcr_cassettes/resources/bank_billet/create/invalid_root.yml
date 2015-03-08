@@ -5,14 +5,14 @@ http_interactions:
     uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets?access_token=BOLETOSIMPLES_ACCESS_TOKEN
     body:
       encoding: UTF-8
-      string: ''
+      string: '{"bank_billet":{}}'
     headers:
       User-Agent:
       - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
       Authorization:
       - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -33,15 +33,15 @@ http_interactions:
       X-Ratelimit-Limit:
       - '500'
       X-Ratelimit-Remaining:
-      - '494'
+      - '465'
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - e140c53f-bbbe-47b9-914c-5aa04d1ea7f8
+      - 9960d0bb-e798-4a31-801c-eddbd2cd3afc
       X-Runtime:
-      - '0.021184'
+      - '0.058479'
       Date:
-      - Tue, 10 Feb 2015 14:29:15 GMT
+      - Sun, 08 Mar 2015 19:55:33 GMT
       X-Rack-Cache:
       - invalidate, pass
       Vary:
@@ -54,5 +54,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"errors":{"bank_billet":["não pode ficar em branco"]}}'
     http_version: 
-  recorded_at: Tue, 10 Feb 2015 14:29:15 GMT
+  recorded_at: Sun, 08 Mar 2015 19:55:33 GMT
 recorded_with: VCR 2.9.3

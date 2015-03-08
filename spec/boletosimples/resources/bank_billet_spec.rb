@@ -14,7 +14,7 @@ RSpec.describe BoletoSimples::BankBillet do
     before {
       VCR.use_cassette('resources/bank_billet/create/valid') do
         @bank_billet = BoletoSimples::BankBillet.create({
-          amount: '9,01',
+          amount: 9.01,
           description: 'Despesas do contrato 0012',
           expire_at: '2014-01-01',
           customer_address: 'Rua quinhentos',
@@ -38,7 +38,7 @@ RSpec.describe BoletoSimples::BankBillet do
         subject { @bank_billet }
         it { expect(subject).to be_a_kind_of(BoletoSimples::BankBillet) }
         it { expect(subject.response_errors).to eq({}) }
-        it { expect(subject.attributes.keys).to match_array(["amount","description","expire_at","customer_address","customer_address_complement","customer_address_number","customer_city_name","customer_cnpj_cpf","customer_email","customer_neighborhood","customer_person_name","customer_person_type","customer_phone_number","customer_state","customer_zipcode","notification_url","id","paid_at","status","shorten_url","send_email_on_creation","created_via_api","paid_amount","parcel","parent_id","all_parcels_ids"]) }
+        it { expect(subject.attributes.keys).to match_array(["amount","description","expire_at","customer_address","customer_address_complement","customer_address_number","customer_city_name","customer_cnpj_cpf","customer_email","customer_neighborhood","customer_person_name","customer_person_type","customer_phone_number","customer_state","customer_zipcode","notification_url","id","paid_at","status","shorten_url","send_email_on_creation","created_via_api","paid_amount"]) }
       end
       context 'invalid parameters' do
         context 'empty bank_billet' do
@@ -55,7 +55,7 @@ RSpec.describe BoletoSimples::BankBillet do
               BoletoSimples::BankBillet.create({amount: 9.1})
             end
           }
-          it { expect(subject.response_errors).to eq({:expire_at=>["não pode ficar em branco", "não é uma data válida"], :customer_person_name=>["não pode ficar em branco"], :customer_cnpj_cpf=>["não pode ficar em branco", "não é um CPNJ ou CPF válido"], :description=>["não pode ficar em branco"], :customer_zipcode=>["não pode ficar em branco"], :amount=>["está em um formato de moeda inválido"]}) }
+          it { expect(subject.response_errors).to eq({:expire_at=>["não pode ficar em branco", "não é uma data válida"], :customer_person_name=>["não pode ficar em branco"], :customer_cnpj_cpf=>["não pode ficar em branco"], :description=>["não pode ficar em branco"], :customer_zipcode=>["não pode ficar em branco"]}) }
         end
       end
     end

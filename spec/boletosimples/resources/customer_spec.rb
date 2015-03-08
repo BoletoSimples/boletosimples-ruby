@@ -15,7 +15,7 @@ RSpec.describe BoletoSimples::Customer do
       VCR.use_cassette('resources/customer/create/valid') do
         @customer = BoletoSimples::Customer.create({
           person_name: "Maria José",
-          cnpj_cpf: "79.563.027/0001-42",
+          cnpj_cpf: "811.536.151-85",
           email: "cliente@bom.com",
           address: "Rua quinhentos",
           city_name: "Rio de Janeiro",

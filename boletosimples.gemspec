@@ -9,9 +9,9 @@ Gem::Specification.new do |gem|
   gem.version       = BoletoSimples::VERSION
   gem.authors       = ['Kivanio Barbosa', 'Rafael Lima', 'Thiago Belem']
   gem.email         = ['kivanio@gmail.com', 'contato@rafael.adm.br', 'contato@thiagobelem.net']
-  gem.description   = 'An easy way to charge by bank billet.'
-  gem.summary       = 'An easy way to charge by bank billet.'
-  gem.homepage      = 'https://boletosimples.com.br'
+  gem.description   = 'Boleto Simples API wrapper.'
+  gem.summary       = 'Boleto Simples API wrapper.'
+  gem.homepage      = 'https://github.com/BoletoSimples/boletosimples-ruby'
 
   gem.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   gem.executables   = gem.files.grep(/^bin\//).map { |f| File.basename(f) }

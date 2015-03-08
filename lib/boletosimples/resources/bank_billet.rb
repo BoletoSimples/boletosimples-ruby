@@ -6,8 +6,9 @@ module BoletoSimples
         assign_attributes(self.class.parse(parsed_data[:data])) if parsed_data[:data].any?
         @metadata = parsed_data[:metadata]
         @response_errors = parsed_data[:errors]
+        @response = response
       end
-      self
+      return @response.success?
     end
   end
 end

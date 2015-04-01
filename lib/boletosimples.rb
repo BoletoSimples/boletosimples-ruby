@@ -10,6 +10,7 @@ module BoletoSimples
   autoload :LastRequest, 'boletosimples/last_request'
 
   autoload :BankBillet, 'boletosimples/resources/bank_billet'
+  autoload :BankBilletAccount, 'boletosimples/resources/bank_billet_account'
   autoload :Customer, 'boletosimples/resources/customer'
   autoload :Transaction, 'boletosimples/resources/transaction'
   autoload :BaseModel, 'boletosimples/resources/base_model'

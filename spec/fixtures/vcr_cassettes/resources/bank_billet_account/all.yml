@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+      Total:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '493'
+      Etag:
+      - W/"ca330f75ba0317e3c3566f31bf76171f"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 5fb90b12-2fb2-4b98-9a1d-11c5decca367
+      X-Runtime:
+      - '0.041115'
+      Date:
+      - Wed, 01 Apr 2015 17:47:58 GMT
+      X-Rack-Cache:
+      - miss
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"bank_contract_slug":"sicoob-02","next_our_number":"0000001","agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":null,"extra1_digit":null,"extra2":null,"extra2_digit":null}]'
+    http_version: 
+  recorded_at: Wed, 01 Apr 2015 17:47:58 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: UTF-8
+      string: bank_billet_account%5Baccount_digit%5D=8&bank_billet_account%5Baccount_number%5D=3666&bank_billet_account%5Bagency_digit%5D=3&bank_billet_account%5Bagency_number%5D=4327&bank_billet_account%5Bbank_contract_slug%5D=sicoob-02&bank_billet_account%5Bextra1_length%5D=1234567&bank_billet_account%5Bnext_our_number%5D=1
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+      Location:
+      - https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '500'
+      X-Ratelimit-Remaining:
+      - '497'
+      Etag:
+      - W/"e1004aeca30742932a4d8da7b82dba83"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5dd95636-6cb1-42c3-b93b-e8c122d1bfa1
+      X-Runtime:
+      - '0.134357'
+      Date:
+      - Wed, 01 Apr 2015 17:47:54 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"bank_contract_slug":"sicoob-02","next_our_number":"0000001","agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":null,"extra1_digit":null,"extra2":null,"extra2_digit":null}'
+    http_version: 
+  recorded_at: Wed, 01 Apr 2015 17:47:54 GMT
+recorded_with: VCR 2.9.3

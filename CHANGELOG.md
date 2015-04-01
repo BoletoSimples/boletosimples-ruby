@@ -1,10 +1,11 @@
 # Changelog
 
-## 0.1.1 (unreleased)
+## 0.1.1
 
 ### features
 
 - Created `client.cancel_bank_billet(id, options)` to cancel bank billets
+- Add BankBilletAccount resource
 
 ### improvements
 

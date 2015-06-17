@@ -7,7 +7,8 @@ module BoletoSimples
 
     BASE_URI = {
       sandbox: 'https://sandbox.boletosimples.com.br/api/v1',
-      production: 'https://boletosimples.com.br/api/v1'
+      production: 'https://boletosimples.com.br/api/v1',
+      development: 'http://localhost:5000/api/v1'
     }
 
     def initialize

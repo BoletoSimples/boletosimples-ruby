@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/discharges?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.2.3 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Ratelimit-Limit:
+      - '500'
+      Date:
+      - Mon, 24 Aug 2015 18:03:13 GMT
+      Strict-Transport-Security:
+      - max-age=2592000
+      X-Ratelimit-Remaining:
+      - '498'
+      Vary:
+      - Accept-Encoding
+      X-Request-Id:
+      - 796a233a-e38d-4ca8-9cce-2af208d6b0f6
+      Total:
+      - '1'
+      Etag:
+      - W/"368fef8232d9c141edd54608bcff2c22"
+      X-Runtime:
+      - '0.152599'
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 5.0.15
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 5.0.15
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"filename":"cnab0904-1.ret","processed_at":"2015-04-17","created_via_api":true,"status":"unprocessed","discharge_transactions":[]}]'
+    http_version: 
+  recorded_at: Mon, 24 Aug 2015 18:03:13 GMT
+recorded_with: VCR 2.9.3

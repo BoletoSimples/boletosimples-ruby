@@ -14,6 +14,7 @@ module BoletoSimples
   autoload :Customer, 'boletosimples/resources/customer'
   autoload :Transaction, 'boletosimples/resources/transaction'
   autoload :Remittance, 'boletosimples/resources/remittance'
+  autoload :Discharge, 'boletosimples/resources/discharge'
   autoload :BaseModel, 'boletosimples/resources/base_model'
 
   module Partner

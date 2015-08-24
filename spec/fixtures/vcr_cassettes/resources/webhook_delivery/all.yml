@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/webhook_deliveries?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.2.3 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Ratelimit-Limit:
+      - '500'
+      Date:
+      - Mon, 24 Aug 2015 18:22:27 GMT
+      Strict-Transport-Security:
+      - max-age=2592000
+      X-Ratelimit-Remaining:
+      - '491'
+      Vary:
+      - Accept-Encoding
+      X-Request-Id:
+      - 27610549-e053-4cce-b496-6e097d680193
+      Total:
+      - '1'
+      Etag:
+      - W/"821177355d204f38ed3af15a2aecde23"
+      X-Runtime:
+      - '0.065348'
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 5.0.15
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 5.0.15
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1434,"uid":"476750a1-bbdf-4e2c-b821-ce80d916af1d","url":"https://example.com","duration":194,"request_headers":{"X-BoletoSimples-Event":"ping","X-Hub-Signature":"sha1=fb0ba87d0416cfaadc762b7296f4a2edeeb3501b","X-BoletoSimples-Delivery-Id":"476750a1-bbdf-4e2c-b821-ce80d916af1d","X-BoletoSimples-Environment":"sandbox","User-Agent":"BoletoSimples-Robot
+        (sandbox)","Content-Type":"application/json"},"request_payload":{"event_code":"ping","webhook":{"id":48,"url":"https://example.com"}},"request_error":null,"response_body":"\u003c!doctype
+        html\u003e\n\u003chtml\u003e\n\u003chead\u003e\n    \u003ctitle\u003eExample
+        Domain\u003c/title\u003e\n\n    \u003cmeta charset=\"utf-8\" /\u003e\n    \u003cmeta
+        http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" /\u003e\n    \u003cmeta
+        name=\"viewport\" content=\"width=device-width, initial-scale=1\" /\u003e\n    \u003cstyle
+        type=\"text/css\"\u003e\n    body {\n        background-color: #f0f0f2;\n        margin:
+        0;\n        padding: 0;\n        font-family: \"Open Sans\", \"Helvetica Neue\",
+        Helvetica, Arial, sans-serif;\n        \n    }\n    div {\n        width:
+        600px;\n        margin: 5em auto;\n        padding: 50px;\n        background-color:
+        #fff;\n        border-radius: 1em;\n    }\n    a:link, a:visited {\n        color:
+        #38488f;\n        text-decoration: none;\n    }\n    @media (max-width: 700px)
+        {\n        body {\n            background-color: #fff;\n        }\n        div
+        {\n            width: auto;\n            margin: 0 auto;\n            border-radius:
+        0;\n            padding: 1em;\n        }\n    }\n    \u003c/style\u003e    \n\u003c/head\u003e\n\n\u003cbody\u003e\n\u003cdiv\u003e\n    \u003ch1\u003eExample
+        Domain\u003c/h1\u003e\n    \u003cp\u003eThis domain is established to be used
+        for illustrative examples in documents. You may use this\n    domain in examples
+        without prior coordination or asking for permission.\u003c/p\u003e\n    \u003cp\u003e\u003ca
+        href=\"http://www.iana.org/domains/example\"\u003eMore information...\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n","response_code":200,"response_headers":{"accept-ranges":["bytes"],"cache-control":["max-age=604800"],"content-type":["text/html"],"date":["Mon,
+        24 Aug 2015 18:19:26 GMT"],"etag":["\"359670651\""],"expires":["Mon, 31 Aug
+        2015 18:19:26 GMT"],"last-modified":["Fri, 09 Aug 2013 23:54:35 GMT"],"server":["EOS
+        (lax004/2816)"],"content-length":["1270"],"connection":["close"]},"response_message":"OK","delivered_at":"2015-08-24T15:19:26.452-03:00","event":null}]'
+    http_version: 
+  recorded_at: Mon, 24 Aug 2015 18:22:27 GMT
+recorded_with: VCR 2.9.3

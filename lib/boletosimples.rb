@@ -17,6 +17,7 @@ module BoletoSimples
   autoload :Remittance, 'boletosimples/resources/remittance'
   autoload :Discharge, 'boletosimples/resources/discharge'
   autoload :BaseModel, 'boletosimples/resources/base_model'
+  autoload :Webhook, 'boletosimples/resources/webhook'
 
   module Partner
     autoload :User, 'boletosimples/resources/partner/user'

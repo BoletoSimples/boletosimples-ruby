@@ -1,0 +1,197 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/events?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.2.3 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Ratelimit-Limit:
+      - '500'
+      Date:
+      - Mon, 24 Aug 2015 18:10:09 GMT
+      Strict-Transport-Security:
+      - max-age=2592000
+      X-Ratelimit-Remaining:
+      - '496'
+      Vary:
+      - Accept-Encoding
+      X-Request-Id:
+      - 125f2efb-ea36-479d-bca9-bca1de938e20
+      Link:
+      - <https://sandbox.boletosimples.com.br/api/v1/events?access_token=BOLETOSIMPLES_ACCESS_TOKEN&page=4>;
+        rel="last", <https://sandbox.boletosimples.com.br/api/v1/events?access_token=BOLETOSIMPLES_ACCESS_TOKEN&page=2>;
+        rel="next"
+      Total:
+      - '89'
+      Etag:
+      - W/"a028eaa2eeae1ff5004373945583ae8e"
+      X-Runtime:
+      - '0.116483'
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 5.0.15
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 5.0.15
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":2560,"code":"bank_billet.generated","data":{"object":{"id":1489,"expire_at":"2015-07-24","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"https://bole.to/3/wqol","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/wqol","formats":{"png":"https://bole.to/3/wqol.png","pdf":"https://bole.to/3/wqol.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null}},"occurred_at":"2015-08-24T14:43:37.000-03:00"},{"id":2559,"code":"bank_billet.created","data":{"object":{"id":1489,"expire_at":"2015-07-24","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"generating","shorten_url":"https://bole.to/3/wqol","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/wqol","formats":{"png":"https://bole.to/3/wqol.png","pdf":"https://bole.to/3/wqol.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null}},"occurred_at":"2015-08-24T14:43:32.000-03:00"},{"id":2558,"code":"bank_billet.generated","data":{"object":{"id":1487,"expire_at":"2015-07-24","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"https://bole.to/3/vred","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/vred","formats":{"png":"https://bole.to/3/vred.png","pdf":"https://bole.to/3/vred.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null}},"occurred_at":"2015-08-24T14:37:04.000-03:00"},{"id":2557,"code":"bank_billet.generated","data":{"object":{"id":1488,"expire_at":"2015-07-24","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"https://bole.to/3/xrbx","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/xrbx","formats":{"png":"https://bole.to/3/xrbx.png","pdf":"https://bole.to/3/xrbx.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null}},"occurred_at":"2015-08-24T14:37:04.000-03:00"},{"id":2556,"code":"bank_billet.created","data":{"object":{"id":1488,"expire_at":"2015-07-24","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"generating","shorten_url":"https://bole.to/3/xrbx","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/xrbx","formats":{"png":"https://bole.to/3/xrbx.png","pdf":"https://bole.to/3/xrbx.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null}},"occurred_at":"2015-08-24T14:36:57.000-03:00"},{"id":2555,"code":"bank_billet.generated","data":{"object":{"id":1486,"expire_at":"2015-07-24","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"https://bole.to/3/owqn","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/owqn","formats":{"png":"https://bole.to/3/owqn.png","pdf":"https://bole.to/3/owqn.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null}},"occurred_at":"2015-08-24T14:36:55.000-03:00"},{"id":2554,"code":"bank_billet.created","data":{"object":{"id":1487,"expire_at":"2015-07-24","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"generating","shorten_url":"https://bole.to/3/vred","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/vred","formats":{"png":"https://bole.to/3/vred.png","pdf":"https://bole.to/3/vred.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null}},"occurred_at":"2015-08-24T14:36:55.000-03:00"},{"id":2553,"code":"bank_billet.created","data":{"object":{"id":1486,"expire_at":"2015-07-24","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"generating","shorten_url":"https://bole.to/3/owqn","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/owqn","formats":{"png":"https://bole.to/3/owqn.png","pdf":"https://bole.to/3/owqn.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null}},"occurred_at":"2015-08-24T14:36:52.000-03:00"},{"id":2552,"code":"user.updated","data":{"object":{"id":64,"email":"kivanio+cb@boletosimples.com.br","account_type":"juridical","sex":null,"cpf":"000.233.771-19","address_street_name":"Rua
+        10","address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":"9","address_complement":null,"phone_number":null,"withdrawal_period":"monthly","notification_url":"","first_name":"Kivanio","middle_name":"Pereira","last_name":"Barbosa","date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":"Boleto
+        Simples Cobranças LTDA","business_legal_name":"Boleto Simples Cobranças LTDA","business_type":null,"business_cnpj":"05.813.794/0001-26","address_city_name":null,"full_name":"Kivanio
+        Pereira Barbosa","login_url":"https://sandbox.boletosimples.com.br/welcome?email=kivanio%2Bcb%40boletosimples.com.br\u0026token=pvcc7RVMDxh9rwwpdQRJ","mother_name":null,"father_name":null,"account_level":2},"changes":{"last_sign_in_at":["2015-06-09
+        10:00:34 -0300","2015-06-09 10:58:56 -0300"],"current_sign_in_at":["2015-06-09
+        10:58:56 -0300","2015-08-24 14:31:28 -0300"],"current_sign_in_ip":["179.216.199.84","187.123.27.68"],"sign_in_count":[12,13],"updated_at":["2015-06-09
+        11:04:28 -0300","2015-08-24 14:31:28 -0300"]}},"occurred_at":"2015-08-24T14:31:28.000-03:00"},{"id":1552,"code":"bank_billet.updated","data":{"object":{"id":1262,"expire_at":"2015-05-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"https://bole.to/3/ymom","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/ymom","formats":{"png":"https://bole.to/3/ymom.png","pdf":"https://bole.to/3/ymom.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null},"changes":{"remessa_id":[null,1],"updated_at":["2015-06-09
+        11:05:01 -0300","2015-06-09 17:04:16 -0300"]}},"occurred_at":"2015-06-09T17:04:16.000-03:00"},{"id":1551,"code":"bank_billet.updated","data":{"object":{"id":1263,"expire_at":"2015-05-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"https://bole.to/3/lkro","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/lkro","formats":{"png":"https://bole.to/3/lkro.png","pdf":"https://bole.to/3/lkro.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null},"changes":{"remessa_id":[null,1],"updated_at":["2015-06-09
+        11:05:01 -0300","2015-06-09 17:04:16 -0300"]}},"occurred_at":"2015-06-09T17:04:16.000-03:00"},{"id":1498,"code":"user.updated","data":{"object":{"id":64,"email":"kivanio+cb@boletosimples.com.br","account_type":"juridical","sex":null,"cpf":"000.233.771-19","address_street_name":"Rua
+        10","address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":"9","address_complement":null,"phone_number":null,"withdrawal_period":"monthly","notification_url":"","first_name":"Kivanio","middle_name":"Pereira","last_name":"Barbosa","date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":"Boleto
+        Simples Cobranças LTDA","business_legal_name":"Boleto Simples Cobranças LTDA","business_type":null,"business_cnpj":"05.813.794/0001-26","address_city_name":null,"full_name":"Kivanio
+        Pereira Barbosa","login_url":"https://sandbox.boletosimples.com.br/welcome?email=kivanio%2Bcb%40boletosimples.com.br\u0026token=pvcc7RVMDxh9rwwpdQRJ","mother_name":null,"father_name":null,"account_level":2},"changes":{}},"occurred_at":"2015-06-09T11:04:28.000-03:00"},{"id":1497,"code":"bank_billet.updated","data":{"object":{"id":1249,"expire_at":"2015-05-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"generating","shorten_url":"https://bole.to/3/qzdk","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/qzdk","formats":{"png":"https://bole.to/3/qzdk.png","pdf":"https://bole.to/3/qzdk.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null},"changes":{"remessa_id":[null,1],"beneficiary_name":["Joao
+        Silva","Boleto Simples Cobranças LTDA"],"beneficiary_cnpj_cpf":["871.539.859-56","05.813.794/0001-26"],"updated_at":["2015-06-09
+        10:32:02 -0300","2015-06-09 11:05:01 -0300"]}},"occurred_at":"2015-06-09T11:05:01.000-03:00"},{"id":1496,"code":"bank_billet.updated","data":{"object":{"id":1262,"expire_at":"2015-05-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"https://bole.to/3/ymom","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/ymom","formats":{"png":"https://bole.to/3/ymom.png","pdf":"https://bole.to/3/ymom.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null},"changes":{"remessa_id":[null,1],"beneficiary_name":["Joao
+        Silva","Boleto Simples Cobranças LTDA"],"beneficiary_cnpj_cpf":["871.539.859-56","05.813.794/0001-26"],"updated_at":["2015-06-09
+        10:32:02 -0300","2015-06-09 11:05:01 -0300"]}},"occurred_at":"2015-06-09T11:05:01.000-03:00"},{"id":1495,"code":"bank_billet.updated","data":{"object":{"id":1263,"expire_at":"2015-05-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"https://bole.to/3/lkro","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/lkro","formats":{"png":"https://bole.to/3/lkro.png","pdf":"https://bole.to/3/lkro.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null},"changes":{"remessa_id":[null,1],"beneficiary_name":["Joao
+        Silva","Boleto Simples Cobranças LTDA"],"beneficiary_cnpj_cpf":["871.539.859-56","05.813.794/0001-26"],"updated_at":["2015-06-09
+        10:32:02 -0300","2015-06-09 11:05:01 -0300"]}},"occurred_at":"2015-06-09T11:05:01.000-03:00"},{"id":1494,"code":"bank_billet.updated","data":{"object":{"id":1251,"expire_at":"2015-04-30","paid_at":null,"description":"teste","status":"generating","shorten_url":"https://bole.to/3/erwg","customer_person_type":"individual","customer_person_name":"Nome
+        do Cliente Atualizado","customer_cnpj_cpf":"125.812.717-28","customer_address":"","customer_state":"","customer_neighborhood":"","customer_zipcode":"20071-004","customer_address_number":"","customer_address_complement":"","customer_phone_number":"","customer_email":"","created_via_api":false,"customer_city_name":null,"paid_amount":0.0,"amount":9.9,"url":"https://bole.to/3/erwg","formats":{"png":"https://bole.to/3/erwg.png","pdf":"https://bole.to/3/erwg.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null},"changes":{"remessa_id":[null,1],"beneficiary_name":["Joao
+        Silva","Boleto Simples Cobranças LTDA"],"beneficiary_cnpj_cpf":["871.539.859-56","05.813.794/0001-26"],"updated_at":["2015-06-09
+        10:32:02 -0300","2015-06-09 11:05:00 -0300"]}},"occurred_at":"2015-06-09T11:05:00.000-03:00"},{"id":1493,"code":"bank_billet.updated","data":{"object":{"id":1250,"expire_at":"2015-05-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"generating","shorten_url":"https://bole.to/3/kyez","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/kyez","formats":{"png":"https://bole.to/3/kyez.png","pdf":"https://bole.to/3/kyez.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null},"changes":{"remessa_id":[null,1],"beneficiary_name":["Joao
+        Silva","Boleto Simples Cobranças LTDA"],"beneficiary_cnpj_cpf":["871.539.859-56","05.813.794/0001-26"],"updated_at":["2015-06-09
+        10:32:02 -0300","2015-06-09 11:05:00 -0300"]}},"occurred_at":"2015-06-09T11:05:00.000-03:00"},{"id":1492,"code":"user.updated","data":{"object":{"id":64,"email":"kivanio+cb@boletosimples.com.br","account_type":"juridical","sex":null,"cpf":"000.233.771-19","address_street_name":"Rua
+        10","address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":"9","address_complement":null,"phone_number":null,"withdrawal_period":"monthly","notification_url":"","first_name":"Kivanio","middle_name":"Pereira","last_name":"Barbosa","date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":"Boleto
+        Simples Cobranças LTDA","business_legal_name":"Boleto Simples Cobranças LTDA","business_type":null,"business_cnpj":"05.813.794/0001-26","address_city_name":null,"full_name":"Kivanio
+        Pereira Barbosa","login_url":"https://sandbox.boletosimples.com.br/welcome?email=kivanio%2Bcb%40boletosimples.com.br\u0026token=pvcc7RVMDxh9rwwpdQRJ","mother_name":null,"father_name":null,"account_level":2},"changes":{"business_name":[null,"Boleto
+        Simples Cobranças LTDA"],"business_legal_name":[null,"Boleto Simples Cobranças
+        LTDA"],"updated_at":["2015-06-09 11:03:39 -0300","2015-06-09 11:04:28 -0300"]}},"occurred_at":"2015-06-09T11:04:28.000-03:00"},{"id":1491,"code":"user.updated","data":{"object":{"id":64,"email":"kivanio+cb@boletosimples.com.br","account_type":"juridical","sex":null,"cpf":"000.233.771-19","address_street_name":"Rua
+        10","address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":"9","address_complement":null,"phone_number":null,"withdrawal_period":"monthly","notification_url":"","first_name":"Kivanio","middle_name":"Pereira","last_name":"Barbosa","date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":null,"business_type":null,"business_cnpj":"05.813.794/0001-26","address_city_name":null,"full_name":"Kivanio
+        Pereira Barbosa","login_url":"https://sandbox.boletosimples.com.br/welcome?email=kivanio%2Bcb%40boletosimples.com.br\u0026token=pvcc7RVMDxh9rwwpdQRJ","mother_name":null,"father_name":null,"account_level":2},"changes":{"first_name":["Joao","Kivanio"],"last_name":["Silva","Barbosa"],"middle_name":[null,"Pereira"],"cpf":["871.539.859-56","000.233.771-19"],"business_cnpj":[null,"05.813.794/0001-26"],"account_type":["individual","juridical"],"updated_at":["2015-06-09
+        10:58:56 -0300","2015-06-09 11:03:39 -0300"]}},"occurred_at":"2015-06-09T11:03:39.000-03:00"},{"id":1489,"code":"user.updated","data":{"object":{"id":64,"email":"kivanio+cb@boletosimples.com.br","account_type":"individual","sex":null,"cpf":"871.539.859-56","address_street_name":"Rua
+        10","address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":"9","address_complement":null,"phone_number":null,"withdrawal_period":"monthly","notification_url":"","first_name":"Joao","middle_name":null,"last_name":"Silva","date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":null,"business_type":null,"business_cnpj":null,"address_city_name":null,"full_name":"Joao
+        Silva","login_url":"https://sandbox.boletosimples.com.br/welcome?email=kivanio%2Bcb%40boletosimples.com.br\u0026token=pvcc7RVMDxh9rwwpdQRJ","mother_name":null,"father_name":null,"account_level":2},"changes":{"last_sign_in_at":["2015-06-08
+        16:49:26 -0300","2015-06-09 10:00:34 -0300"],"current_sign_in_at":["2015-06-09
+        10:00:34 -0300","2015-06-09 10:58:56 -0300"],"sign_in_count":[11,12],"updated_at":["2015-06-09
+        10:19:28 -0300","2015-06-09 10:58:56 -0300"]}},"occurred_at":"2015-06-09T10:58:56.000-03:00"},{"id":1488,"code":"user.updated","data":{"object":{"id":64,"email":"kivanio+cb@boletosimples.com.br","account_type":"individual","sex":null,"cpf":"871.539.859-56","address_street_name":"Rua
+        10","address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":"9","address_complement":null,"phone_number":null,"withdrawal_period":"monthly","notification_url":"","first_name":"Joao","middle_name":null,"last_name":"Silva","date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":null,"business_type":null,"business_cnpj":null,"address_city_name":null,"full_name":"Joao
+        Silva","login_url":"https://sandbox.boletosimples.com.br/welcome?email=kivanio%2Bcb%40boletosimples.com.br\u0026token=pvcc7RVMDxh9rwwpdQRJ","mother_name":null,"father_name":null,"account_level":2},"changes":{}},"occurred_at":"2015-06-09T10:19:28.000-03:00"},{"id":1481,"code":"bank_billet.updated","data":{"object":{"id":1263,"expire_at":"2015-05-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"https://bole.to/3/lkro","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/lkro","formats":{"png":"https://bole.to/3/lkro.png","pdf":"https://bole.to/3/lkro.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null},"changes":{"remessa_id":[null,1],"updated_at":["2015-06-09
+        10:21:28 -0300","2015-06-09 10:32:02 -0300"]}},"occurred_at":"2015-06-09T10:32:02.000-03:00"},{"id":1480,"code":"bank_billet.updated","data":{"object":{"id":1262,"expire_at":"2015-05-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","shorten_url":"https://bole.to/3/ymom","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/ymom","formats":{"png":"https://bole.to/3/ymom.png","pdf":"https://bole.to/3/ymom.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null},"changes":{"remessa_id":[null,1],"updated_at":["2015-06-09
+        10:20:37 -0300","2015-06-09 10:32:02 -0300"]}},"occurred_at":"2015-06-09T10:32:02.000-03:00"},{"id":1479,"code":"bank_billet.updated","data":{"object":{"id":1251,"expire_at":"2015-04-30","paid_at":null,"description":"teste","status":"generating","shorten_url":"https://bole.to/3/erwg","customer_person_type":"individual","customer_person_name":"Nome
+        do Cliente Atualizado","customer_cnpj_cpf":"125.812.717-28","customer_address":"","customer_state":"","customer_neighborhood":"","customer_zipcode":"20071-004","customer_address_number":"","customer_address_complement":"","customer_phone_number":"","customer_email":"","created_via_api":false,"customer_city_name":null,"paid_amount":0.0,"amount":9.9,"url":"https://bole.to/3/erwg","formats":{"png":"https://bole.to/3/erwg.png","pdf":"https://bole.to/3/erwg.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null},"changes":{"remessa_id":[null,1],"beneficiary_name":[null,"Joao
+        Silva"],"beneficiary_cnpj_cpf":[null,"871.539.859-56"],"beneficiary_address":["","Rua
+        10, 9"],"updated_at":["2015-06-08 17:02:58 -0300","2015-06-09 10:32:02 -0300"]}},"occurred_at":"2015-06-09T10:32:02.000-03:00"},{"id":1478,"code":"bank_billet.updated","data":{"object":{"id":1250,"expire_at":"2015-05-01","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"generating","shorten_url":"https://bole.to/3/kyez","customer_person_type":"individual","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
+        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://bole.to/3/kyez","formats":{"png":"https://bole.to/3/kyez.png","pdf":"https://bole.to/3/kyez.pdf"},"notification_url":"","meta":null,"fine_for_delay":null,"late_payment_interest":null},"changes":{"remessa_id":[null,1],"beneficiary_name":[null,"Joao
+        Silva"],"beneficiary_cnpj_cpf":[null,"871.539.859-56"],"beneficiary_address":["","Rua
+        10, 9"],"updated_at":["2015-06-08 16:54:07 -0300","2015-06-09 10:32:02 -0300"]}},"occurred_at":"2015-06-09T10:32:02.000-03:00"}]'
+    http_version: 
+  recorded_at: Mon, 24 Aug 2015 18:10:09 GMT
+recorded_with: VCR 2.9.3

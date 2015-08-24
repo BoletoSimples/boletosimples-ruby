@@ -11,6 +11,7 @@ module BoletoSimples
 
   autoload :BankBillet, 'boletosimples/resources/bank_billet'
   autoload :BankBilletAccount, 'boletosimples/resources/bank_billet_account'
+  autoload :Event, 'boletosimples/resources/event'
   autoload :Customer, 'boletosimples/resources/customer'
   autoload :Transaction, 'boletosimples/resources/transaction'
   autoload :Remittance, 'boletosimples/resources/remittance'

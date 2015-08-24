@@ -13,6 +13,7 @@ module BoletoSimples
   autoload :BankBilletAccount, 'boletosimples/resources/bank_billet_account'
   autoload :Customer, 'boletosimples/resources/customer'
   autoload :Transaction, 'boletosimples/resources/transaction'
+  autoload :Remittance, 'boletosimples/resources/remittance'
   autoload :BaseModel, 'boletosimples/resources/base_model'
 
   module Partner

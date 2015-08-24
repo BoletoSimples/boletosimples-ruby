@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/remittances?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.2.3 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Ratelimit-Limit:
+      - '500'
+      Date:
+      - Mon, 24 Aug 2015 18:00:12 GMT
+      Strict-Transport-Security:
+      - max-age=2592000
+      X-Ratelimit-Remaining:
+      - '499'
+      Vary:
+      - Accept-Encoding
+      X-Request-Id:
+      - 23d745ee-0225-43f4-aa53-061727ff9bc9
+      Total:
+      - '1'
+      Etag:
+      - W/"895aedce469530ceac59ec2bf17eb5b3"
+      X-Runtime:
+      - '0.194253'
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 5.0.15
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 5.0.15
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"filename":"0806201501.REM","created_via_api":false,"status":"processed","bank_billet_account_id":10,"created_at":"2015-06-08","processed_at":"2015-06-09","url":"https://sandbox.boletosimples.com.br/api/v1/remittances/1/raw"}]'
+    http_version: 
+  recorded_at: Mon, 24 Aug 2015 18:00:12 GMT
+recorded_with: VCR 2.9.3

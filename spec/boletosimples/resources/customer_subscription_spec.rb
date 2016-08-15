@@ -56,5 +56,11 @@ RSpec.describe BoletoSimples::CustomerSubscription do
       subject { BoletoSimples::CustomerSubscription.all }
       it { expect(subject.first).to be_a_kind_of(BoletoSimples::CustomerSubscription) }
     end
+    describe 'cancel' do
+      context 'success', vcr: { cassette_name: 'resources/customer_subscription/next_charge'} do
+        subject { BoletoSimples::CustomerSubscription.find(@customer_subscription.id) }
+        it { expect(subject.next_charge).to be_truthy }
+      end
+    end
   end
 end

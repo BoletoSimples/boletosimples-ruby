@@ -13,6 +13,7 @@ module BoletoSimples
   autoload :BankBilletAccount, 'boletosimples/resources/bank_billet_account'
   autoload :Event, 'boletosimples/resources/event'
   autoload :Customer, 'boletosimples/resources/customer'
+  autoload :CustomerSubscription, 'boletosimples/resources/customer_subscription'
   autoload :Transaction, 'boletosimples/resources/transaction'
   autoload :Remittance, 'boletosimples/resources/remittance'
   autoload :Discharge, 'boletosimples/resources/discharge'

@@ -14,6 +14,7 @@ module BoletoSimples
   autoload :Event, 'boletosimples/resources/event'
   autoload :Customer, 'boletosimples/resources/customer'
   autoload :CustomerSubscription, 'boletosimples/resources/customer_subscription'
+  autoload :Installment, 'boletosimples/resources/installment'
   autoload :Transaction, 'boletosimples/resources/transaction'
   autoload :Remittance, 'boletosimples/resources/remittance'
   autoload :Discharge, 'boletosimples/resources/discharge'

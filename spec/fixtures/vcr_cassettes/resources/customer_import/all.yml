@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/imports/customers?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.4.1 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Date:
+      - Fri, 16 Jun 2017 03:50:17 GMT
+      Vary:
+      - Origin,Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - b7c0a074-5f03-49b9-af71-78e4a22ef7af
+      Content-Security-Policy-Report-Only:
+      - 'default-src ''self''; child-src ''self'' www.googleadservices.com googleads.g.doubleclick.net
+        www.google.com www.google.com.br app.popupdomination.com; connect-src ''self''
+        ws: wss: *.intercom.io ws.pusherapp.com hn.inspectlet.com *.pusher.com boletosimples.com.br
+        *.boletosimples.com.br boletosimples.zendesk.com; font-src ''self'' fonts.googleapis.com
+        fonts.gstatic.com js.intercomcdn.com data: v2.zopim.com d25j7wj0q61kjj.cloudfront.net;
+        img-src ''self'' https: data: maps.googleapis.com dev.bole.to:5001 bole.to
+        boletosimples-sandbox.s3.amazonaws.com; script-src ''self'' ''unsafe-inline''
+        static.intercomcdn.com cdn.inspectlet.com widget.intercom.io js.intercomcdn.com
+        js.pusher.com stats.pusher.com zapier.com www.google-analytics.com www.googleadservices.com
+        doug1izaerwt3.cloudfront.net app.popupdomination.com cdn.ywxi.net www.draw.io
+        tag.getdrip.com www.getdrip.com js-agent.newrelic.com bam.nr-data.net cdnjs.cloudflare.com
+        widget.pluga.co www.google.com www.gstatic.com boletosimples.zendesk.com assets.zendesk.com
+        v2.zopim.com d25j7wj0q61kjj.cloudfront.net; style-src ''self'' ''unsafe-inline''
+        fonts.googleapis.com d25j7wj0q61kjj.cloudfront.net; report-uri https://boletosimples.report-uri.io/r/default/csp/reportOnly'
+      Total:
+      - '6'
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"1f7b18205f2c944fb3c09298b8477dd7"
+      X-Runtime:
+      - '0.040018'
+      X-Frame-Options:
+      - sameorigin
+      X-Content-Type-Options:
+      - nosniff
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 5.1.4
+      Server:
+      - nginx/1.10.3 + Phusion Passenger 5.1.4
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"created_rows":0,"records_count":null,"enqueued_at":"2017-06-15T23:02:55-03:00","started_at":"2017-06-15T23:02:56-03:00","finished_at":"2017-06-15T23:02:56-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_content_type":"text/plain","source_file_name":"cobregratis-customers.csv","source_file_size":210,"source_updated_at":"2017-06-15T23:02:55-03:00","status":"done"},{"id":2,"created_rows":0,"records_count":null,"enqueued_at":"2017-06-15T23:15:30-03:00","started_at":"2017-06-15T23:15:30-03:00","finished_at":"2017-06-15T23:15:30-03:00","processed_at":null,"failed_to_create_rows":1,"failed_to_update_rows":0,"import_errors":[[1,{"CEP":"não
+        pode ficar em branco","Bairro":"não pode ficar em branco","Cidade":"não pode
+        ficar em branco","Estado":"não está incluído na lista","Endereço":"não pode
+        ficar em branco","E-mail opcional":"não é válido","Nome/Razao Social":"não
+        pode ficar em branco","Numero do Celular":"não é um número de celular"}]],"processed_rows":1,"total_rows":1,"updated_rows":0,"source_content_type":"text/plain","source_file_name":"cobregratis-customers.csv","source_file_size":398,"source_updated_at":"2017-06-15T23:15:30-03:00","status":"done"},{"id":3,"created_rows":0,"records_count":null,"enqueued_at":"2017-06-15T23:22:46-03:00","started_at":"2017-06-15T23:22:46-03:00","finished_at":"2017-06-15T23:22:46-03:00","processed_at":null,"failed_to_create_rows":1,"failed_to_update_rows":0,"import_errors":[[1,{"Numero
+        do Celular":"não é um número de celular"}]],"processed_rows":1,"total_rows":1,"updated_rows":0,"source_content_type":"text/plain","source_file_name":"cobregratis-customers.csv","source_file_size":422,"source_updated_at":"2017-06-15T23:22:46-03:00","status":"done"},{"id":4,"created_rows":1,"records_count":1,"enqueued_at":"2017-06-15T23:23:24-03:00","started_at":"2017-06-15T23:23:24-03:00","finished_at":"2017-06-15T23:23:24-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":1,"total_rows":1,"updated_rows":0,"source_content_type":"text/plain","source_file_name":"cobregratis-customers.csv","source_file_size":423,"source_updated_at":"2017-06-15T23:23:24-03:00","status":"done"},{"id":5,"created_rows":2,"records_count":2,"enqueued_at":"2017-06-16T00:44:55-03:00","started_at":"2017-06-16T00:44:56-03:00","finished_at":"2017-06-16T00:44:56-03:00","processed_at":null,"failed_to_create_rows":2,"failed_to_update_rows":0,"import_errors":[[1,{"E-mail":"não
+        é válido"}],[2,{"CNPJ/CPF":"não pode ficar em branco"}]],"processed_rows":4,"total_rows":4,"updated_rows":0,"source_content_type":"text/plain","source_file_name":"customers.csv","source_file_size":810,"source_updated_at":"2017-06-16T00:44:55-03:00","status":"done"},{"id":6,"created_rows":0,"records_count":null,"enqueued_at":"2017-06-16T00:50:16-03:00","started_at":"2017-06-16T00:50:16-03:00","finished_at":"2017-06-16T00:50:16-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_content_type":"text/plain","source_file_name":"customers.csv","source_file_size":190,"source_updated_at":"2017-06-16T00:50:16-03:00","status":"done"}]'
+    http_version: 
+  recorded_at: Fri, 16 Jun 2017 03:50:17 GMT
+recorded_with: VCR 3.0.3

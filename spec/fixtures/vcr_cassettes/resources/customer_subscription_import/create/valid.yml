@@ -1,0 +1,98 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.boletosimples.com.br/api/v1/imports/customer_subscriptions?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        LS0tLS0tLS0tLS0tLVJ1YnlNdWx0aXBhcnRQb3N0LWQwNmUwYmZkMjljODNm
+        ZTYzY2E1NDk3NTc0YjU4OTU2DQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3Jt
+        LWRhdGE7IG5hbWU9ImN1c3RvbWVyX3N1YnNjcmlwdGlvbl9pbXBvcnRbc291
+        cmNlXSI7IGZpbGVuYW1lPSJjdXN0b21lcl9zdWJzY3JpcHRpb25zLmNzdiIN
+        CkNvbnRlbnQtTGVuZ3RoOiAyMzkNCkNvbnRlbnQtVHlwZTogdGV4dC9jc3YN
+        CkNvbnRlbnQtVHJhbnNmZXItRW5jb2Rpbmc6IGJpbmFyeQ0KDQpJRCxJRCBk
+        byBDbGllbnRlLElEIGRhIENhcnRlaXJhLElEIGRvIE1vZGVsbyxDTlBKL0NQ
+        RiBkbyBDbGllbnRlLENpY2xvIGRhIEFzc2luYXR1cmEsUXVhbnRpYSAqLFBy
+        aW1laXJhIENvYnJhbsOnYSxBbnRlY2Vkw6puY2lhLFBhcmFyIGVtLERlbW9u
+        c3RyYXRpdm8gKixJbnN0cnXDp8O1ZXMgcGFyYSBvIENhaXhhLE11bHRhIHBv
+        ciBBdHJhc28sSnVyb3MgZGUgTW9yYSBNZW5zYWwsRS1tYWlsLE9ic2VydmHD
+        p8O1ZXMNCg0KLS0tLS0tLS0tLS0tLVJ1YnlNdWx0aXBhcnRQb3N0LWQwNmUw
+        YmZkMjljODNmZTYzY2E1NDk3NTc0YjU4OTU2LS0NCg0K
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.4.1 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost-d06e0bfd29c83fe63ca5497574b58956
+      Content-Length:
+      - '573'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 422 Unprocessable Entity
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 16 Jun 2017 03:51:24 GMT
+      Vary:
+      - Origin,Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 69c6803b-ff17-431e-adf6-38f2cc1086df
+      Content-Security-Policy-Report-Only:
+      - 'default-src ''self''; child-src ''self'' www.googleadservices.com googleads.g.doubleclick.net
+        www.google.com www.google.com.br app.popupdomination.com; connect-src ''self''
+        ws: wss: *.intercom.io ws.pusherapp.com hn.inspectlet.com *.pusher.com boletosimples.com.br
+        *.boletosimples.com.br boletosimples.zendesk.com; font-src ''self'' fonts.googleapis.com
+        fonts.gstatic.com js.intercomcdn.com data: v2.zopim.com d25j7wj0q61kjj.cloudfront.net;
+        img-src ''self'' https: data: maps.googleapis.com dev.bole.to:5001 bole.to
+        boletosimples-sandbox.s3.amazonaws.com; script-src ''self'' ''unsafe-inline''
+        static.intercomcdn.com cdn.inspectlet.com widget.intercom.io js.intercomcdn.com
+        js.pusher.com stats.pusher.com zapier.com www.google-analytics.com www.googleadservices.com
+        doug1izaerwt3.cloudfront.net app.popupdomination.com cdn.ywxi.net www.draw.io
+        tag.getdrip.com www.getdrip.com js-agent.newrelic.com bam.nr-data.net cdnjs.cloudflare.com
+        widget.pluga.co www.google.com www.gstatic.com boletosimples.zendesk.com assets.zendesk.com
+        v2.zopim.com d25j7wj0q61kjj.cloudfront.net; style-src ''self'' ''unsafe-inline''
+        fonts.googleapis.com d25j7wj0q61kjj.cloudfront.net; report-uri https://boletosimples.report-uri.io/r/default/csp/reportOnly'
+      X-Download-Options:
+      - noopen
+      X-Runtime:
+      - '0.022987'
+      X-Frame-Options:
+      - sameorigin
+      X-Content-Type-Options:
+      - nosniff
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Powered-By:
+      - Phusion Passenger 5.1.4
+      Server:
+      - nginx/1.10.3 + Phusion Passenger 5.1.4
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"errors":{"customer_import":["não pode ficar em branco"]}}'
+    http_version: 
+  recorded_at: Fri, 16 Jun 2017 03:51:24 GMT
+recorded_with: VCR 3.0.3

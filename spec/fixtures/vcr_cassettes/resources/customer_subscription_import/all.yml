@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/imports/customer_subscriptions?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.4.1 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Date:
+      - Fri, 16 Jun 2017 03:51:26 GMT
+      Vary:
+      - Origin,Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 2d7787e3-0377-4115-b769-ac5bb3599b91
+      Link:
+      - <https://sandbox.boletosimples.com.br/api/v1/imports/customer_subscriptions?access_token=BOLETOSIMPLES_ACCESS_TOKEN&page=0>;
+        rel="last", <https://sandbox.boletosimples.com.br/api/v1/imports/customer_subscriptions?access_token=BOLETOSIMPLES_ACCESS_TOKEN&page=2>;
+        rel="next"
+      Content-Security-Policy-Report-Only:
+      - 'default-src ''self''; child-src ''self'' www.googleadservices.com googleads.g.doubleclick.net
+        www.google.com www.google.com.br app.popupdomination.com; connect-src ''self''
+        ws: wss: *.intercom.io ws.pusherapp.com hn.inspectlet.com *.pusher.com boletosimples.com.br
+        *.boletosimples.com.br boletosimples.zendesk.com; font-src ''self'' fonts.googleapis.com
+        fonts.gstatic.com js.intercomcdn.com data: v2.zopim.com d25j7wj0q61kjj.cloudfront.net;
+        img-src ''self'' https: data: maps.googleapis.com dev.bole.to:5001 bole.to
+        boletosimples-sandbox.s3.amazonaws.com; script-src ''self'' ''unsafe-inline''
+        static.intercomcdn.com cdn.inspectlet.com widget.intercom.io js.intercomcdn.com
+        js.pusher.com stats.pusher.com zapier.com www.google-analytics.com www.googleadservices.com
+        doug1izaerwt3.cloudfront.net app.popupdomination.com cdn.ywxi.net www.draw.io
+        tag.getdrip.com www.getdrip.com js-agent.newrelic.com bam.nr-data.net cdnjs.cloudflare.com
+        widget.pluga.co www.google.com www.gstatic.com boletosimples.zendesk.com assets.zendesk.com
+        v2.zopim.com d25j7wj0q61kjj.cloudfront.net; style-src ''self'' ''unsafe-inline''
+        fonts.googleapis.com d25j7wj0q61kjj.cloudfront.net; report-uri https://boletosimples.report-uri.io/r/default/csp/reportOnly'
+      Total:
+      - '0'
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+      X-Runtime:
+      - '0.036902'
+      X-Frame-Options:
+      - sameorigin
+      X-Content-Type-Options:
+      - nosniff
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 5.1.4
+      Server:
+      - nginx/1.10.3 + Phusion Passenger 5.1.4
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Fri, 16 Jun 2017 03:51:26 GMT
+recorded_with: VCR 3.0.3

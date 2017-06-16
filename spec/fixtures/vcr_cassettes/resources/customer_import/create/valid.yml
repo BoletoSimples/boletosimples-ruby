@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.boletosimples.com.br/api/v1/imports/customers?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        LS0tLS0tLS0tLS0tLVJ1YnlNdWx0aXBhcnRQb3N0LTI0MWU1YWY1ZTlkYzcw
+        YjY4MTZiOWQxYjQ3Mjk5ZmU3DQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3Jt
+        LWRhdGE7IG5hbWU9ImN1c3RvbWVyX2ltcG9ydFtzb3VyY2VdIjsgZmlsZW5h
+        bWU9ImN1c3RvbWVycy5jc3YiDQpDb250ZW50LUxlbmd0aDogMTkwDQpDb250
+        ZW50LVR5cGU6IHRleHQvY3N2DQpDb250ZW50LVRyYW5zZmVyLUVuY29kaW5n
+        OiBiaW5hcnkNCg0KTm9tZS9SYXphbyBTb2NpYWwsQXBlbGlkby9Ob21lIEZh
+        bnRhc2lhLENOUEovQ1BGLEUtbWFpbCxDRVAsRW5kZXJlw6dvLE51bWVybyBk
+        byBFbmRlcmVjbyxDb21wbGVtZW50byxCYWlycm8sQ2lkYWRlLEVzdGFkbyxU
+        ZWxlZm9uZSAoY29tIERERCksREREIGRvIENlbHVsYXIsTnVtZXJvIGRvIENl
+        bHVsYXIsRS1tYWlsIG9wY2lvbmFsCg0KLS0tLS0tLS0tLS0tLVJ1YnlNdWx0
+        aXBhcnRQb3N0LTI0MWU1YWY1ZTlkYzcwYjY4MTZiOWQxYjQ3Mjk5ZmU3LS0N
+        Cg0K
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.4.1 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost-241e5af5e9dc70b6816b9d1b47299fe7
+      Content-Length:
+      - '498'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 201 Created
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Fri, 16 Jun 2017 03:50:16 GMT
+      Vary:
+      - Origin,Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 685c0992-20c4-4530-839b-00999cce1797
+      Content-Security-Policy-Report-Only:
+      - 'default-src ''self''; child-src ''self'' www.googleadservices.com googleads.g.doubleclick.net
+        www.google.com www.google.com.br app.popupdomination.com; connect-src ''self''
+        ws: wss: *.intercom.io ws.pusherapp.com hn.inspectlet.com *.pusher.com boletosimples.com.br
+        *.boletosimples.com.br boletosimples.zendesk.com; font-src ''self'' fonts.googleapis.com
+        fonts.gstatic.com js.intercomcdn.com data: v2.zopim.com d25j7wj0q61kjj.cloudfront.net;
+        img-src ''self'' https: data: maps.googleapis.com dev.bole.to:5001 bole.to
+        boletosimples-sandbox.s3.amazonaws.com; script-src ''self'' ''unsafe-inline''
+        static.intercomcdn.com cdn.inspectlet.com widget.intercom.io js.intercomcdn.com
+        js.pusher.com stats.pusher.com zapier.com www.google-analytics.com www.googleadservices.com
+        doug1izaerwt3.cloudfront.net app.popupdomination.com cdn.ywxi.net www.draw.io
+        tag.getdrip.com www.getdrip.com js-agent.newrelic.com bam.nr-data.net cdnjs.cloudflare.com
+        widget.pluga.co www.google.com www.gstatic.com boletosimples.zendesk.com assets.zendesk.com
+        v2.zopim.com d25j7wj0q61kjj.cloudfront.net; style-src ''self'' ''unsafe-inline''
+        fonts.googleapis.com d25j7wj0q61kjj.cloudfront.net; report-uri https://boletosimples.report-uri.io/r/default/csp/reportOnly'
+      Location:
+      - https://sandbox.boletosimples.com.br/api/v1/imports/customers/6
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"a8f4bd7880c47cc76588e180d1370ae4"
+      X-Runtime:
+      - '0.161758'
+      X-Frame-Options:
+      - sameorigin
+      X-Content-Type-Options:
+      - nosniff
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Powered-By:
+      - Phusion Passenger 5.1.4
+      Server:
+      - nginx/1.10.3 + Phusion Passenger 5.1.4
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":6,"created_rows":0,"records_count":null,"enqueued_at":"2017-06-16T00:50:16-03:00","started_at":null,"finished_at":null,"processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":null,"processed_rows":0,"total_rows":null,"updated_rows":0,"source_content_type":"text/plain","source_file_name":"customers.csv","source_file_size":190,"source_updated_at":"2017-06-16T00:50:16-03:00","status":"enqueued"}'
+    http_version: 
+  recorded_at: Fri, 16 Jun 2017 03:50:16 GMT
+recorded_with: VCR 3.0.3

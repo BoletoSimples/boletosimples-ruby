@@ -45,6 +45,8 @@ module BoletoSimples
         # Request
         c.use BoletoSimples::Middleware::UserAgent
         c.use FaradayMiddleware::OAuth2, BoletoSimples.configuration.access_token if BoletoSimples.configuration.access_token?
+        c.use Faraday::Request::Multipart
+        c.use Faraday::Request::UrlEncoded
         c.use FaradayMiddleware::EncodeJson
         if !BoletoSimples.configuration.cache.nil?
           c.use Faraday::HttpCache, store: BoletoSimples.configuration.cache
@@ -60,7 +62,7 @@ module BoletoSimples
       end
 
       # Because Her set the api on the moment module is included we need to call use_api again, after changing the configuration.
-      [BankBillet, BankBilletAccount, Customer, CustomerSubscription, Installment, Transaction, Partner::User,
+      [BankBillet, BankBilletAccount, Customer, CustomerImport, CustomerSubscription, CustomerSubscriptionImport, Installment, Transaction, Partner::User,
         Webhook, Discharge, Remittance, WebhookDelivery, Event].each do |klass|
         klass.send(:use_api, Her::API.default_api)
       end

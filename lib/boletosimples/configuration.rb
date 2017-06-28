@@ -48,7 +48,7 @@ module BoletoSimples
         c.use Faraday::Request::Multipart
         c.use Faraday::Request::UrlEncoded
         c.use FaradayMiddleware::EncodeJson
-        if !BoletoSimples.configuration.cache.nil?
+        if !@cache.nil?
           c.use Faraday::HttpCache, store: BoletoSimples.configuration.cache
         end
 

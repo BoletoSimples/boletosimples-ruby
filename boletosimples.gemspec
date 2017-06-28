@@ -21,9 +21,9 @@ Gem::Specification.new do |gem|
   gem.required_ruby_version = '>= 1.9'
 
   # Gems that must be intalled for boletosimples to work
-  gem.add_dependency 'her', '~> 0.8.1'
-  gem.add_dependency 'faraday_middleware', '~> 0.10.0'
-  gem.add_dependency 'faraday-http-cache', '~> 1.3.1'
+  gem.add_dependency 'her', '~> 0.9.0'
+  gem.add_dependency 'faraday_middleware', '~> 0.11.0.1'
+  gem.add_dependency 'faraday-http-cache', '~> 2.0.0'
 
   # Gems that must be installed for boletosimples to compile and build
   gem.add_development_dependency 'pry', '~> 0.10.1'

@@ -33,7 +33,7 @@ http_interactions:
       Cache-Control:
       - no-cache
       Date:
-      - Fri, 16 Jun 2017 03:51:25 GMT
+      - Wed, 28 Jun 2017 06:47:20 GMT
       Vary:
       - Origin,Accept-Encoding
       Strict-Transport-Security:
@@ -43,7 +43,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Request-Id:
-      - c67b09b1-4ac5-4376-8488-4805b41f5348
+      - 5ed6cd9e-823f-4666-84c4-0559c9725cf4
       Content-Security-Policy-Report-Only:
       - 'default-src ''self''; child-src ''self'' www.googleadservices.com googleads.g.doubleclick.net
         www.google.com www.google.com.br app.popupdomination.com; connect-src ''self''
@@ -57,12 +57,13 @@ http_interactions:
         doug1izaerwt3.cloudfront.net app.popupdomination.com cdn.ywxi.net www.draw.io
         tag.getdrip.com www.getdrip.com js-agent.newrelic.com bam.nr-data.net cdnjs.cloudflare.com
         widget.pluga.co www.google.com www.gstatic.com boletosimples.zendesk.com assets.zendesk.com
-        v2.zopim.com d25j7wj0q61kjj.cloudfront.net; style-src ''self'' ''unsafe-inline''
-        fonts.googleapis.com d25j7wj0q61kjj.cloudfront.net; report-uri https://boletosimples.report-uri.io/r/default/csp/reportOnly'
+        v2.zopim.com landing.vincent-ai.com d25j7wj0q61kjj.cloudfront.net; style-src
+        ''self'' ''unsafe-inline'' fonts.googleapis.com d25j7wj0q61kjj.cloudfront.net;
+        report-uri https://boletosimples.report-uri.io/r/default/csp/reportOnly'
       X-Download-Options:
       - noopen
       X-Runtime:
-      - '0.029000'
+      - '0.040227'
       X-Frame-Options:
       - sameorigin
       X-Content-Type-Options:
@@ -70,14 +71,14 @@ http_interactions:
       X-Rack-Cache:
       - invalidate, pass
       X-Powered-By:
-      - Phusion Passenger 5.1.4
+      - Phusion Passenger 5.1.5
       Server:
-      - nginx/1.10.3 + Phusion Passenger 5.1.4
+      - nginx/1.10.3 + Phusion Passenger 5.1.5
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"errors":{"customer_import":["não pode ficar em branco"]}}'
+      string: '{"errors":{"source":["não pode ficar em branco"]}}'
     http_version: 
-  recorded_at: Fri, 16 Jun 2017 03:51:25 GMT
+  recorded_at: Wed, 28 Jun 2017 06:47:19 GMT
 recorded_with: VCR 3.0.3

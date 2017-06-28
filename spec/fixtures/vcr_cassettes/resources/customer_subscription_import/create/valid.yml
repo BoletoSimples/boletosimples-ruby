@@ -6,8 +6,8 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        LS0tLS0tLS0tLS0tLVJ1YnlNdWx0aXBhcnRQb3N0LWQwNmUwYmZkMjljODNm
-        ZTYzY2E1NDk3NTc0YjU4OTU2DQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3Jt
+        LS0tLS0tLS0tLS0tLVJ1YnlNdWx0aXBhcnRQb3N0LWY0ZGFlZTNhZDRhNmY2
+        MGVjZGY4ZjAyZDE0N2Q5Nzg3DQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3Jt
         LWRhdGE7IG5hbWU9ImN1c3RvbWVyX3N1YnNjcmlwdGlvbl9pbXBvcnRbc291
         cmNlXSI7IGZpbGVuYW1lPSJjdXN0b21lcl9zdWJzY3JpcHRpb25zLmNzdiIN
         CkNvbnRlbnQtTGVuZ3RoOiAyMzkNCkNvbnRlbnQtVHlwZTogdGV4dC9jc3YN
@@ -17,15 +17,15 @@ http_interactions:
         aW1laXJhIENvYnJhbsOnYSxBbnRlY2Vkw6puY2lhLFBhcmFyIGVtLERlbW9u
         c3RyYXRpdm8gKixJbnN0cnXDp8O1ZXMgcGFyYSBvIENhaXhhLE11bHRhIHBv
         ciBBdHJhc28sSnVyb3MgZGUgTW9yYSBNZW5zYWwsRS1tYWlsLE9ic2VydmHD
-        p8O1ZXMNCg0KLS0tLS0tLS0tLS0tLVJ1YnlNdWx0aXBhcnRQb3N0LWQwNmUw
-        YmZkMjljODNmZTYzY2E1NDk3NTc0YjU4OTU2LS0NCg0K
+        p8O1ZXMNCg0KLS0tLS0tLS0tLS0tLVJ1YnlNdWx0aXBhcnRQb3N0LWY0ZGFl
+        ZTNhZDRhNmY2MGVjZGY4ZjAyZDE0N2Q5Nzg3LS0NCg0K
     headers:
       User-Agent:
       - BoletoSimples Ruby Client v0.4.1 (contato@boletosimples.com.br)
       Authorization:
       - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
       Content-Type:
-      - multipart/form-data; boundary=-----------RubyMultipartPost-d06e0bfd29c83fe63ca5497574b58956
+      - multipart/form-data; boundary=-----------RubyMultipartPost-f4daee3ad4a6f60ecdf8f02d147d9787
       Content-Length:
       - '573'
       Accept-Encoding:
@@ -34,8 +34,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 422
-      message: Unprocessable Entity
+      code: 201
+      message: Created
     headers:
       Connection:
       - keep-alive
@@ -44,11 +44,11 @@ http_interactions:
       Transfer-Encoding:
       - chunked
       Status:
-      - 422 Unprocessable Entity
+      - 201 Created
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       Date:
-      - Fri, 16 Jun 2017 03:51:24 GMT
+      - Wed, 28 Jun 2017 06:47:19 GMT
       Vary:
       - Origin,Accept-Encoding
       Strict-Transport-Security:
@@ -58,7 +58,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Request-Id:
-      - 69c6803b-ff17-431e-adf6-38f2cc1086df
+      - 785e3884-4766-405b-b0ac-33a1e4a861ec
       Content-Security-Policy-Report-Only:
       - 'default-src ''self''; child-src ''self'' www.googleadservices.com googleads.g.doubleclick.net
         www.google.com www.google.com.br app.popupdomination.com; connect-src ''self''
@@ -72,12 +72,17 @@ http_interactions:
         doug1izaerwt3.cloudfront.net app.popupdomination.com cdn.ywxi.net www.draw.io
         tag.getdrip.com www.getdrip.com js-agent.newrelic.com bam.nr-data.net cdnjs.cloudflare.com
         widget.pluga.co www.google.com www.gstatic.com boletosimples.zendesk.com assets.zendesk.com
-        v2.zopim.com d25j7wj0q61kjj.cloudfront.net; style-src ''self'' ''unsafe-inline''
-        fonts.googleapis.com d25j7wj0q61kjj.cloudfront.net; report-uri https://boletosimples.report-uri.io/r/default/csp/reportOnly'
+        v2.zopim.com landing.vincent-ai.com d25j7wj0q61kjj.cloudfront.net; style-src
+        ''self'' ''unsafe-inline'' fonts.googleapis.com d25j7wj0q61kjj.cloudfront.net;
+        report-uri https://boletosimples.report-uri.io/r/default/csp/reportOnly'
+      Location:
+      - https://sandbox.boletosimples.com.br/api/v1/imports/customer_subscriptions/7
       X-Download-Options:
       - noopen
+      Etag:
+      - W/"4ac3fd01c77a17d4db390124d121c4fd"
       X-Runtime:
-      - '0.022987'
+      - '0.537522'
       X-Frame-Options:
       - sameorigin
       X-Content-Type-Options:
@@ -85,14 +90,14 @@ http_interactions:
       X-Rack-Cache:
       - invalidate, pass
       X-Powered-By:
-      - Phusion Passenger 5.1.4
+      - Phusion Passenger 5.1.5
       Server:
-      - nginx/1.10.3 + Phusion Passenger 5.1.4
+      - nginx/1.10.3 + Phusion Passenger 5.1.5
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"errors":{"customer_import":["não pode ficar em branco"]}}'
+      string: '{"id":7,"created_rows":0,"records_count":null,"enqueued_at":"2017-06-28T03:47:18-03:00","started_at":null,"finished_at":null,"processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":null,"processed_rows":0,"total_rows":null,"updated_rows":0,"source_content_type":"text/plain","source_file_name":"customer_subscriptions.csv","source_file_size":239,"source_updated_at":"2017-06-28T03:47:18-03:00","status":"enqueued"}'
     http_version: 
-  recorded_at: Fri, 16 Jun 2017 03:51:24 GMT
+  recorded_at: Wed, 28 Jun 2017 06:47:18 GMT
 recorded_with: VCR 3.0.3

@@ -1,26 +1,24 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://sandbox.boletosimples.com.br/api/v1/imports/customer_subscriptions?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/imports/customer_subscriptions/7?access_token=BOLETOSIMPLES_ACCESS_TOKEN
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
       - BoletoSimples Ruby Client v0.4.1 (contato@boletosimples.com.br)
       Authorization:
       - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
-      Content-Type:
-      - application/x-www-form-urlencoded
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
   response:
     status:
-      code: 422
-      message: Unprocessable Entity
+      code: 200
+      message: OK
     headers:
       Connection:
       - keep-alive
@@ -29,11 +27,11 @@ http_interactions:
       Transfer-Encoding:
       - chunked
       Status:
-      - 422 Unprocessable Entity
+      - 200 OK
       Cache-Control:
-      - no-cache
+      - must-revalidate, private, max-age=0
       Date:
-      - Wed, 28 Jun 2017 06:47:20 GMT
+      - Wed, 28 Jun 2017 06:47:24 GMT
       Vary:
       - Origin,Accept-Encoding
       Strict-Transport-Security:
@@ -43,7 +41,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Request-Id:
-      - f7956662-fc9b-48d7-a847-5ef30e9d99d3
+      - f255857f-31dd-47e2-9485-6bb7abcfe345
       Content-Security-Policy-Report-Only:
       - 'default-src ''self''; child-src ''self'' www.googleadservices.com googleads.g.doubleclick.net
         www.google.com www.google.com.br app.popupdomination.com; connect-src ''self''
@@ -60,16 +58,20 @@ http_interactions:
         v2.zopim.com landing.vincent-ai.com d25j7wj0q61kjj.cloudfront.net; style-src
         ''self'' ''unsafe-inline'' fonts.googleapis.com d25j7wj0q61kjj.cloudfront.net;
         report-uri https://boletosimples.report-uri.io/r/default/csp/reportOnly'
+      Location:
+      - https://sandbox.boletosimples.com.br/api/v1/imports/customer_subscriptions/7
       X-Download-Options:
       - noopen
+      Etag:
+      - W/"b6f1ce958b789e8877e205646365bdf0"
       X-Runtime:
-      - '0.020721'
+      - '0.042036'
       X-Frame-Options:
       - sameorigin
       X-Content-Type-Options:
       - nosniff
       X-Rack-Cache:
-      - invalidate, pass
+      - miss
       X-Powered-By:
       - Phusion Passenger 5.1.5
       Server:
@@ -78,7 +80,7 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"errors":{"customer_subscription_import":["não pode ficar em branco"]}}'
+      string: '{"id":7,"created_rows":0,"records_count":null,"enqueued_at":"2017-06-28T03:47:18-03:00","started_at":"2017-06-28T03:47:19-03:00","finished_at":"2017-06-28T03:47:19-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_content_type":"text/plain","source_file_name":"customer_subscriptions.csv","source_file_size":239,"source_updated_at":"2017-06-28T03:47:18-03:00","status":"done"}'
     http_version: 
-  recorded_at: Wed, 28 Jun 2017 06:47:20 GMT
+  recorded_at: Wed, 28 Jun 2017 06:47:24 GMT
 recorded_with: VCR 3.0.3

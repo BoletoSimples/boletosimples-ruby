@@ -2,14 +2,28 @@
 require 'spec_helper'
 
 RSpec.describe BoletoSimples::Configuration do
+  before {
+    @last_env = {}
+    @last_env['BOLETOSIMPLES_ENV'] = ENV['BOLETOSIMPLES_ENV']
+    @last_env['BOLETOSIMPLES_APP_ID'] = ENV['BOLETOSIMPLES_APP_ID']
+    @last_env['BOLETOSIMPLES_APP_SECRET'] = ENV['BOLETOSIMPLES_APP_SECRET']
+    @last_env['BOLETOSIMPLES_ACCESS_TOKEN'] = ENV['BOLETOSIMPLES_ACCESS_TOKEN']
+  }
+  after {
+    ENV['BOLETOSIMPLES_ENV'] = @last_env['BOLETOSIMPLES_ENV']
+    ENV['BOLETOSIMPLES_APP_ID'] = @last_env['BOLETOSIMPLES_APP_ID']
+    ENV['BOLETOSIMPLES_APP_SECRET'] = @last_env['BOLETOSIMPLES_APP_SECRET']
+    ENV['BOLETOSIMPLES_ACCESS_TOKEN'] = @last_env['BOLETOSIMPLES_ACCESS_TOKEN']
+  }
   describe 'defaults' do
     before {
-      allow(ENV).to receive(:[]).with('BOLETOSIMPLES_ENV').and_return(nil)
-      allow(ENV).to receive(:[]).with('BOLETOSIMPLES_APP_ID').and_return(nil)
-      allow(ENV).to receive(:[]).with('BOLETOSIMPLES_APP_SECRET').and_return(nil)
-      allow(ENV).to receive(:[]).with('BOLETOSIMPLES_ACCESS_TOKEN').and_return(nil)
+      ENV['BOLETOSIMPLES_ENV'] = nil
+      ENV['BOLETOSIMPLES_APP_ID'] = nil
+      ENV['BOLETOSIMPLES_APP_SECRET'] = nil
+      ENV['BOLETOSIMPLES_ACCESS_TOKEN'] = nil
     }
     subject { BoletoSimples::Configuration.new }
+    before { subject.setup_her}
     it { expect(subject.environment).to eq(:sandbox) }
     it { expect(subject.base_uri).to eq('https://sandbox.boletosimples.com.br/api/v1') }
     it { expect(subject.application_id).to be_nil }
@@ -20,12 +34,14 @@ RSpec.describe BoletoSimples::Configuration do
   end
   describe 'environment variables' do
     before {
-      allow(ENV).to receive(:[]).with('BOLETOSIMPLES_ENV').and_return('production')
-      allow(ENV).to receive(:[]).with('BOLETOSIMPLES_APP_ID').and_return('app-id')
-      allow(ENV).to receive(:[]).with('BOLETOSIMPLES_APP_SECRET').and_return('app-secret')
-      allow(ENV).to receive(:[]).with('BOLETOSIMPLES_ACCESS_TOKEN').and_return('access-token')
+      ENV['BOLETOSIMPLES_ENV'] = 'production'
+      ENV['BOLETOSIMPLES_APP_ID'] = 'app-id'
+      ENV['BOLETOSIMPLES_APP_SECRET'] = 'app-secret'
+      ENV['BOLETOSIMPLES_ACCESS_TOKEN'] = 'access-token'
     }
-    subject { BoletoSimples::Configuration.new }
+    before  { BoletoSimples.configure }
+    subject { BoletoSimples.configuration }
+    # subject { BoletoSimples::Configuration.new }
     it { expect(subject.environment).to eq(:production) }
     it { expect(subject.base_uri).to eq('https://boletosimples.com.br/api/v1') }
     it { expect(subject.application_id).to eq('app-id') }

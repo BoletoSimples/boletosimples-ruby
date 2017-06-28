@@ -41,16 +41,14 @@ module BoletoSimples
     end
 
     def setup_her
-      Her::API.setup url: BoletoSimples.configuration.base_uri do |c|
+      Her::API.setup url: base_uri do |c|
         # Request
         c.use BoletoSimples::Middleware::UserAgent
-        c.use FaradayMiddleware::OAuth2, BoletoSimples.configuration.access_token if BoletoSimples.configuration.access_token?
+        c.use FaradayMiddleware::OAuth2, access_token, token_type: 'param' if access_token?
         c.use Faraday::Request::Multipart
         c.use Faraday::Request::UrlEncoded
         c.use FaradayMiddleware::EncodeJson
-        if !@cache.nil?
-          c.use Faraday::HttpCache, store: BoletoSimples.configuration.cache
-        end
+        c.use Faraday::HttpCache, store: cache unless cache.nil?
 
         # Response
         c.use BoletoSimples::Middleware::LastRequest

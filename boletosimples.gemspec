@@ -26,12 +26,13 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'faraday-http-cache', '~> 2.0.0'
 
   # Gems that must be installed for boletosimples to compile and build
-  gem.add_development_dependency 'pry', '~> 0.10.1'
-  gem.add_development_dependency 'rspec', '~> 3.5.0'
-  gem.add_development_dependency 'vcr', '~> 3.0'
-  gem.add_development_dependency 'webmock', '~> 2.1.0'
-  gem.add_development_dependency 'rake', '~> 11.2.2'
-  gem.add_development_dependency 'coveralls', '~> 0.8.2'
-  gem.add_development_dependency 'codeclimate-test-reporter', '~> 0.6.0'
+  gem.add_development_dependency 'pry'
+  gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'vcr'
+  gem.add_development_dependency 'webmock'
+  gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'coveralls'
+  gem.add_development_dependency 'simplecov'
+  gem.add_development_dependency 'codeclimate-test-reporter'
   gem.add_development_dependency 'rubocop'
 end

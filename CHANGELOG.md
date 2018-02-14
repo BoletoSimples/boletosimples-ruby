@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.2
+
+### improvements
+
+- Dependencies update
+
 ## 0.2.2
 
 ### features

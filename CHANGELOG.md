@@ -4,7 +4,7 @@
 
 ### improvements
 
-- Dependencies update
+- Update dependencies
 
 ## 0.2.2
 

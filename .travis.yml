@@ -1,10 +1,38 @@
 language: ruby
+bundler_args: --without development
+cache: bundler
+before_install:
+  - gem update --system # use the very latest Rubygems
+  - gem install bundler # use the very latest Bundler
+dist: trusty
+before_script:
+  - unset _JAVA_OPTIONS
 rvm:
   - '2.5.0'
   - '2.4.3'
   - '2.3.4'
   - '2.2.7'
   - '2.1.10'
+  - jruby-9.1.16.0
+
+gemfile:
+  - gemfiles/rails_42.gemfile
+  - gemfiles/rails_50.gemfile
+  - gemfiles/rails_51.gemfile
+  - gemfiles/rails_52.gemfile
+
+env:
+  global:
+    - JRUBY_OPTS="-J-Xmx1024m --dev --debug"
+    - COVERAGE=true
+
+matrix:
+  fast_finish: true
+
+  allow_failures:
+    - rvm: jruby-9.1.16.0
+      gemfile: gemfiles/rails_52.gemfile
+
 branches:
   only:
     - master

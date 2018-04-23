@@ -13,12 +13,12 @@ Gem::Specification.new do |gem|
   gem.summary       = 'Boleto Simples API wrapper.'
   gem.homepage      = 'https://github.com/BoletoSimples/boletosimples-ruby'
 
-  gem.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
-  gem.executables   = gem.files.grep(/^bin\//).map { |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(/^(test|spec|features)\//)
-  gem.require_paths = ['lib']
+  gem.files         = `git ls-files -z`.split("\x0").reject do |f|
+    f.match(%r{^(spec|features)/})
+  end
 
-  gem.required_ruby_version = '>= 2.0'
+  gem.test_files = `git ls-files -- {spec,features}/*`.split("\n")
+  gem.require_paths = ['lib']
 
   # Gems that must be intalled for boletosimples to work
   gem.add_dependency 'her', '~> 0.10'

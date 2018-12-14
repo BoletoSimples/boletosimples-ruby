@@ -48,6 +48,7 @@ RSpec.describe BoletoSimples::Configuration do
     it { expect(subject.application_secret).to eq('app-secret') }
     it { expect(subject.access_token).to eq('access-token') }
     it { expect(subject).to be_access_token }
+    it { expect(subject.user_agent).to eq("BoletoSimples Ruby Client v#{BoletoSimples::VERSION} (contato@boletosimples.com.br)") }
     describe 'cache' do
       it { expect(subject.cache).to be_nil }
       it { expect(Her::API.default_api.connection.builder.handlers).not_to include(Faraday::HttpCache) }
@@ -62,11 +63,12 @@ RSpec.describe BoletoSimples::Configuration do
         c.application_secret = 'app-secret'
         c.access_token = 'access-token'
         c.cache = cache_object
+        c.user_agent = 'Meu agent'
       end
     }
     subject { BoletoSimples.configuration }
     it { expect(subject.environment).to eq(:production) }
-    it { expect(subject.user_agent).to eq("BoletoSimples Ruby Client v#{BoletoSimples::VERSION} (contato@boletosimples.com.br)") }
+    it { expect(subject.user_agent).to eq("Meu agent") }
     it { expect(subject.base_uri).to eq('https://boletosimples.com.br/api/v1') }
     it { expect(subject.application_id).to eq('app-id') }
     it { expect(subject.application_secret).to eq('app-secret') }

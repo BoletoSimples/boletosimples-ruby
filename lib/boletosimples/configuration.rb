@@ -2,8 +2,7 @@
 module BoletoSimples
 
   class Configuration
-    attr_accessor :environment, :application_id, :application_secret, :access_token, :cache
-
+    attr_accessor :environment, :application_id, :application_secret, :access_token, :cache, :user_agent
 
     BASE_URI = {
       sandbox: 'https://sandbox.boletosimples.com.br/api/v1',
@@ -17,14 +16,11 @@ module BoletoSimples
       @application_secret = ENV['BOLETOSIMPLES_APP_SECRET']
       @access_token = ENV['BOLETOSIMPLES_ACCESS_TOKEN']
       @cache = nil
+      @user_agent = ENV['BOLETOSIMPLES_USER_AGENT'] || "BoletoSimples Ruby Client v#{BoletoSimples::VERSION} (contato@boletosimples.com.br)"
     end
 
     def base_uri
       BASE_URI[@environment]
-    end
-
-    def user_agent
-      "BoletoSimples Ruby Client v#{BoletoSimples::VERSION} (contato@boletosimples.com.br)"
     end
 
     def access_token?

@@ -11,7 +11,11 @@ module BoletoSimples
 
   autoload :BankBillet, 'boletosimples/resources/bank_billet'
   autoload :BankBilletAccount, 'boletosimples/resources/bank_billet_account'
+  autoload :BankBilletDischarge, 'boletosimples/resources/bank_billet_discharge'
+  autoload :BankBilletPayment, 'boletosimples/resources/bank_billet_payment'
+  autoload :BankBilletRemittance, 'boletosimples/resources/bank_billet_remittance'
   autoload :Event, 'boletosimples/resources/event'
+  autoload :EmailDelivery, 'boletosimples/resources/email_delivery'
   autoload :Customer, 'boletosimples/resources/customer'
   autoload :CustomerImport, 'boletosimples/resources/customer_import'
   autoload :CustomerSubscription, 'boletosimples/resources/customer_subscription'

@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/email_deliveries?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.5.0 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Date:
+      - Fri, 14 Dec 2018 19:44:02 GMT
+      Vary:
+      - Origin,Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=2629746
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 50f4a7d6-a313-44aa-9d74-f3ba0262ae92
+      Link:
+      - <https://sandbox.boletosimples.com.br/api/v1/email_deliveries?access_token=BOLETOSIMPLES_ACCESS_TOKEN&page=0>;
+        rel="last", <https://sandbox.boletosimples.com.br/api/v1/email_deliveries?access_token=BOLETOSIMPLES_ACCESS_TOKEN&page=2>;
+        rel="next"
+      X-Download-Options:
+      - noopen
+      Total:
+      - '0'
+      Etag:
+      - W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+      X-Frame-Options:
+      - DENY
+      X-Runtime:
+      - '0.024390'
+      X-Content-Type-Options:
+      - nosniff
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 6.0.0
+      Server:
+      - nginx/1.15.7 + Phusion Passenger 6.0.0
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Fri, 14 Dec 2018 19:44:03 GMT
+recorded_with: VCR 4.0.0

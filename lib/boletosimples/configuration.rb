@@ -57,7 +57,7 @@ module BoletoSimples
 
       # Because Her set the api on the moment module is included we need to call use_api again, after changing the configuration.
       [BankBillet, BankBilletAccount, Customer, CustomerImport, CustomerSubscription, CustomerSubscriptionImport, Installment, Transaction, Partner::User,
-        Webhook, Discharge, Remittance, WebhookDelivery, Event].each do |klass|
+        Webhook, Discharge, Remittance, WebhookDelivery, Event, EmailDelivery, BankBilletDischarge, BankBilletPayment, BankBilletRemittance].each do |klass|
         klass.send(:use_api, Her::API.default_api)
       end
     end

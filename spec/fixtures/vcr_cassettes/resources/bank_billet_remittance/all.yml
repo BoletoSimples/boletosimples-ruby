@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.5.0 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Date:
+      - Fri, 14 Dec 2018 19:23:00 GMT
+      Vary:
+      - Origin,Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=2629746
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - f062a888-d4b7-4ed0-a45b-4e03e3cac687
+      X-Download-Options:
+      - noopen
+      Total:
+      - '1'
+      Etag:
+      - W/"79a2594c96025094523022e47afe286a"
+      X-Frame-Options:
+      - DENY
+      X-Runtime:
+      - '0.042576'
+      X-Content-Type-Options:
+      - nosniff
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 6.0.0
+      Server:
+      - nginx/1.15.7 + Phusion Passenger 6.0.0
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":106043,"our_code":"1001","occurrence":"01","remittance_id":1341,"bank_billet_id":133853,"bank_billet_account_id":12,"processed_at":"2018-12-14","occurrence_detail":"Entrada
+        de Título","created_at":"2018-12-14","bank_billet":{"id":133853,"expire_at":"2018-12-14","paid_at":"2018-12-14","description":"teste","status":"paid","shorten_url":"https://bole.to/3/vjkxew","customer_person_type":"individual","customer_person_name":"Kivanio
+        Barbosa","customer_cnpj_cpf":"000.233.771-19","customer_address":"Rua Quatro","customer_state":"MT","customer_neighborhood":"CPA
+        III","customer_zipcode":"78058330","customer_address_number":"9","customer_address_complement":"","customer_phone_number":"6581214248","customer_email":"kivanio@gmail.com","customer_email_cc":null,"customer_ignore_email":null,"customer_mobile_local_code":null,"customer_mobile_number":null,"customer_nickname":"","customer_notes":null,"created_via_api":false,"customer_city_name":"Cuiabá","paid_amount":131.31,"amount":131.31,"url":"https://bole.to/3/vjkxew","formats":{"png":"https://bole.to/3/vjkxew.png?r=1544815148","pdf":"https://bole.to/3/vjkxew.pdf?r=1544815148"},"meta":null,"fine_for_delay":null,"fine_type":0,"fine_percentage":null,"fine_value":null,"days_for_fine":null,"late_payment_interest":null,"interest_type":0,"interest_daily_value":null,"interest_daily_percentage":null,"interest_monthly_percentage":null,"days_for_interest":null,"discount_type":0,"discount_limit_date":null,"discount_value":null,"discount_percentage":null,"days_for_revoke":null,"notes":null,"payment_count":1,"bank_billet_account_id":12,"beneficiary_name":"Kivanio
+        Pereira Barbosa","beneficiary_cnpj_cpf":"000.233.771-19","beneficiary_address":"Rua
+        Quatro, 9, 78058-330","beneficiary_assignor_code":"4327 / 1234567","guarantor_name":"","guarantor_cnpj_cpf":null,"payment_place":"Pagável
+        em qualquer banco até a data de vencimento.","instructions":"teste","document_date":null,"document_type":"02","document_number":"","acceptance":"N","processed_our_number":"0000314-2","processed_our_number_raw":"00003142","bank_contract_slug":"sicoob-02","agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"line":"75691.43279
+        02123.456705 00031.420011 6 77380000013131","our_number":"0000314","customer_subscription_id":null,"installment_number":null,"installment_id":null,"carne_url":null,"bank_billet_layout_id":5,"remittance_id":null,"created_at":"2018-12-14","updated_at":"2018-12-14","tags":[],"tag_list":"","document_type_label":"DM","addons":null,"ignore_email":false,"sue_code":null,"revoke_code":null,"first_instruction":null,"second_instruction":null,"guarantor_address_number":null,"guarantor_neighborhood":null,"guarantor_phone_number":null,"guarantor_city_name":null,"guarantor_state":null,"guarantor_zipcode":null,"guarantor_address":null,"guarantor_address_complement":null,"barcode":"","registered_at":null}}]'
+    http_version: 
+  recorded_at: Fri, 14 Dec 2018 19:23:01 GMT
+recorded_with: VCR 4.0.0

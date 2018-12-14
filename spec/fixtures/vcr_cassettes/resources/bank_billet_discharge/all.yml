@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_discharges?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - BoletoSimples Ruby Client v0.5.0 (contato@boletosimples.com.br)
+      Authorization:
+      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Date:
+      - Fri, 14 Dec 2018 19:23:01 GMT
+      Vary:
+      - Origin,Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=2629746
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - cea5a898-5942-4b05-9766-a7b225d3661c
+      Link:
+      - <https://sandbox.boletosimples.com.br/api/v1/bank_billet_discharges?access_token=BOLETOSIMPLES_ACCESS_TOKEN&page=2>;
+        rel="last", <https://sandbox.boletosimples.com.br/api/v1/bank_billet_discharges?access_token=BOLETOSIMPLES_ACCESS_TOKEN&page=2>;
+        rel="next"
+      X-Download-Options:
+      - noopen
+      Total:
+      - '31'
+      Etag:
+      - W/"05b627a2e9ed0eaad53fb3abaab47053"
+      X-Frame-Options:
+      - DENY
+      X-Runtime:
+      - '0.133802'
+      X-Content-Type-Options:
+      - nosniff
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 6.0.0
+      Server:
+      - nginx/1.15.7 + Phusion Passenger 6.0.0
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":15792,"occurrence":"05","date_of_occurrence":"2015-04-08","discharge_id":13,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","parcel":"01","paid_at":"2015-04-08","cnpj_cpf":"05813794000126","contract":"02","discount":"0","line_raw":"1020581379400012643270000036668000000                         000000100670010000000OU00000000000000000000
+        0205080415                              150415000000005610010441880990804150000180000000000000000000000000000000000000000000000000000000000000000000000000056100000000000000000000000000000000000000000000000000000010000000000000          0000000000000000000000000000000000000000000000000000000029","bank_rate":"180","credit_at":"2015-04-08","error_code":"00","event_type":"05","our_number":"00100670","billet_fine":"0","paid_amount":"56100","agency_digit":"0","other_credit":"0","value_rebate":"0","account_digit":"8","agency_number":"4327","credit_amount":"0","account_number":"00003666","banco_recebedor":"104","agencia_recebedora":"4188","processed_our_number_raw":"00100670"},"processed_at":"2018-12-14","occurrence_detail":"Liquidação
+        Sem Registro","occurrence_error_detail":null,"our_occurrence":"2027","bank_billet":null}]'
+    http_version: 
+  recorded_at: Fri, 14 Dec 2018 19:23:02 GMT
+recorded_with: VCR 4.0.0

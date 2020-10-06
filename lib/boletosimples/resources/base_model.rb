@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BoletoSimples
   class BaseModel
     include Her::Model

@@ -1,14 +1,15 @@
-# encoding: UTF-8
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe BoletoSimples::LastRequest do
-  before {
+  before do
     BoletoSimples.configure do |c|
       c.application_id = nil
       c.application_secret = nil
     end
-  }
-  describe 'bank_billets', vcr: { cassette_name: 'last_request/bank_billets'} do
+  end
+  describe 'bank_billets', vcr: { cassette_name: 'last_request/bank_billets' } do
     before { BoletoSimples::BankBillet.all.size }
     subject { BoletoSimples.last_request }
     it { expect(subject).to be_kind_of(BoletoSimples::LastRequest) }
@@ -18,9 +19,9 @@ RSpec.describe BoletoSimples::LastRequest do
     it { expect(subject.total).to be_kind_of(Integer) }
     it { expect(subject.ratelimit_limit).to be_kind_of(Integer) }
     it { expect(subject.ratelimit_remaining).to be_kind_of(Integer) }
-    it { expect(subject.links.keys).to match_array([:next, :last]) }
+    it { expect(subject.links.keys).to match_array(%i[next last]) }
   end
-  describe 'user_info', vcr: { cassette_name: 'last_request/userinfo'} do
+  describe 'user_info', vcr: { cassette_name: 'last_request/userinfo' } do
     before { BoletoSimples::Extra.userinfo }
     subject { BoletoSimples.last_request }
     it { expect(subject).to be_kind_of(BoletoSimples::LastRequest) }

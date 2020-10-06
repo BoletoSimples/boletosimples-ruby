@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'her'
 require 'faraday_middleware'
 require 'faraday-http-cache'
@@ -47,7 +49,6 @@ module BoletoSimples
       configuration.setup_her # after changing configuration gem her should be configured
     end
   end
-
 end
 
 BoletoSimples.configure

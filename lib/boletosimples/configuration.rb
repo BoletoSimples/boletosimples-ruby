@@ -1,6 +1,6 @@
-# encoding: utf-8
-module BoletoSimples
+# frozen_string_literal: true
 
+module BoletoSimples
   class Configuration
     attr_accessor :environment, :application_id, :application_secret, :access_token, :cache, :user_agent
 
@@ -8,7 +8,7 @@ module BoletoSimples
       sandbox: 'https://sandbox.boletosimples.com.br/api/v1',
       production: 'https://boletosimples.com.br/api/v1',
       development: 'http://localhost:5000/api/v1'
-    }
+    }.freeze
 
     def initialize
       @environment = (ENV['BOLETOSIMPLES_ENV'] || :sandbox).to_sym
@@ -57,11 +57,9 @@ module BoletoSimples
 
       # Because Her set the api on the moment module is included we need to call use_api again, after changing the configuration.
       [BankBillet, BankBilletAccount, Customer, CustomerImport, CustomerSubscription, CustomerSubscriptionImport, Installment, Transaction, Partner::User,
-        Webhook, Discharge, Remittance, WebhookDelivery, Event, EmailDelivery, BankBilletDischarge, BankBilletPayment, BankBilletRemittance].each do |klass|
+       Webhook, Discharge, Remittance, WebhookDelivery, Event, EmailDelivery, BankBilletDischarge, BankBilletPayment, BankBilletRemittance].each do |klass|
         klass.send(:use_api, Her::API.default_api)
       end
     end
-
   end
-
 end

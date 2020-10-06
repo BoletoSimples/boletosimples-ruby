@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BoletoSimples
   module Middleware
     class LastRequest < Faraday::Response::Middleware

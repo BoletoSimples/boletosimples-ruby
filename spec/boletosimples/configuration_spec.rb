@@ -1,29 +1,30 @@
-# encoding: UTF-8
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe BoletoSimples::Configuration do
-  before {
+  before do
     @last_env = {}
     @last_env['BOLETOSIMPLES_ENV'] = ENV['BOLETOSIMPLES_ENV']
     @last_env['BOLETOSIMPLES_APP_ID'] = ENV['BOLETOSIMPLES_APP_ID']
     @last_env['BOLETOSIMPLES_APP_SECRET'] = ENV['BOLETOSIMPLES_APP_SECRET']
     @last_env['BOLETOSIMPLES_ACCESS_TOKEN'] = ENV['BOLETOSIMPLES_ACCESS_TOKEN']
-  }
-  after {
+  end
+  after do
     ENV['BOLETOSIMPLES_ENV'] = @last_env['BOLETOSIMPLES_ENV']
     ENV['BOLETOSIMPLES_APP_ID'] = @last_env['BOLETOSIMPLES_APP_ID']
     ENV['BOLETOSIMPLES_APP_SECRET'] = @last_env['BOLETOSIMPLES_APP_SECRET']
     ENV['BOLETOSIMPLES_ACCESS_TOKEN'] = @last_env['BOLETOSIMPLES_ACCESS_TOKEN']
-  }
+  end
   describe 'defaults' do
-    before {
+    before do
       ENV['BOLETOSIMPLES_ENV'] = nil
       ENV['BOLETOSIMPLES_APP_ID'] = nil
       ENV['BOLETOSIMPLES_APP_SECRET'] = nil
       ENV['BOLETOSIMPLES_ACCESS_TOKEN'] = nil
-    }
+    end
     subject { BoletoSimples::Configuration.new }
-    before { subject.setup_her}
+    before { subject.setup_her }
     it { expect(subject.environment).to eq(:sandbox) }
     it { expect(subject.base_uri).to eq('https://sandbox.boletosimples.com.br/api/v1') }
     it { expect(subject.application_id).to be_nil }
@@ -33,12 +34,12 @@ RSpec.describe BoletoSimples::Configuration do
     it { expect(subject).not_to be_access_token }
   end
   describe 'environment variables' do
-    before {
+    before do
       ENV['BOLETOSIMPLES_ENV'] = 'production'
       ENV['BOLETOSIMPLES_APP_ID'] = 'app-id'
       ENV['BOLETOSIMPLES_APP_SECRET'] = 'app-secret'
       ENV['BOLETOSIMPLES_ACCESS_TOKEN'] = 'access-token'
-    }
+    end
     before  { BoletoSimples.configure }
     subject { BoletoSimples.configuration }
     # subject { BoletoSimples::Configuration.new }
@@ -56,7 +57,7 @@ RSpec.describe BoletoSimples::Configuration do
   end
   describe 'configuration' do
     let(:cache_object) { double('Dalli') }
-    before {
+    before do
       BoletoSimples.configure do |c|
         c.environment = :production
         c.application_id = 'app-id'
@@ -65,10 +66,10 @@ RSpec.describe BoletoSimples::Configuration do
         c.cache = cache_object
         c.user_agent = 'Meu agent'
       end
-    }
+    end
     subject { BoletoSimples.configuration }
     it { expect(subject.environment).to eq(:production) }
-    it { expect(subject.user_agent).to eq("Meu agent") }
+    it { expect(subject.user_agent).to eq('Meu agent') }
     it { expect(subject.base_uri).to eq('https://boletosimples.com.br/api/v1') }
     it { expect(subject.application_id).to eq('app-id') }
     it { expect(subject.application_secret).to eq('app-secret') }
@@ -78,23 +79,23 @@ RSpec.describe BoletoSimples::Configuration do
       it { expect(Her::API.default_api.connection.builder.handlers).to include(Faraday::HttpCache) }
     end
     describe 'client credentials' do
-      context 'invalid credentials', vcr: { cassette_name: 'configuration/client_credentials/invalid'} do
-        before {
+      context 'invalid credentials', vcr: { cassette_name: 'configuration/client_credentials/invalid' } do
+        before do
           BoletoSimples.configure do |c|
             c.application_id = 'app-id'
             c.application_secret = 'app-secret'
             c.access_token = nil
           end
-        }
-        it { expect{subject.client_credentials}.to raise_error(BoletoSimples::ResponseError, "401 POST https://sandbox.boletosimples.com.br/api/v1/oauth2/token (invalid_client)") }
+        end
+        it { expect { subject.client_credentials }.to raise_error(BoletoSimples::ResponseError, '401 POST https://sandbox.boletosimples.com.br/api/v1/oauth2/token (invalid_client)') }
       end
-      context 'valid credentials', vcr: { cassette_name: 'configuration/client_credentials/valid'} do
+      context 'valid credentials', vcr: { cassette_name: 'configuration/client_credentials/valid' } do
         # Before running this spec again, you need to set environment variable BOLETOSIMPLES_APP_ID and BOLETOSIMPLES_APP_SECRET
-        before {
+        before do
           BoletoSimples.configure do |c|
             c.access_token = nil
           end
-        }
+        end
         it { expect(subject.client_credentials).to include(:access_token) }
       end
     end

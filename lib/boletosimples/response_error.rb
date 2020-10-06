@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BoletoSimples
   # BoletoSimples::ResponseError
   # Exception that gets raised if the response is an error (4xx or 5xx)
@@ -35,7 +37,8 @@ module BoletoSimples
     end
 
     def to_s
-      msg = "#{status} #{method} #{url}"
+      msg = ''
+      msg += "#{status} #{method} #{url}"
       msg << " (#{error_message})" unless error_message.blank?
       msg
     end

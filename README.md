@@ -2,14 +2,10 @@
 
 [![Gem Version](http://img.shields.io/gem/v/boletosimples.svg)][gem]
 [![Build Status](http://img.shields.io/travis/BoletoSimples/boletosimples-ruby.svg)][travis]
-[![Dependency Status](http://img.shields.io/gemnasium/BoletoSimples/boletosimples-ruby.svg)][gemnasium]
-[![Code Climate](http://img.shields.io/codeclimate/github/BoletoSimples/boletosimples-ruby.svg)][codeclimate]
 [![Coverage Status](http://img.shields.io/coveralls/BoletoSimples/boletosimples-ruby.svg)][coveralls]
 
 [gem]: https://rubygems.org/gems/boletosimples
 [travis]: http://travis-ci.org/BoletoSimples/boletosimples-ruby
-[gemnasium]: https://gemnasium.com/BoletoSimples/boletosimples-ruby
-[codeclimate]: https://codeclimate.com/github/BoletoSimples/boletosimples-ruby
 [coveralls]: https://coveralls.io/r/BoletoSimples/boletosimples-ruby
 
 Biblioteca Ruby para acessar informações do [Boleto Simples](http://boletosimples.com.br) através da [API](http://api.boletosimples.com.br).
@@ -189,4 +185,3 @@ end
 ## OAuth 2.0 Authentication (para acessar as contas dos usuários)
 
 Comece [solicitando um cadastro de OAuth 2.0 application](http://suporte.boletosimples.com.br)
-

@@ -58,8 +58,7 @@ RSpec.describe BoletoSimples::CustomerSubscription do
     end
     describe 'cancel' do
       context 'success', vcr: { cassette_name: 'resources/customer_subscription/next_charge' } do
-        subject { BoletoSimples::CustomerSubscription.find(@customer_subscription.id) }
-        it { expect(subject.next_charge).to be_truthy }
+        it { expect(BoletoSimples::CustomerSubscription.next_charge(id: @customer_subscription.id)).to be_truthy }
       end
     end
   end

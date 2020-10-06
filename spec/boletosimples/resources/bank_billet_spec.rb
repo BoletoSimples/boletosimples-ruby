@@ -65,16 +65,7 @@ RSpec.describe BoletoSimples::BankBillet do
     end
     describe 'cancel' do
       context 'success', vcr: { cassette_name: 'resources/bank_billet/cancel/success' } do
-        subject { BoletoSimples::BankBillet.find(@bank_billet.id) }
-        it { expect(subject.cancel).to be_truthy }
-      end
-      context 'failure', vcr: { cassette_name: 'resources/bank_billet/cancel/failure' } do
-        subject { BoletoSimples::BankBillet.find(863) }
-        it { expect(subject.cancel).to be_falsy }
-        context 'after cancel' do
-          before { subject.cancel }
-          it { expect(subject.response_errors).to eq({ status: ['cannot transition via cancel'] }) }
-        end
+        it { expect(BoletoSimples::BankBillet.cancel(id: @bank_billet.id)).to be_truthy }
       end
     end
     describe 'all', vcr: { cassette_name: 'resources/bank_billet/all' } do

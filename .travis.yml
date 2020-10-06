@@ -1,8 +1,11 @@
 language: ruby
 cache: bundler
 before_install:
-  - gem update --system # use the very latest Rubygems
-  - gem install bundler # use the very latest Bundler
+  # https://docs.travis-ci.com/user/languages/ruby/
+  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
+  - gem install bundler -v '< 2'
+  # - gem update --system # use the very latest Rubygems
+  # - gem install bundler # use the very latest Bundler
 dist: trusty
 before_script:
   - unset _JAVA_OPTIONS

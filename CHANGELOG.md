@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.1
+
+### improvements
+
+- Update dependencies
+
 ## 0.4.2
 
 ### improvements

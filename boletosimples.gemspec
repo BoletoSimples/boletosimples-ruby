@@ -21,9 +21,9 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   # Gems that must be intalled for boletosimples to work
-  gem.add_dependency 'faraday-http-cache', '~> 2.0.0'
-  gem.add_dependency 'faraday_middleware', '~> 0.12'
-  gem.add_dependency 'her', '~> 1.0'
+  gem.add_dependency 'faraday-http-cache', '~> 2.2.0'
+  gem.add_dependency 'faraday_middleware', '~> 0.14'
+  gem.add_dependency 'her', '~> 1.1.0'
 
   # Gems that must be installed for boletosimples to compile and build
   gem.add_development_dependency 'codeclimate-test-reporter'

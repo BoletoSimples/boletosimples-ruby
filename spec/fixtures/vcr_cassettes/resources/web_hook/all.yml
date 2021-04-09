@@ -2,63 +2,72 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/webhooks?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/webhooks
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.2.3 (contato@boletosimples.com.br)
+      - email@minhaempresa.com.br
       Authorization:
-      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      - Bearer BOLETOSIMPLES_API_TOKEN
+      Accept:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
+      Server:
+      - Cowboy
       Connection:
       - keep-alive
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Per-Page:
+      - '50'
+      Page:
+      - ''
       Content-Type:
       - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Status:
-      - 200 OK
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '52'
+      Etag:
+      - W/"88dbb05d87d7e2af22f847e4896fe83c"
       Cache-Control:
       - must-revalidate, private, max-age=0
-      X-Ratelimit-Limit:
-      - '500'
-      Date:
-      - Mon, 24 Aug 2015 18:19:42 GMT
-      Strict-Transport-Security:
-      - max-age=2592000
-      X-Ratelimit-Remaining:
-      - '492'
-      Vary:
-      - Accept-Encoding
       X-Request-Id:
-      - 87f24b72-4d2c-4d34-a42c-96da07bdeb9c
-      Total:
-      - '1'
-      Etag:
-      - W/"e37218891cd4584530ca6b91573d338e"
+      - e5d86cc6-2a8a-43ef-8cfe-58886569fbf2
       X-Runtime:
-      - '0.029120'
+      - '0.033169'
+      Date:
+      - Tue, 13 Apr 2021 17:18:29 GMT
       X-Rack-Cache:
       - miss
-      X-Powered-By:
-      - Phusion Passenger 5.0.15
-      Server:
-      - nginx/1.8.0 + Phusion Passenger 5.0.15
+      Strict-Transport-Security:
+      - max-age=2629746
+      Vary:
+      - Origin,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":48,"url":"https://example.com","content_type":"application/json","events":["*"],"ssl_verification_enabled":true,"active":true}]'
-    http_version: 
-  recorded_at: Mon, 24 Aug 2015 18:19:42 GMT
-recorded_with: VCR 2.9.3
+      string: '[{"id":3888,"url":"https://reqbs.herokuapp.com/r0b6mqr0?inspect","content_type":"application/json","events":["bank_billet.*"],"ssl_verification_enabled":true,"active":true,"secret_key":"7d467d0d0902c2052961282bdb7b688472f808ceb2a2192f4377bcd103de2d80","bank_billet_account_id":null,"concurrency_limit":10}]'
+  recorded_at: Tue, 13 Apr 2021 17:18:29 GMT
+recorded_with: VCR 6.0.0

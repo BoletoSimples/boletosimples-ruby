@@ -1,125 +1,67 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets/851?access_token=BOLETOSIMPLES_ACCESS_TOKEN
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
-      Authorization:
-      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - Cowboy
-      Connection:
-      - keep-alive
-      Strict-Transport-Security:
-      - max-age=2592000
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ratelimit-Limit:
-      - '500'
-      X-Ratelimit-Remaining:
-      - '462'
-      Etag:
-      - W/"3e63641eb9f541ffab79e1d13c250890"
-      Cache-Control:
-      - must-revalidate, private, max-age=0
-      X-Request-Id:
-      - 459acce4-87bb-45e0-ba2b-4126250e7b48
-      X-Runtime:
-      - '0.041686'
-      Date:
-      - Sun, 08 Mar 2015 19:55:37 GMT
-      X-Rack-Cache:
-      - miss
-      Vary:
-      - Accept-Encoding
-      Transfer-Encoding:
-      - chunked
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '{"id":851,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
-        do contrato 0012","status":"opened","shorten_url":"http://staging.bole.to/nirjavew","customer_person_type":"individual","customer_person_name":"Joao
-        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
-        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
-        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","notification_url":"http://example.com.br/notify","send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
-        de Janeiro","paid_amount":0.0,"amount":9.01}'
-    http_version: 
-  recorded_at: Sun, 08 Mar 2015 19:55:36 GMT
-- request:
     method: put
-    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets/851/cancel?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets/382369/cancel
     body:
       encoding: UTF-8
-      string: "{}"
+      string: '{"bank_billet":{"id":382369}}'
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
+      - email@minhaempresa.com.br
       Authorization:
-      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      - Bearer BOLETOSIMPLES_API_TOKEN
       Content-Type:
+      - application/json
+      Accept:
       - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 204
+      message: No Content
     headers:
       Server:
       - Cowboy
+      Content-Length:
+      - '0'
       Connection:
       - keep-alive
-      Strict-Transport-Security:
-      - max-age=2592000
-      Content-Type:
-      - application/json; charset=utf-8
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       X-Ratelimit-Limit:
-      - '500'
+      - '1000'
       X-Ratelimit-Remaining:
-      - '461'
-      Etag:
-      - W/"d7665b0a15eb03d124030c5f13771e4a"
+      - '992'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - 7773008b-3423-4038-a157-100679061d62
+      - 98887c96-4671-4127-a41f-2aa02a5f03c8
       X-Runtime:
-      - '0.185339'
+      - '0.152161'
       Date:
-      - Sun, 08 Mar 2015 19:55:38 GMT
+      - Tue, 13 Apr 2021 17:18:32 GMT
       X-Rack-Cache:
       - invalidate, pass
+      Strict-Transport-Security:
+      - max-age=2629746
       Vary:
-      - Accept-Encoding
-      Transfer-Encoding:
-      - chunked
+      - Origin
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":851,"expire_at":"2014-01-01","paid_at":null,"description":"Despesas
-        do contrato 0012","status":"canceled","shorten_url":"http://staging.bole.to/nirjavew","customer_person_type":"individual","customer_person_name":"Joao
-        da Silva","customer_cnpj_cpf":"012.345.678-90","customer_address":"Rua quinhentos","customer_state":"RJ","customer_neighborhood":"Sao
-        Francisco","customer_zipcode":"12312-123","customer_address_number":"111","customer_address_complement":"Sala
-        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","notification_url":"http://example.com.br/notify","send_email_on_creation":null,"created_via_api":true,"customer_city_name":"Rio
-        de Janeiro","paid_amount":0.0,"amount":9.01}'
-    http_version: 
-  recorded_at: Sun, 08 Mar 2015 19:55:37 GMT
-recorded_with: VCR 2.9.3
+      string: ''
+  recorded_at: Tue, 13 Apr 2021 17:18:32 GMT
+recorded_with: VCR 6.0.0

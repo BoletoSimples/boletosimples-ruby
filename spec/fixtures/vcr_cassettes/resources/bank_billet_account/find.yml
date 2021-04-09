@@ -2,19 +2,19 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/3562
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
+      - email@minhaempresa.com.br
       Authorization:
-      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      - Bearer BOLETOSIMPLES_API_TOKEN
+      Accept:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
@@ -24,35 +24,55 @@ http_interactions:
       - Cowboy
       Connection:
       - keep-alive
-      Strict-Transport-Security:
-      - max-age=2592000
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Location:
+      - https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/3562
       Content-Type:
       - application/json; charset=utf-8
       X-Ratelimit-Limit:
-      - '500'
+      - '60'
       X-Ratelimit-Remaining:
-      - '496'
+      - '41'
       Etag:
-      - W/"e1004aeca30742932a4d8da7b82dba83"
+      - W/"bf3d5ab0ca5f9e0058f0cce47f121d91"
       Cache-Control:
       - must-revalidate, private, max-age=0
       X-Request-Id:
-      - faaa5b09-7f35-4535-b47d-f391dff84d7d
+      - 88798a01-6635-4430-9eb5-685884f2f797
       X-Runtime:
-      - '0.103545'
+      - '0.088745'
       Date:
-      - Wed, 01 Apr 2015 17:47:55 GMT
+      - Tue, 13 Apr 2021 17:18:53 GMT
       X-Rack-Cache:
       - miss
+      Strict-Transport-Security:
+      - max-age=2629746
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":1,"bank_contract_slug":"sicoob-02","next_our_number":"0000001","agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":null,"extra1_digit":null,"extra2":null,"extra2_digit":null}'
-    http_version: 
-  recorded_at: Wed, 01 Apr 2015 17:47:55 GMT
-recorded_with: VCR 2.9.3
+      string: '{"id":3562,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
+        S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
+        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
+        1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
+        - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
+        02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
+        S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
+        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false}'
+  recorded_at: Tue, 13 Apr 2021 17:18:54 GMT
+recorded_with: VCR 6.0.0

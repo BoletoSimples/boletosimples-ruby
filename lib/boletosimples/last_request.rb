@@ -36,8 +36,8 @@ module BoletoSimples
 
       @links = {}
       link_header.split(', ').each do |link|
-        key = /rel=\"(.*)\"/.match(link)[1]
-        value = /\<(.*)\>/.match(link)[1]
+        key = /rel="(.*)"/.match(link)[1]
+        value = /<(.*)>/.match(link)[1]
         @links[key] = value
       end
       @links.symbolize_keys!

@@ -2,7 +2,7 @@
 
 module BoletoSimples
   class Configuration
-    attr_accessor :environment, :application_id, :application_secret, :access_token, :cache, :user_agent
+    attr_accessor :environment, :cache, :user_agent, :api_token
 
     BASE_URI = {
       sandbox: 'https://sandbox.boletosimples.com.br/api/v1',
@@ -12,38 +12,27 @@ module BoletoSimples
 
     def initialize
       @environment = (ENV['BOLETOSIMPLES_ENV'] || :sandbox).to_sym
-      @application_id = ENV['BOLETOSIMPLES_APP_ID']
-      @application_secret = ENV['BOLETOSIMPLES_APP_SECRET']
-      @access_token = ENV['BOLETOSIMPLES_ACCESS_TOKEN']
+      @api_token = ENV['BOLETOSIMPLES_API_TOKEN']
+      @user_agent = ENV['BOLETOSIMPLES_USER_AGENT']
       @cache = nil
-      @user_agent = ENV['BOLETOSIMPLES_USER_AGENT'] || "BoletoSimples Ruby Client v#{BoletoSimples::VERSION} (contato@boletosimples.com.br)"
     end
 
     def base_uri
       BASE_URI[@environment]
     end
 
-    def access_token?
-      !@access_token.nil?
-    end
-
-    def client_credentials
-      response = Her::API.default_api.connection.post 'oauth2/token', {
-        grant_type: 'client_credentials',
-        client_id: application_id,
-        client_secret: application_secret
-      }
-      response.body[:data]
+    def api_token?
+      !@api_token.nil?
     end
 
     def setup_her
       Her::API.setup url: base_uri do |c|
         # Request
         c.use BoletoSimples::Middleware::UserAgent
-        c.use FaradayMiddleware::OAuth2, access_token, token_type: 'param' if access_token?
+        c.use BoletoSimples::Middleware::Bearer if api_token?
         c.use Faraday::Request::Multipart
-        c.use Faraday::Request::UrlEncoded
         c.use FaradayMiddleware::EncodeJson
+        c.use Her::Middleware::AcceptJSON
         c.use Faraday::HttpCache, store: cache unless cache.nil?
 
         # Response
@@ -56,8 +45,10 @@ module BoletoSimples
       end
 
       # Because Her set the api on the moment module is included we need to call use_api again, after changing the configuration.
-      [BankBillet, BankBilletAccount, Customer, CustomerImport, CustomerSubscription, CustomerSubscriptionImport, Installment, Transaction, Partner::User,
-       Webhook, Discharge, Remittance, WebhookDelivery, Event, EmailDelivery, BankBilletDischarge, BankBilletPayment, BankBilletRemittance].each do |klass|
+      [BankBillet, BankBilletAccount, Customer, CustomerImport, CustomerSubscription,
+       CustomerSubscriptionImport, Installment, Transaction, Webhook, Discharge,
+       Remittance, WebhookDelivery, Event, EmailDelivery, BankBilletDischarge,
+       BankBilletPayment, BankBilletRemittance, SmsDelivery].each do |klass|
         klass.send(:use_api, Her::API.default_api)
       end
     end

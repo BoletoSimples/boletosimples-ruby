@@ -2,23 +2,23 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.boletosimples.com.br/api/v1/customers?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/customers
     body:
       encoding: UTF-8
-      string: '{"customer":{"person_name":"Maria José","cnpj_cpf":"811.536.151-85","email":"cliente@example.com","address":"Rua
+      string: '{"customer":{"person_name":"Maria José","cnpj_cpf":"54.872.822/0001-91","email":"cliente@example.com","address":"Rua
         quinhentos","city_name":"Rio de Janeiro","state":"RJ","neighborhood":"bairro","zipcode":"12312-123","address_number":"111","address_complement":"Sala
         4","phone_number":"2112123434"}}'
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
+      - email@minhaempresa.com.br
       Authorization:
-      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      - Bearer BOLETOSIMPLES_API_TOKEN
       Content-Type:
+      - application/json
+      Accept:
       - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 201
@@ -28,38 +28,50 @@ http_interactions:
       - Cowboy
       Connection:
       - keep-alive
-      Strict-Transport-Security:
-      - max-age=2592000
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Location:
-      - https://sandbox.boletosimples.com.br/api/v1/customers/65
+      - https://sandbox.boletosimples.com.br/api/v1/customers/80825
       Content-Type:
       - application/json; charset=utf-8
       X-Ratelimit-Limit:
-      - '500'
+      - '1000'
       X-Ratelimit-Remaining:
-      - '458'
+      - '973'
       Etag:
-      - W/"f198f003d0efa5f1e98adab6fe1a196f"
+      - W/"bf421a7739e6fb5b4a0a6574f14546dc"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 12c35d9a-04c8-4f17-8d0a-641af68a6284
+      - bb3b5ce6-4428-40df-a4b7-1fa6bcf98aec
       X-Runtime:
-      - '0.109969'
+      - '0.069261'
       Date:
-      - Sun, 08 Mar 2015 19:59:18 GMT
+      - Tue, 13 Apr 2021 17:19:09 GMT
       X-Rack-Cache:
       - invalidate, pass
+      Strict-Transport-Security:
+      - max-age=2629746
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":65,"city_name":"Rio de Janeiro","person_name":"Maria José","address":"Rua
-        quinhentos","address_complement":"Sala 4","address_number":"111","mobile_number":null,"cnpj_cpf":"811.536.151-85","email":"cliente@example.com","neighborhood":"bairro","person_type":"individual","phone_number":"2112123434","zipcode":"12312-123","mobile_local_code":null,"state":"RJ","created_via_api":true}'
-    http_version: 
-  recorded_at: Sun, 08 Mar 2015 19:59:17 GMT
-recorded_with: VCR 2.9.3
+      string: '{"id":80825,"city_name":"Rio de Janeiro","person_name":"Maria José","nickname":null,"address":"Rua
+        quinhentos","address_complement":"Sala 4","address_number":"111","mobile_number":null,"cnpj_cpf":"54.872.822/0001-91","email":"cliente@example.com","neighborhood":"bairro","phone_number":"2112123434","zipcode":"12312123","mobile_local_code":null,"notes":null,"state":"RJ","created_via_api":true,"email_cc":null,"contact_person":null,"truncated_address":"Rua
+        quinhentos, 111","external_code":null,"tags":[],"tag_list":"","custom_data":null}'
+  recorded_at: Tue, 13 Apr 2021 17:19:09 GMT
+recorded_with: VCR 6.0.0

@@ -2,80 +2,68 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.boletosimples.com.br/api/v1/installments?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/installments
     body:
       encoding: UTF-8
       string: '{"installment":{}}'
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.3.1 (contato@boletosimples.com.br)
+      - email@minhaempresa.com.br
       Authorization:
-      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      - Bearer BOLETOSIMPLES_API_TOKEN
       Content-Type:
+      - application/json
+      Accept:
       - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 422
       message: Unprocessable Entity
     headers:
+      Server:
+      - Cowboy
       Connection:
       - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Status:
-      - 422 Unprocessable Entity
-      Cache-Control:
-      - no-cache
-      X-Ratelimit-Limit:
-      - '500'
-      Date:
-      - Mon, 15 Aug 2016 19:16:31 GMT
-      Strict-Transport-Security:
-      - max-age=631138519
-      X-Ratelimit-Remaining:
-      - '492'
-      Vary:
-      - Accept-Encoding
-      X-Permitted-Cross-Domain-Policies:
-      - none
+      X-Frame-Options:
+      - DENY
       X-Xss-Protection:
       - 1; mode=block
-      X-Request-Id:
-      - 464aab27-7141-4e9a-94fd-38b97ca51a7d
-      Content-Security-Policy-Report-Only:
-      - 'default-src ''self''; child-src ''self'' www.googleadservices.com googleads.g.doubleclick.net
-        www.google.com; connect-src ws: wss: *.intercom.io ws.pusherapp.com hn.inspectlet.com
-        stats.pusher.com; font-src ''self'' fonts.googleapis.com fonts.gstatic.com
-        data:; img-src ''self'' https: data:; script-src ''self'' static.intercomcdn.com
-        cdn.inspectlet.com widget.intercom.io js.intercomcdn.com js.pusher.com stats.pusher.com
-        zapier.com www.google-analytics.com www.googleadservices.com i.kissmetrics.com
-        doug1izaerwt3.cloudfront.net app.popupdomination.com cdn.ywxi.net www.draw.io;
-        style-src ''self'' fonts.googleapis.com; report-uri https://boletosimples.report-uri.io/r/default/csp/reportOnly'
-      X-Download-Options:
-      - noopen
-      X-Runtime:
-      - '0.018220'
-      X-Frame-Options:
-      - sameorigin
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '984'
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - b79be165-5970-4b8a-8c9f-08ee89e9d173
+      X-Runtime:
+      - '0.023672'
+      Date:
+      - Tue, 13 Apr 2021 17:18:45 GMT
       X-Rack-Cache:
       - invalidate, pass
-      X-Powered-By:
-      - Phusion Passenger 5.0.30
-      Server:
-      - nginx/1.10.1 + Phusion Passenger 5.0.30
+      Strict-Transport-Security:
+      - max-age=2629746
+      Vary:
+      - Origin,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"errors":{"installment":["não pode ficar em branco"]}}'
-    http_version: 
-  recorded_at: Mon, 15 Aug 2016 19:16:31 GMT
-recorded_with: VCR 2.9.3
+      string: '{"errors":[{"title":"installment não pode ficar em branco","status":422,"code":422}]}'
+  recorded_at: Tue, 13 Apr 2021 17:18:45 GMT
+recorded_with: VCR 6.0.0

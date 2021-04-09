@@ -2,21 +2,21 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.boletosimples.com.br/api/v1/customers?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/customers
     body:
       encoding: UTF-8
       string: '{"customer":{}}'
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
+      - email@minhaempresa.com.br
       Authorization:
-      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      - Bearer BOLETOSIMPLES_API_TOKEN
       Content-Type:
+      - application/json
+      Accept:
       - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 422
@@ -26,33 +26,44 @@ http_interactions:
       - Cowboy
       Connection:
       - keep-alive
-      Strict-Transport-Security:
-      - max-age=2592000
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
       X-Ratelimit-Limit:
-      - '500'
+      - '1000'
       X-Ratelimit-Remaining:
-      - '456'
+      - '971'
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 1119bf7c-038c-4c5a-a2c2-e5c5c66097fd
+      - 11cbaf30-2b23-4517-a48e-f38050c17f17
       X-Runtime:
-      - '0.119195'
+      - '0.017993'
       Date:
-      - Sun, 08 Mar 2015 19:59:20 GMT
+      - Tue, 13 Apr 2021 17:19:12 GMT
       X-Rack-Cache:
       - invalidate, pass
+      Strict-Transport-Security:
+      - max-age=2629746
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"errors":{"customer":["não pode ficar em branco"]}}'
-    http_version: 
-  recorded_at: Sun, 08 Mar 2015 19:59:19 GMT
-recorded_with: VCR 2.9.3
+      string: '{"errors":[{"title":"customer não pode ficar em branco","status":422,"code":422}]}'
+  recorded_at: Tue, 13 Apr 2021 17:19:12 GMT
+recorded_with: VCR 6.0.0

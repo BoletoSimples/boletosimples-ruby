@@ -2,21 +2,21 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts
     body:
       encoding: UTF-8
-      string: bank_billet_account%5Bbank_contract_slug%5D=
+      string: '{"bank_billet_account":{"bank_contract_slug":""}}'
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
+      - email@minhaempresa.com.br
       Authorization:
-      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      - Bearer BOLETOSIMPLES_API_TOKEN
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
+      Accept:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 422
@@ -26,34 +26,48 @@ http_interactions:
       - Cowboy
       Connection:
       - keep-alive
-      Strict-Transport-Security:
-      - max-age=2592000
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
       X-Ratelimit-Limit:
-      - '500'
+      - '1000'
       X-Ratelimit-Remaining:
-      - '495'
+      - '979'
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - f05ec95b-ec7e-4f61-9f65-a0c72dd8a5a8
+      - bc01842f-c34d-48dd-8d42-59cf87749e43
       X-Runtime:
-      - '0.046546'
+      - '0.123919'
       Date:
-      - Wed, 01 Apr 2015 17:47:56 GMT
+      - Tue, 13 Apr 2021 17:18:51 GMT
       X-Rack-Cache:
       - invalidate, pass
+      Strict-Transport-Security:
+      - max-age=2629746
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"errors":{"agency_number":["não pode ficar em branco"],"account_number":["não
-        pode ficar em branco"],"bank_contract_slug":["não pode ficar em branco"]}}'
-    http_version: 
-  recorded_at: Wed, 01 Apr 2015 17:47:56 GMT
-recorded_with: VCR 2.9.3
+      string: '{"errors":{"bank_contract_slug":["não pode ficar em branco"],"beneficiary_name":["não
+        pode ficar em branco"],"beneficiary_cnpj_cpf":["não pode ficar em branco"],"beneficiary_address_street":["não
+        pode ficar em branco"],"beneficiary_address_city":["não pode ficar em branco"],"beneficiary_address_neighborhood":["não
+        pode ficar em branco"],"beneficiary_address_state":["não pode ficar em branco"],"beneficiary_address_zipcode":["não
+        pode ficar em branco"]}}'
+  recorded_at: Tue, 13 Apr 2021 17:18:51 GMT
+recorded_with: VCR 6.0.0

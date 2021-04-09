@@ -10,8 +10,5 @@ VCR.configure do |c|
   c.before_record do |i|
     i.response.body.force_encoding('UTF-8')
   end
-  c.filter_sensitive_data('BOLETOSIMPLES_APP_ID') { ENV['BOLETOSIMPLES_APP_ID'] }
-  c.filter_sensitive_data('BOLETOSIMPLES_APP_SECRET') { ENV['BOLETOSIMPLES_APP_SECRET'] }
-  c.filter_sensitive_data('BOLETOSIMPLES_ACCESS_TOKEN') { ENV['BOLETOSIMPLES_ACCESS_TOKEN'] }
-  c.filter_sensitive_data('BOLETOSIMPLES_CLIENT_CREDENTIALS_TOKEN') { ENV['BOLETOSIMPLES_CLIENT_CREDENTIALS_TOKEN'] }
+  c.filter_sensitive_data('BOLETOSIMPLES_API_TOKEN') { ENV['BOLETOSIMPLES_API_TOKEN'] }
 end

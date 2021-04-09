@@ -31,7 +31,10 @@ require 'boletosimples'
 
 BoletoSimples.configure do |c|
   c.environment = :production # defaut :sandbox
-  c.access_token = 'access-token'
+  # production - https://boletosimples.com.br/conta/api/tokens
+  # sandbox - https://sandbox.boletosimples.com.br/conta/api/tokens
+  c.api_token = 'api-token'
+  c.user_agent = 'email@minhaempresa.com.br' #Colocar um e-mail válido para contatos técnicos relacionado ao uso da API.
 end
 ```
 
@@ -41,9 +44,7 @@ Você também pode configurar as variáveis de ambiente a seguir e não será ne
 
 ```bash
 ENV['BOLETOSIMPLES_ENV']
-ENV['BOLETOSIMPLES_APP_ID']
-ENV['BOLETOSIMPLES_APP_SECRET']
-ENV['BOLETOSIMPLES_ACCESS_TOKEN']
+ENV['BOLETOSIMPLES_API_TOKEN']
 ```
 
 ### Configurando cache
@@ -68,7 +69,7 @@ Exemplo:
 
 ```ruby
 # Criar um boleto
-@bank_billet = BoletoSimples::BankBillet.create({
+@bank_billet = BoletoSimples::BankBillet.create(
   amount: 9.01,
   description: 'Despesas do contrato 0012',
   expire_at: '2014-01-01',
@@ -84,7 +85,7 @@ Exemplo:
   customer_phone_number: '2112123434',
   customer_state: 'RJ',
   customer_zipcode: '12312-123'
-})
+)
 
 # Criar um novo boleto instanciando o objeto
 @bank_billet = BoletoSimples::BankBillet.new(amount: 199.99, expire_at: '2020-01-01')
@@ -108,14 +109,6 @@ Exemplo:
   puts bank_billet.attributes
 end
 
- # Após realizar a chamada na listagem, você terá acesso aos seguintes dados:
-
-BoletoSimples.last_request.total # número total de boletos
-BoletoSimples.last_request.links[:first] # url da primeira página
-BoletoSimples.last_request.links[:prev] # url da página anterior
-BoletoSimples.last_request.links[:next] # url da próxima página
-BoletoSimples.last_request.links[:last] # url da última página
-
 # Cancelar um boleto
 @bank_billet = BoletoSimples::BankBillet.find(1)
 @bank_billet.cancel
@@ -126,7 +119,7 @@ BoletoSimples.last_request.links[:last] # url da última página
 
 ```ruby
 # Criar um cliente
-@customer = BoletoSimples::Customer.create({
+@customer = BoletoSimples::Customer.create(
   person_name: "Joao da Silva",
   cnpj_cpf: "012.345.678-90",
   email: "cliente@example.com",
@@ -138,7 +131,7 @@ BoletoSimples.last_request.links[:last] # url da última página
   address_number: "111",
   address_complement: "Sala 4",
   phone_number: "2112123434"
-})
+)
 
 # Mensagens de erro na criação do cliente
 @customer = BoletoSimples::Customer.new(person_name: '')
@@ -151,37 +144,8 @@ BoletoSimples.last_request.links[:last] # url da última página
   puts customer.attributes
 end
 
- # Após realizar a chamada na listagem, você terá acesso aos seguintes dados:
-
-BoletoSimples.last_request.total # número total de clientes
-BoletoSimples.last_request.links[:first] # url da primeira página
-BoletoSimples.last_request.links[:prev] # url da página anterior
-BoletoSimples.last_request.links[:next] # url da próxima página
-BoletoSimples.last_request.links[:last] # url da última página
-
 # Atualizar um cliente
 @customer = BoletoSimples::Customer.find(1)
 @customer.person_name = 'Novo nome'
 @customer.save
 ```
-
-### Extrato
-
-```ruby
-# Listar todas as transações
-@transactions = BoletoSimples::Transaction.all
-@transactions.each do |transaction|
-  puts transaction.attributes
-end
-```
-
-### Extras
-
-```ruby
-# Dados do usuário logado
-@userinfo = BoletoSimples::Extra.userinfo
-```
-
-## OAuth 2.0 Authentication (para acessar as contas dos usuários)
-
-Comece [solicitando um cadastro de OAuth 2.0 application](http://suporte.boletosimples.com.br)

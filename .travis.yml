@@ -10,8 +10,8 @@ dist: trusty
 before_script:
   - unset _JAVA_OPTIONS
 rvm:
-  - "3.0.0-preview1"
-  - "2.7.2"
+  - "3.0.1"
+  - "2.7.3"
   - "2.6.6"
   - "2.5.5"
   - "2.4.6"

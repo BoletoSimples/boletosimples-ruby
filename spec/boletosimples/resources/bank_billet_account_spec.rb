@@ -2,61 +2,85 @@
 
 require 'spec_helper'
 
-# Before running this spec again, you need to set environment variable BOLETOSIMPLES_ACCESS_TOKEN
+# Before running this spec again, you need to set environment variable BOLETOSIMPLES_API_TOKEN
 RSpec.describe BoletoSimples::BankBilletAccount do
-  before do
-    BoletoSimples.configure do |c|
-      c.application_id = nil
-      c.application_secret = nil
-    end
-  end
   describe 'methods' do
     before do
       VCR.use_cassette('resources/bank_billet_account/create/valid') do
-        @bank_billet_account = BoletoSimples::BankBilletAccount.create({
-                                                                         bank_contract_slug: 'sicoob-02',
-                                                                         next_our_number: '1',
-                                                                         agency_number: '4327',
-                                                                         agency_digit: '3',
-                                                                         account_number: '3666',
-                                                                         account_digit: '8',
-                                                                         extra1_length: '1234567'
-                                                                       })
+        @bank_billet_account = described_class.create(
+          bank_contract_slug: 'sicoob-02',
+          next_our_number: '1',
+          agency_number: '4327',
+          agency_digit: '3',
+          account_number: '3666',
+          account_digit: '8',
+          extra1: '1234567',
+          beneficiary_name: 'XPTO S.A.',
+          beneficiary_cnpj_cpf: '22.622.867/0001-11',
+          beneficiary_address_street: 'Rua S',
+          beneficiary_address_city: 'São Paulo',
+          beneficiary_address_state: 'SP',
+          beneficiary_address_neighborhood: 'Moema',
+          beneficiary_address_zipcode: '04524030'
+        )
       end
     end
+
     describe 'create' do
       context 'valid parameters' do
         subject { @bank_billet_account }
-        it { expect(subject).to be_a_kind_of(BoletoSimples::BankBilletAccount) }
-        it { expect(subject.response_errors).to eq({}) }
-        it { expect(subject.attributes.keys).to match_array(%w[account_digit account_number agency_digit agency_number bank_contract_slug extra1 extra1_digit extra1_length extra2 extra2_digit id next_our_number]) }
+
+        it do
+          expect(subject).to be_a_kind_of(described_class)
+          expect(subject.response_errors).to eq({})
+        end
       end
+
       context 'invalid parameters' do
         context 'empty bank_billet' do
           subject do
             VCR.use_cassette('resources/bank_billet_account/create/invalid_root') do
-              BoletoSimples::BankBilletAccount.create({})
+              described_class.create({})
             end
           end
-          it { expect(subject.response_errors).to eq({ bank_billet_account: ['não pode ficar em branco'] }) }
+
+          it {
+            expect(subject.response_errors).to eq([{ code: 422, status: 422,
+                                                     title: 'bank_billet_account não pode ficar em branco' }])
+          }
         end
+
         context 'invalid params' do
           subject do
             VCR.use_cassette('resources/bank_billet_account/create/invalid_params') do
-              BoletoSimples::BankBilletAccount.create({ bank_contract_slug: '' })
+              described_class.create({ bank_contract_slug: '' })
             end
           end
-          it { expect(subject.response_errors).to eq({ agency_number: ['não pode ficar em branco'], account_number: ['não pode ficar em branco'], bank_contract_slug: ['não pode ficar em branco'] }) }
+
+          it {
+            expect(subject.response_errors).to eq({ bank_contract_slug: ['não pode ficar em branco'],
+                                                    beneficiary_name: ['não pode ficar em branco'],
+                                                    beneficiary_cnpj_cpf: ['não pode ficar em branco'],
+                                                    beneficiary_address_street: ['não pode ficar em branco'],
+                                                    beneficiary_address_city: ['não pode ficar em branco'],
+                                                    beneficiary_address_neighborhood: ['não pode ficar em branco'],
+                                                    beneficiary_address_state: ['não pode ficar em branco'],
+                                                    beneficiary_address_zipcode: ['não pode ficar em branco'] })
+          }
         end
       end
     end
+
     describe 'find', vcr: { cassette_name: 'resources/bank_billet_account/find' } do
-      subject { BoletoSimples::BankBilletAccount.find(@bank_billet_account.id) }
-      it { expect(subject).to be_a_kind_of(BoletoSimples::BankBilletAccount) }
+      subject { described_class.find(@bank_billet_account.id) }
+
+      it { expect(subject).to be_a_kind_of(described_class) }
     end
+
     describe 'all', vcr: { cassette_name: 'resources/bank_billet_account/all' } do
-      subject { BoletoSimples::BankBilletAccount.all }
-      it { expect(subject.first).to be_a_kind_of(BoletoSimples::BankBilletAccount) }
+      subject { described_class.all }
+
+      it { expect(subject.first).to be_a_kind_of(described_class) }
     end
   end
 end

@@ -2,75 +2,72 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/email_deliveries?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/email_deliveries
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.5.0 (contato@boletosimples.com.br)
+      - email@minhaempresa.com.br
       Authorization:
-      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      - Bearer BOLETOSIMPLES_API_TOKEN
+      Accept:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
+      Server:
+      - Cowboy
       Connection:
       - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Status:
-      - 200 OK
-      Cache-Control:
-      - must-revalidate, private, max-age=0
-      Date:
-      - Fri, 14 Dec 2018 19:44:02 GMT
-      Vary:
-      - Origin,Accept-Encoding
-      Strict-Transport-Security:
-      - max-age=2629746
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Request-Id:
-      - 50f4a7d6-a313-44aa-9d74-f3ba0262ae92
-      Link:
-      - <https://sandbox.boletosimples.com.br/api/v1/email_deliveries?access_token=BOLETOSIMPLES_ACCESS_TOKEN&page=0>;
-        rel="last", <https://sandbox.boletosimples.com.br/api/v1/email_deliveries?access_token=BOLETOSIMPLES_ACCESS_TOKEN&page=2>;
-        rel="next"
-      X-Download-Options:
-      - noopen
-      Total:
-      - '0'
-      Etag:
-      - W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
       X-Frame-Options:
       - DENY
-      X-Runtime:
-      - '0.024390'
+      X-Xss-Protection:
+      - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Per-Page:
+      - '50'
+      Page:
+      - ''
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '34'
+      Etag:
+      - W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 13cbd42f-95e9-4bd2-8fa8-e3b418ce23d6
+      X-Runtime:
+      - '0.032018'
+      Date:
+      - Tue, 13 Apr 2021 17:19:03 GMT
       X-Rack-Cache:
       - miss
-      X-Powered-By:
-      - Phusion Passenger 6.0.0
-      Server:
-      - nginx/1.15.7 + Phusion Passenger 6.0.0
+      Strict-Transport-Security:
+      - max-age=2629746
+      Vary:
+      - Origin,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
-    http_version: 
-  recorded_at: Fri, 14 Dec 2018 19:44:03 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Tue, 13 Apr 2021 17:19:03 GMT
+recorded_with: VCR 6.0.0

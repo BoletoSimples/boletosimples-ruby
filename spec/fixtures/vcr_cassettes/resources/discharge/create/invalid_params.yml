@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.boletosimples.com.br/api/v1/discharges
+    body:
+      encoding: UTF-8
+      string: '{"discharge":{"content":""}}'
+    headers:
+      User-Agent:
+      - email@minhaempresa.com.br
+      Authorization:
+      - Bearer BOLETOSIMPLES_API_TOKEN
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '981'
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 904c5219-a4ce-4a81-9249-72a63a9eebc0
+      X-Runtime:
+      - '0.026695'
+      Date:
+      - Tue, 13 Apr 2021 17:18:49 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Strict-Transport-Security:
+      - max-age=2629746
+      Vary:
+      - Origin,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"errors":{"content":["não pode ficar em branco"],"filename":["não
+        pode ficar em branco"]}}'
+  recorded_at: Tue, 13 Apr 2021 17:18:49 GMT
+recorded_with: VCR 6.0.0

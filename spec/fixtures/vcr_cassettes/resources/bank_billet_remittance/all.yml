@@ -2,78 +2,125 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.5.0 (contato@boletosimples.com.br)
+      - email@minhaempresa.com.br
       Authorization:
-      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      - Bearer BOLETOSIMPLES_API_TOKEN
+      Accept:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
+      Server:
+      - Cowboy
       Connection:
       - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Status:
-      - 200 OK
-      Cache-Control:
-      - must-revalidate, private, max-age=0
-      Date:
-      - Fri, 14 Dec 2018 19:23:00 GMT
-      Vary:
-      - Origin,Accept-Encoding
-      Strict-Transport-Security:
-      - max-age=2629746
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Request-Id:
-      - f062a888-d4b7-4ed0-a45b-4e03e3cac687
-      X-Download-Options:
-      - noopen
-      Total:
-      - '1'
-      Etag:
-      - W/"79a2594c96025094523022e47afe286a"
       X-Frame-Options:
       - DENY
-      X-Runtime:
-      - '0.042576'
+      X-Xss-Protection:
+      - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Link:
+      - <https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances?page=2>;
+        rel="next"
+      Per-Page:
+      - '50'
+      Page:
+      - ''
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '36'
+      Etag:
+      - W/"61a58e3e0b8ce637f9a1a286ee2a6a70"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - b7de9a4e-83ad-4a54-9995-3c52c34c2e4b
+      X-Runtime:
+      - '0.071825'
+      Date:
+      - Tue, 13 Apr 2021 17:19:01 GMT
       X-Rack-Cache:
       - miss
-      X-Powered-By:
-      - Phusion Passenger 6.0.0
-      Server:
-      - nginx/1.15.7 + Phusion Passenger 6.0.0
+      Strict-Transport-Security:
+      - max-age=2629746
+      Vary:
+      - Origin,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":106043,"our_code":"1001","occurrence":"01","remittance_id":1341,"bank_billet_id":133853,"bank_billet_account_id":12,"processed_at":"2018-12-14","occurrence_detail":"Entrada
-        de Título","created_at":"2018-12-14","bank_billet":{"id":133853,"expire_at":"2018-12-14","paid_at":"2018-12-14","description":"teste","status":"paid","shorten_url":"https://bole.to/3/vjkxew","customer_person_type":"individual","customer_person_name":"Kivanio
-        Barbosa","customer_cnpj_cpf":"000.233.771-19","customer_address":"Rua Quatro","customer_state":"MT","customer_neighborhood":"CPA
-        III","customer_zipcode":"78058330","customer_address_number":"9","customer_address_complement":"","customer_phone_number":"6581214248","customer_email":"kivanio@gmail.com","customer_email_cc":null,"customer_ignore_email":null,"customer_mobile_local_code":null,"customer_mobile_number":null,"customer_nickname":"","customer_notes":null,"created_via_api":false,"customer_city_name":"Cuiabá","paid_amount":131.31,"amount":131.31,"url":"https://bole.to/3/vjkxew","formats":{"png":"https://bole.to/3/vjkxew.png?r=1544815148","pdf":"https://bole.to/3/vjkxew.pdf?r=1544815148"},"meta":null,"fine_for_delay":null,"fine_type":0,"fine_percentage":null,"fine_value":null,"days_for_fine":null,"late_payment_interest":null,"interest_type":0,"interest_daily_value":null,"interest_daily_percentage":null,"interest_monthly_percentage":null,"days_for_interest":null,"discount_type":0,"discount_limit_date":null,"discount_value":null,"discount_percentage":null,"days_for_revoke":null,"notes":null,"payment_count":1,"bank_billet_account_id":12,"beneficiary_name":"Kivanio
-        Pereira Barbosa","beneficiary_cnpj_cpf":"000.233.771-19","beneficiary_address":"Rua
-        Quatro, 9, 78058-330","beneficiary_assignor_code":"4327 / 1234567","guarantor_name":"","guarantor_cnpj_cpf":null,"payment_place":"Pagável
-        em qualquer banco até a data de vencimento.","instructions":"teste","document_date":null,"document_type":"02","document_number":"","acceptance":"N","processed_our_number":"0000314-2","processed_our_number_raw":"00003142","bank_contract_slug":"sicoob-02","agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"line":"75691.43279
-        02123.456705 00031.420011 6 77380000013131","our_number":"0000314","customer_subscription_id":null,"installment_number":null,"installment_id":null,"carne_url":null,"bank_billet_layout_id":5,"remittance_id":null,"created_at":"2018-12-14","updated_at":"2018-12-14","tags":[],"tag_list":"","document_type_label":"DM","addons":null,"ignore_email":false,"sue_code":null,"revoke_code":null,"first_instruction":null,"second_instruction":null,"guarantor_address_number":null,"guarantor_neighborhood":null,"guarantor_phone_number":null,"guarantor_city_name":null,"guarantor_state":null,"guarantor_zipcode":null,"guarantor_address":null,"guarantor_address_complement":null,"barcode":"","registered_at":null}}]'
-    http_version: 
-  recorded_at: Fri, 14 Dec 2018 19:23:01 GMT
-recorded_with: VCR 4.0.0
+      string: '[{"id":348220,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382372,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T14:18:55-03:00"},{"id":348219,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382371,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T14:18:48-03:00"},{"id":348218,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382370,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T14:18:47-03:00"},{"id":348198,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382350,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:44:34-03:00"},{"id":348196,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382348,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:43:57-03:00"},{"id":348195,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382347,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:43:55-03:00"},{"id":348194,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382346,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:43:53-03:00"},{"id":348193,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382345,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:40:22-03:00"},{"id":348192,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382344,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:40:16-03:00"},{"id":348191,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382343,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:40:13-03:00"},{"id":348190,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382342,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:40:13-03:00"},{"id":348187,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382338,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:38:13-03:00"},{"id":348185,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382336,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:38:07-03:00"},{"id":348184,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382335,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:38:05-03:00"},{"id":348182,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382333,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:35:50-03:00"},{"id":348180,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382331,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:35:35-03:00"},{"id":348179,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382330,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:35:33-03:00"},{"id":348178,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382329,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:35:30-03:00"},{"id":348177,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382328,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:26:44-03:00"},{"id":348176,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382327,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:26:42-03:00"},{"id":348175,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382326,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:26:40-03:00"},{"id":348173,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382324,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:26:26-03:00"},{"id":348171,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382322,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:22:33-03:00"},{"id":348170,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382321,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:21:49-03:00"},{"id":348169,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382320,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:21:47-03:00"},{"id":348168,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382319,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:21:45-03:00"},{"id":348167,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382318,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:11:00-03:00"},{"id":348166,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382317,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:11:00-03:00"},{"id":348165,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382316,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:10:58-03:00"},{"id":348163,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382314,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:10:25-03:00"},{"id":348159,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382309,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T11:03:04-03:00"},{"id":348157,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382307,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T10:57:52-03:00"},{"id":348156,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382306,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T10:57:46-03:00"},{"id":348155,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382305,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T10:57:43-03:00"},{"id":348154,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382304,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T10:57:35-03:00"},{"id":348153,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382303,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T10:55:34-03:00"},{"id":348152,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382302,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T10:55:28-03:00"},{"id":348151,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382301,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T10:55:27-03:00"},{"id":348150,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382300,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T10:55:10-03:00"},{"id":348137,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382282,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T10:00:42-03:00"},{"id":348136,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382281,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T10:00:35-03:00"},{"id":348135,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382280,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T10:00:33-03:00"},{"id":348134,"our_code":"1001","occurrence":"01","remittance_id":null,"bank_billet_id":382279,"bank_billet_account_id":3547,"processed_at":null,"occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T10:00:30-03:00"},{"id":348119,"our_code":"1034","occurrence":"34","remittance_id":2350,"bank_billet_id":382264,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Pago
+        diretamente ao beneficiário","created_at":"2021-04-13T09:30:20-03:00"},{"id":348118,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382264,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T09:27:31-03:00"},{"id":348117,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382263,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T09:27:25-03:00"},{"id":348116,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382262,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T09:27:23-03:00"},{"id":348115,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382261,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-13T09:27:23-03:00"},{"id":347983,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382122,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-12T11:55:20-03:00"},{"id":347982,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382121,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+        de Título","created_at":"2021-04-12T11:55:18-03:00"}]'
+  recorded_at: Tue, 13 Apr 2021 17:19:01 GMT
+recorded_with: VCR 6.0.0

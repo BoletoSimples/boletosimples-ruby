@@ -2,16 +2,11 @@
 
 require 'spec_helper'
 
-# Before running this spec again, you need to set environment variable BOLETOSIMPLES_ACCESS_TOKEN
+# Before running this spec again, you need to set environment variable BOLETOSIMPLES_API_TOKEN
 RSpec.describe BoletoSimples::Remittance do
-  before do
-    BoletoSimples.configure do |c|
-      c.application_id = nil
-      c.application_secret = nil
-    end
-  end
   describe 'all', vcr: { cassette_name: 'resources/remittance/all' } do
-    subject { BoletoSimples::Remittance.all }
-    it { expect(subject.first).to be_a_kind_of(BoletoSimples::Remittance) }
+    subject { described_class.all }
+
+    it { expect(subject.first).to be_a_kind_of(described_class) }
   end
 end

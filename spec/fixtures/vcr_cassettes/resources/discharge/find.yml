@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.boletosimples.com.br/api/v1/discharges/3192
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - email@minhaempresa.com.br
+      Authorization:
+      - Bearer BOLETOSIMPLES_API_TOKEN
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Location:
+      - https://sandbox.boletosimples.com.br/api/v1/discharges/3192
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '43'
+      Etag:
+      - W/"e077f7fad4f8c1d2e95d90396adb0b16"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - d8c0eaf7-ce3b-49f6-a980-8d870931e2ed
+      X-Runtime:
+      - '0.029146'
+      Date:
+      - Tue, 13 Apr 2021 17:18:47 GMT
+      X-Rack-Cache:
+      - miss
+      Strict-Transport-Security:
+      - max-age=2629746
+      Vary:
+      - Origin,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":3192,"filename":"discharge.RET","processed_at":null,"created_via_api":true,"status":"unprocessed","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[]}'
+  recorded_at: Tue, 13 Apr 2021 17:18:47 GMT
+recorded_with: VCR 6.0.0

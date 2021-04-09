@@ -2,84 +2,79 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.boletosimples.com.br/api/v1/installments?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/installments
     body:
       encoding: UTF-8
-      string: '{"installment":{"customer_id":"11","bank_billet_account_id":"12","amount":"1.120,4","cycle":"monthly","start_at":"2016-09-15","total":"3","description":"Hospedagem"}}'
+      string: '{"installment":{"amount":"1.120,4","cycle":"monthly","start_at":"2022-09-15","total":"3","description":"Hospedagem","customer_address":"Rua
+        quinhentos","customer_address_complement":"Sala 4","customer_address_number":"111","customer_city_name":"Rio
+        de Janeiro","customer_cnpj_cpf":"18.033.842/0001-05","customer_email":"cliente@example.com","customer_neighborhood":"Sao
+        Francisco","customer_person_name":"Joao da Silva","customer_person_type":"individual","customer_phone_number":"2112123434","customer_state":"RJ","customer_zipcode":"12312-123"}}'
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.3.1 (contato@boletosimples.com.br)
+      - email@minhaempresa.com.br
       Authorization:
-      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      - Bearer BOLETOSIMPLES_API_TOKEN
       Content-Type:
+      - application/json
+      Accept:
       - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 201
       message: Created
     headers:
+      Server:
+      - Cowboy
       Connection:
       - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Status:
-      - 201 Created
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Ratelimit-Limit:
-      - '500'
-      Date:
-      - Mon, 15 Aug 2016 19:16:30 GMT
-      Strict-Transport-Security:
-      - max-age=631138519
-      X-Ratelimit-Remaining:
-      - '493'
-      Vary:
-      - Accept-Encoding
-      X-Permitted-Cross-Domain-Policies:
-      - none
+      X-Frame-Options:
+      - DENY
       X-Xss-Protection:
       - 1; mode=block
-      X-Request-Id:
-      - 394821c4-efee-4d1f-a06a-bccc9edbd4e4
-      Content-Security-Policy-Report-Only:
-      - 'default-src ''self''; child-src ''self'' www.googleadservices.com googleads.g.doubleclick.net
-        www.google.com; connect-src ws: wss: *.intercom.io ws.pusherapp.com hn.inspectlet.com
-        stats.pusher.com; font-src ''self'' fonts.googleapis.com fonts.gstatic.com
-        data:; img-src ''self'' https: data:; script-src ''self'' static.intercomcdn.com
-        cdn.inspectlet.com widget.intercom.io js.intercomcdn.com js.pusher.com stats.pusher.com
-        zapier.com www.google-analytics.com www.googleadservices.com i.kissmetrics.com
-        doug1izaerwt3.cloudfront.net app.popupdomination.com cdn.ywxi.net www.draw.io;
-        style-src ''self'' fonts.googleapis.com; report-uri https://boletosimples.report-uri.io/r/default/csp/reportOnly'
-      Location:
-      - https://sandbox.boletosimples.com.br/api/v1/installments/2
-      X-Download-Options:
-      - noopen
-      Etag:
-      - W/"ff834c39ca2ba0ac0941d7fbde7ac5c5"
-      X-Runtime:
-      - '0.066803'
-      X-Frame-Options:
-      - sameorigin
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Location:
+      - https://sandbox.boletosimples.com.br/api/v1/installments/12421
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '986'
+      Etag:
+      - W/"4b998210f081f4a1318ce41309d3bae7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9de81dfb-a115-490d-bea3-98f13e9ed900
+      X-Runtime:
+      - '0.112589'
+      Date:
+      - Tue, 13 Apr 2021 17:18:42 GMT
       X-Rack-Cache:
       - invalidate, pass
-      X-Powered-By:
-      - Phusion Passenger 5.0.30
-      Server:
-      - nginx/1.10.1 + Phusion Passenger 5.0.30
+      Strict-Transport-Security:
+      - max-age=2629746
+      Vary:
+      - Origin,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":2,"amount":1120.4,"cycle":"monthly","start_at":"2016-09-15","end_at":"2016-11-16","instructions":null,"customer_id":11,"description":"Hospedagem","created_at":"2016-08-15","updated_at":"2016-08-15","created_via_api":true,"total":3,"bank_billet_account_id":12,"status":"created"}'
-    http_version: 
-  recorded_at: Mon, 15 Aug 2016 19:16:30 GMT
-recorded_with: VCR 2.9.3
+      string: '{"id":12421,"amount":1120.4,"cycle":"monthly","start_at":"2022-09-15","end_at":"2022-11-16","instructions":null,"customer_id":80703,"description":"Hospedagem","created_at":"2021-04-13T14:18:42-03:00","updated_at":"2021-04-13T14:18:42-03:00","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"18.033.842/0001-05","customer_address":"Rua
+        quinhentos","customer_state":"RJ","customer_neighborhood":"Sao Francisco","customer_zipcode":"12312123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","customer_city_name":"Rio
+        de Janeiro","customer_email_cc":null,"customer_ignore_email":null,"customer_mobile_local_code":null,"customer_mobile_number":null,"customer_nickname":null,"customer_notes":null,"created_via_api":true,"total":3,"bank_billet_account_id":3547,"status":"created","fine_for_delay":null,"fine_type":0,"fine_percentage":null,"fine_value":null,"days_for_fine":null,"late_payment_interest":null,"interest_type":0,"interest_daily_value":null,"interest_daily_percentage":null,"interest_monthly_percentage":null,"days_for_interest":null,"discount_type":0,"days_for_discount":null,"discount_value":null,"discount_percentage":null,"bank_billet_layout_id":null,"url":null,"bank_billet_ids":[],"bank_billets":[],"notes":null,"payment_count":1,"tags":[],"tag_list":"","prevent_registration":false,"divergent_payment_type":null,"divergent_payment_value_type":null,"divergent_payment_maximum_value":null,"divergent_payment_minimum_value":null,"divergent_payment_maximum_percentage":null,"divergent_payment_minimum_percentage":null,"divergent_payment_limit":null,"days_for_second_discount":null,"second_discount_percentage":null,"second_discount_value":null,"days_for_third_discount":null,"third_discount_percentage":null,"third_discount_value":null,"days_for_revoke":null,"days_for_sue":null,"days_for_negativation":null,"interest_percentage":null,"interest_value":null,"interest_days_type":0,"customer_contact_person":null,"custom_attachment_name":null,"guarantor_name":null,"guarantor_cnpj_cpf":null,"guarantor_address_number":null,"guarantor_neighborhood":null,"guarantor_phone_number":null,"guarantor_city_name":null,"guarantor_state":null,"guarantor_zipcode":null,"guarantor_address":null,"guarantor_address_complement":null,"document_number":null,"document_date":null}'
+  recorded_at: Tue, 13 Apr 2021 17:18:42 GMT
+recorded_with: VCR 6.0.0

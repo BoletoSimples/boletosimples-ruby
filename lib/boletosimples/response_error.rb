@@ -31,7 +31,9 @@ module BoletoSimples
       @status = response[:status].to_i
       @method = response[:method].to_s.upcase
       @url = response[:url]
-      @error_message = @body[:error]
+
+      errors = response[:body][:errors]
+      @error_message = errors.first[:title] unless errors.blank?
 
       super
     end

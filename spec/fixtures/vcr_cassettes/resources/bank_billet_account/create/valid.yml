@@ -2,21 +2,23 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?access_token=BOLETOSIMPLES_ACCESS_TOKEN
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts
     body:
       encoding: UTF-8
-      string: bank_billet_account%5Baccount_digit%5D=8&bank_billet_account%5Baccount_number%5D=3666&bank_billet_account%5Bagency_digit%5D=3&bank_billet_account%5Bagency_number%5D=4327&bank_billet_account%5Bbank_contract_slug%5D=sicoob-02&bank_billet_account%5Bextra1_length%5D=1234567&bank_billet_account%5Bnext_our_number%5D=1
+      string: '{"bank_billet_account":{"bank_contract_slug":"sicoob-02","next_our_number":"1","agency_number":"4327","agency_digit":"3","account_number":"3666","account_digit":"8","extra1":"1234567","beneficiary_name":"XPTO
+        S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address_street":"Rua
+        S","beneficiary_address_city":"São Paulo","beneficiary_address_state":"SP","beneficiary_address_neighborhood":"Moema","beneficiary_address_zipcode":"04524030"}}'
     headers:
       User-Agent:
-      - BoletoSimples Ruby Client v0.1.0 (contato@boletosimples.com.br)
+      - email@minhaempresa.com.br
       Authorization:
-      - Token token="BOLETOSIMPLES_ACCESS_TOKEN"
+      - Bearer BOLETOSIMPLES_API_TOKEN
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
+      Accept:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 201
@@ -26,37 +28,55 @@ http_interactions:
       - Cowboy
       Connection:
       - keep-alive
-      Strict-Transport-Security:
-      - max-age=2592000
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Location:
-      - https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1
+      - https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/3562
       Content-Type:
       - application/json; charset=utf-8
       X-Ratelimit-Limit:
-      - '500'
+      - '1000'
       X-Ratelimit-Remaining:
-      - '497'
+      - '980'
       Etag:
-      - W/"e1004aeca30742932a4d8da7b82dba83"
+      - W/"bf3d5ab0ca5f9e0058f0cce47f121d91"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5dd95636-6cb1-42c3-b93b-e8c122d1bfa1
+      - 21c3fa74-7053-4428-848f-90270b6665e2
       X-Runtime:
-      - '0.134357'
+      - '0.137156'
       Date:
-      - Wed, 01 Apr 2015 17:47:54 GMT
+      - Tue, 13 Apr 2021 17:18:50 GMT
       X-Rack-Cache:
       - invalidate, pass
+      Strict-Transport-Security:
+      - max-age=2629746
       Vary:
-      - Accept-Encoding
+      - Origin,Accept-Encoding
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":1,"bank_contract_slug":"sicoob-02","next_our_number":"0000001","agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":null,"extra1_digit":null,"extra2":null,"extra2_digit":null}'
-    http_version: 
-  recorded_at: Wed, 01 Apr 2015 17:47:54 GMT
-recorded_with: VCR 2.9.3
+      string: '{"id":3562,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
+        S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
+        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
+        1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
+        - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
+        02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
+        S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
+        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false}'
+  recorded_at: Tue, 13 Apr 2021 17:18:50 GMT
+recorded_with: VCR 6.0.0

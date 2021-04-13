@@ -26,8 +26,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'her', '~> 1.0'
 
   # Gems that must be installed for boletosimples to compile and build
-  gem.add_development_dependency 'codeclimate-test-reporter'
-  gem.add_development_dependency 'coveralls'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'rubocop'

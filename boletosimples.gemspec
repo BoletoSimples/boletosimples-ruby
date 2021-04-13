@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
 
   # Gems that must be intalled for boletosimples to work
   gem.add_dependency 'faraday-http-cache', '~> 2.0.0'
-  gem.add_dependency 'faraday_middleware', '~> 0.12'
+  gem.add_dependency 'faraday_middleware', '~> 0.13'
   gem.add_dependency 'her', '~> 1.0'
 
   # Gems that must be installed for boletosimples to compile and build

@@ -10,14 +10,14 @@ dist: trusty
 before_script:
   - unset _JAVA_OPTIONS
 rvm:
-  - "3.0.1"
-  - "2.7.3"
-  - "2.6.7"
-  - "2.5.9"
-  - "2.4.10"
-  - "2.3.8"
-  - "2.2.10"
-  - "2.1.10"
+  - 3.0
+  - 2.7
+  - 2.6
+  - 2.5
+  - 2.4
+  - 2.3
+  - 2.2
+  - 2.1
   - jruby-9.2.17.0
   - ruby-head
 
@@ -33,7 +33,6 @@ gemfile:
 env:
   global:
     - JRUBY_OPTS="-J-Xmx1024m --dev --debug"
-    - COVERAGE=true
 
 matrix:
   fast_finish: true
@@ -41,39 +40,36 @@ matrix:
   allow_failures:
     - rvm: ruby-head
     - rvm: jruby-9.2.17.0
-    - rvm: 2.1.10
+    - rvm: 2.1
       gemfile: gemfiles/rails_50.gemfile
-    - rvm: 2.1.10
+    - rvm: 2.1
       gemfile: gemfiles/rails_51.gemfile
-    - rvm: 2.1.10
+    - rvm: 2.1
       gemfile: gemfiles/rails_52.gemfile
-    - rvm: 2.1.10
+    - rvm: 2.1
       gemfile: gemfiles/rails_60.gemfile
-    - rvm: 2.3.8
+    - rvm: 2.3
       gemfile: gemfiles/rails_60.gemfile
-    - rvm: 2.4.6
+    - rvm: 2.4
       gemfile: gemfiles/rails_60.gemfile
-    - rvm: 2.2.10
+    - rvm: 2.2
       gemfile: gemfiles/rails_60.gemfile
-    - rvm: 2.1.10
+    - rvm: 2.1
       gemfile: gemfiles/rails_61.gemfile
-    - rvm: 2.3.8
+    - rvm: 2.3
       gemfile: gemfiles/rails_61.gemfile
-    - rvm: 2.4.6
+    - rvm: 2.4
       gemfile: gemfiles/rails_61.gemfile
-    - rvm: 2.2.10
+    - rvm: 2.2
       gemfile: gemfiles/rails_61.gemfile
-    - rvm: 2.1.10
+    - rvm: 2.1
       gemfile: gemfiles/rails_master.gemfile
-    - rvm: 2.3.8
+    - rvm: 2.3
       gemfile: gemfiles/rails_master.gemfile
-    - rvm: 2.4.6
+    - rvm: 2.4
       gemfile: gemfiles/rails_master.gemfile
-    - rvm: 2.2.10
+    - rvm: 2.2
       gemfile: gemfiles/rails_master.gemfile
 branches:
   only:
     - master
-addons:
-  code_climate:
-    repo_token: 9c2feef5a1d636d5b08d10561c53f9293783fc175c0cc44d152cdb05a65d1868

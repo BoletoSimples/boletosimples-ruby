@@ -2,11 +2,9 @@
 
 [![Gem Version](http://img.shields.io/gem/v/boletosimples.svg)][gem]
 [![Build Status](http://img.shields.io/travis/BoletoSimples/boletosimples-ruby.svg)][travis]
-[![Coverage Status](http://img.shields.io/coveralls/BoletoSimples/boletosimples-ruby.svg)][coveralls]
 
 [gem]: https://rubygems.org/gems/boletosimples
 [travis]: http://travis-ci.org/BoletoSimples/boletosimples-ruby
-[coveralls]: https://coveralls.io/r/BoletoSimples/boletosimples-ruby
 
 Biblioteca Ruby para acessar informações do [Boleto Simples](http://boletosimples.com.br) através da [API](http://api.boletosimples.com.br).
 
@@ -25,6 +23,8 @@ Ou instale você mesmo:
     $ gem install boletosimples
 
 ## Configuração
+
+Saiba mais sobre o [Token de API ](https://api.boletosimples.com.br/authentication/token/)
 
 ```ruby
 require 'boletosimples'

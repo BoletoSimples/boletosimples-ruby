@@ -84,6 +84,12 @@ RSpec.describe BoletoSimples::BankBillet do
       end
     end
 
+    describe 'duplicate' do
+      context 'success', vcr: { cassette_name: 'resources/bank_billet/duplicate/success' } do
+        it { expect(described_class.duplicate(id: @bank_billet.id)).to be_truthy }
+      end
+    end
+
     describe 'all', vcr: { cassette_name: 'resources/bank_billet/all' } do
       subject { described_class.all }
 

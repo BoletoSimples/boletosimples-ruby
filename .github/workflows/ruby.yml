@@ -9,24 +9,37 @@ name: Ruby
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
+    name: Test against Ruby ${{ matrix.ruby-version }} / Rails ${{ matrix.rails-version }}
     strategy:
       matrix:
-        ruby-version: ['2.6', '2.7', '3.0']
+        ruby-version: [2.6, 2.7, 3.0, head, jruby, jruby-head, truffleruby]
+        rails-version: ["4.2", "5.0", "5.1", "5.2", "6.0", "6.1", "master"]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: Run tests
-      run: bundle exec rake
+      - uses: actions/checkout@v2
+
+      - name: Setup System
+        run: sudo apt-get install libsqlite3-dev
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+
+      - name: Install gems
+        env:
+          MATRIX_RAILS_VERSION: ${{ matrix.rails-version }}
+        run: |
+          export BUNDLE_GEMFILE="${GITHUB_WORKSPACE}/gemfiles/rails_${MATRIX_RAILS_VERSION}.gemfile"
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+
+      - name: Run tests
+        run: bundle exec rake

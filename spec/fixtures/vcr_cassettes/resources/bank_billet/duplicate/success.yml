@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets/382369/duplicate
+    body:
+      encoding: UTF-8
+      string: '{"bank_billet":{"id":382369}}'
+    headers:
+      User-Agent:
+      - email@minhaempresa.com.br
+      Authorization:
+      - Bearer BOLETOSIMPLES_API_TOKEN
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Location:
+      - https://sandbox.boletosimples.com.br/api/v1/bank_billets/382602
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '18000'
+      X-Ratelimit-Remaining:
+      - '17997'
+      Etag:
+      - W/"bb8f4b7fc0db6474494e528e349a34af"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2d728ac3-6e78-40bd-93d9-205509507a89
+      X-Runtime:
+      - '0.858514'
+      Date:
+      - Tue, 13 Apr 2021 19:47:35 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Strict-Transport-Security:
+      - max-age=2629746
+      Vary:
+      - Origin,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":382602,"expire_at":"2021-04-20","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"generating","shorten_url":"https://sandbox.bole.to/3/vxomzq","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"34.565.715/0001-03","customer_address":"Rua
+        quinhentos","customer_state":"RJ","customer_neighborhood":"Sao Francisco","customer_zipcode":"12312123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","customer_email_cc":null,"customer_ignore_email":null,"customer_mobile_local_code":null,"customer_mobile_number":null,"customer_nickname":null,"customer_notes":null,"created_via_api":false,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://sandbox.bole.to/3/vxomzq","formats":{"default":"https://sandbox.bole.to/3/vxomzq","png":"https://sandbox.bole.to/3/vxomzq.png?r=1618343254","pdf":"https://sandbox.bole.to/3/vxomzq.pdf?r=1618343254","boleto_hibrido":"https://sandbox.bole.to/3/vxomzq/boleto_hibrido?r=1618343254","boleto_pix":"https://sandbox.bole.to/3/vxomzq/boleto_pix?r=1618343254","barcode":"https://sandbox.bole.to/3/vxomzq/barcode","envelope":"https://sandbox.bole.to/3/vxomzq/envelope","letter":"https://sandbox.bole.to/3/vxomzq/letter","line":"https://sandbox.bole.to/3/vxomzq/line","recibo":"https://sandbox.bole.to/3/vxomzq/recibo"},"meta":null,"fine_for_delay":null,"fine_type":0,"fine_percentage":null,"fine_value":null,"days_for_fine":null,"late_payment_interest":null,"interest_type":0,"interest_daily_value":null,"interest_daily_percentage":null,"interest_monthly_percentage":null,"days_for_interest":null,"discount_type":0,"discount_limit_date":null,"discount_value":null,"discount_percentage":null,"days_for_revoke":null,"notes":null,"payment_count":1,"bank_billet_account_id":3547,"beneficiary_name":"J
+        Calçados","beneficiary_cnpj_cpf":"74.766.527/0001-68","beneficiary_address":"Praça
+        dos Três Poderes, 171,  - Zona Cívico-Administrativa, Brasília - DF, 70165900","beneficiary_assignor_code":"2332
+        / 12312-0","guarantor_name":null,"guarantor_cnpj_cpf":null,"payment_place":"Pagável
+        em qualquer banco até a data de vencimento.","instructions":null,"document_date":null,"document_type":"02","document_number":null,"acceptance":"N","processed_our_number":"109/00000172-9","processed_our_number_raw":"109000001729","bank_contract_slug":"itau-bs-109","agency_number":"2332","agency_digit":"3","account_number":"12312","account_digit":"2","extra1":null,"extra1_digit":null,"extra2":null,"extra2_digit":null,"line":"34191.09008
+        00017.292335 21231.200003 7 85960000000901","our_number":"00000172","customer_subscription_id":null,"installment_number":null,"installment_id":null,"carne_url":null,"bank_billet_layout_id":null,"created_at":"2021-04-13T16:47:34-03:00","updated_at":"2021-04-13T16:47:34-03:00","tags":[],"tag_list":"","document_type_label":"DM","addons":null,"ignore_email":false,"sue_code":null,"revoke_code":null,"first_instruction":null,"second_instruction":null,"guarantor_address_number":null,"guarantor_neighborhood":null,"guarantor_phone_number":null,"guarantor_city_name":null,"guarantor_state":null,"guarantor_zipcode":null,"guarantor_address":null,"guarantor_address_complement":null,"barcode":"34197859600000009011090000017292332123120000","registered_at":null,"prevent_registration":false,"customer_id":80707,"control_number":null,"divergent_payment_type":null,"divergent_payment_value_type":null,"divergent_payment_maximum_value":null,"divergent_payment_minimum_value":null,"divergent_payment_maximum_percentage":null,"divergent_payment_minimum_percentage":null,"divergent_payment_limit":null,"days_for_discount":null,"days_for_second_discount":null,"second_discount_percentage":null,"second_discount_value":null,"days_for_third_discount":null,"third_discount_percentage":null,"third_discount_value":null,"days_for_sue":null,"days_for_negativation":null,"interest_percentage":null,"interest_value":null,"interest_days_type":0,"customer_contact_person":null,"custom_attachment_name":null,"split_payment":false,"dispatch_type":1,"charge_type":1,"custom_data":null,"bank_billet_discharges":[],"bank_billet_remittances":[],"bank_billet_payments":[],"bank_billet_registrations":[],"bank_billet_split_accounts":[]}'
+  recorded_at: Tue, 13 Apr 2021 19:47:35 GMT
+recorded_with: VCR 6.0.0

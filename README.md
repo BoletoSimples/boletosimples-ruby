@@ -2,6 +2,7 @@
 
 [![Gem Version](http://img.shields.io/gem/v/boletosimples.svg)][gem]
 [![Build Status](http://img.shields.io/travis/BoletoSimples/boletosimples-ruby.svg)][travis]
+[![Ruby](https://github.com/BoletoSimples/boletosimples-ruby/actions/workflows/ruby.yml/badge.svg?branch=master)](https://github.com/BoletoSimples/boletosimples-ruby/actions/workflows/ruby.yml)
 
 [gem]: https://rubygems.org/gems/boletosimples
 [travis]: http://travis-ci.org/BoletoSimples/boletosimples-ruby

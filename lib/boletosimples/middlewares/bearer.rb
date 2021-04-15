@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BoletoSimples
   module Middleware
     class Bearer < Faraday::Middleware

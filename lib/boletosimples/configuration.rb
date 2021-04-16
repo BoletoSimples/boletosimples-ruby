@@ -41,7 +41,7 @@ module BoletoSimples
         c.use Her::Middleware::DefaultParseJSON
 
         # Adapter
-        c.use Faraday::Adapter::NetHttp
+        c.adapter Faraday::Adapter::NetHttp
       end
 
       # Because Her set the api on the moment module is included we need to call use_api again, after changing the configuration.

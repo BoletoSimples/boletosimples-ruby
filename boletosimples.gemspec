@@ -13,11 +13,9 @@ Gem::Specification.new do |gem|
   gem.summary       = 'Boleto Simples API wrapper.'
   gem.homepage      = 'https://github.com/BoletoSimples/boletosimples-ruby'
 
-  gem.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(spec|features)/})
-  end
+  gem.files         = Dir['lib/**/*', 'LICENSE.txt', 'README.md', 'CHANGELOG.md']
+  gem.test_files    = Dir['spec/**/*']
 
-  gem.test_files = `git ls-files -- {spec,features}/*`.split("\n")
   gem.require_paths = ['lib']
 
   # Gems that must be intalled for boletosimples to work
@@ -30,6 +28,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'rubocop'
+  gem.add_development_dependency 'rubocop-packaging'
   gem.add_development_dependency 'rubocop-performance'
   gem.add_development_dependency 'rubocop-rake'
   gem.add_development_dependency 'rubocop-rspec'

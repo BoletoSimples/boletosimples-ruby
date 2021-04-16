@@ -3,6 +3,7 @@ require:
   - "test_prof/rubocop"
   - rubocop-rspec
   - rubocop-rake
+  - rubocop-packaging
 
 AllCops:
   NewCops: enable

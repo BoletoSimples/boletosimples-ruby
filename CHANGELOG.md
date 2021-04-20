@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3
+
+### Changes
+
+- Add debug option
+
 ## 1.0.0
 
 ### Breaking changes

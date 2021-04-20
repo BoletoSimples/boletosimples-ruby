@@ -34,6 +34,7 @@ module BoletoSimples
     autoload :UserAgent, 'boletosimples/middlewares/user_agent'
     autoload :RaiseError, 'boletosimples/middlewares/raise_error'
     autoload :LastRequest, 'boletosimples/middlewares/last_request'
+    autoload :Debug, 'boletosimples/middlewares/debug'
     autoload :Bearer, 'boletosimples/middlewares/bearer'
   end
 

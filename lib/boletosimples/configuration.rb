@@ -2,7 +2,7 @@
 
 module BoletoSimples
   class Configuration
-    attr_accessor :environment, :cache, :user_agent, :api_token
+    attr_accessor :environment, :cache, :user_agent, :api_token, :debug
 
     BASE_URI = {
       sandbox: 'https://sandbox.boletosimples.com.br/api/v1',
@@ -15,6 +15,7 @@ module BoletoSimples
       @api_token = ENV['BOLETOSIMPLES_API_TOKEN']
       @user_agent = ENV['BOLETOSIMPLES_USER_AGENT']
       @cache = nil
+      @debug = ENV['BOLETOSIMPLES_DEBUG']
     end
 
     def base_uri
@@ -23,6 +24,10 @@ module BoletoSimples
 
     def api_token?
       !@api_token.nil?
+    end
+
+    def debug?
+      !@debug.nil?
     end
 
     def setup_her
@@ -36,6 +41,7 @@ module BoletoSimples
         c.use Faraday::HttpCache, store: cache unless cache.nil?
 
         # Response
+        c.use BoletoSimples::Middleware::Debug if debug?
         c.use BoletoSimples::Middleware::LastRequest
         c.use BoletoSimples::Middleware::RaiseError
         c.use Her::Middleware::DefaultParseJSON

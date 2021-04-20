@@ -34,6 +34,7 @@ BoletoSimples.configure do |c|
   # sandbox - https://sandbox.boletosimples.com.br/conta/api/tokens
   c.api_token = 'api-token'
   c.user_agent = 'email@minhaempresa.com.br' #Colocar um e-mail válido para contatos técnicos relacionado ao uso da API.
+  # c.debug = true
 end
 ```
 
@@ -44,6 +45,7 @@ Você também pode configurar as variáveis de ambiente a seguir e não será ne
 ```bash
 ENV['BOLETOSIMPLES_ENV']
 ENV['BOLETOSIMPLES_API_TOKEN']
+ENV['BOLETOSIMPLES_DEBUG']
 ```
 
 ### Configurando cache

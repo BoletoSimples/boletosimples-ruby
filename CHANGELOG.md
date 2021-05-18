@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.4
+
+### Changes
+
+- Fix cache
+
 ## 1.0.3
 
 ### Changes

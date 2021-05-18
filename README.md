@@ -60,7 +60,9 @@ Exemplo:
   require 'dalli'
 
   BoletoSimples.configure do |c|
-    c.cache = ActiveSupport::Cache.lookup_store(:dalli_store, ['localhost:11211'], namespace: 'boletosimples_client', compress: true)
+    c.cache = ActiveSupport::Cache.lookup_store(:mem_cache_store, ['localhost:11211'],
+                                              namespace: 'boletosimples_client',
+                                              compress: true)
   end
 ```
 

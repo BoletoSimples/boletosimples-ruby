@@ -38,7 +38,7 @@ module BoletoSimples
         c.use Faraday::Request::Multipart
         c.use FaradayMiddleware::EncodeJson
         c.use Her::Middleware::AcceptJSON
-        c.use Faraday::HttpCache, store: cache unless cache.nil?
+        c.use Faraday::HttpCache, store: cache, serializer: Marshal unless cache.nil?
 
         # Response
         c.use BoletoSimples::Middleware::Debug if debug?

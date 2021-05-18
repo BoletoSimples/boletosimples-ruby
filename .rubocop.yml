@@ -8,3 +8,6 @@ require:
 AllCops:
   NewCops: enable
   TargetRubyVersion: 2.7
+
+RSpec/MultipleExpectations:
+  Enabled: false

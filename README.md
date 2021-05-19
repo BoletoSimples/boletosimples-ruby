@@ -113,8 +113,7 @@ Exemplo:
 end
 
 # Cancelar um boleto
-@bank_billet = BoletoSimples::BankBillet.find(1)
-@bank_billet.cancel
+@bank_billet = BoletoSimples::BankBillet.cancel(id: 1)
 
 ```
 

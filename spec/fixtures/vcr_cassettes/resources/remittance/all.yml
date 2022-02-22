@@ -1,84 +1,85 @@
 ---
 http_interactions:
-- request:
-    method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/remittances
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - email@minhaempresa.com.br
-      Authorization:
-      - Bearer BOLETOSIMPLES_API_TOKEN
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - Cowboy
-      Connection:
-      - keep-alive
-      X-Frame-Options:
-      - DENY
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      X-Download-Options:
-      - noopen
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      Per-Page:
-      - '50'
-      Page:
-      - ''
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '48'
-      Etag:
-      - W/"c6dffee977e49ac44b9150d254522678"
-      Cache-Control:
-      - must-revalidate, private, max-age=0
-      X-Request-Id:
-      - c6ac7f05-59bb-472c-992a-f12624a66297
-      X-Runtime:
-      - '0.050576'
-      Date:
-      - Tue, 13 Apr 2021 17:18:39 GMT
-      X-Rack-Cache:
-      - miss
-      Strict-Transport-Security:
-      - max-age=2629746
-      Vary:
-      - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '[{"id":2350,"filename":"2104131.REM","created_via_api":false,"status":"processed","bank_billet_account_id":3547,"created_at":"2021-04-13T09:30:38-03:00","processed_at":"2021-04-13T09:30:39-03:00","url":"https://sandbox.boletosimples.com.br/remessas/0636d86fb51bd17d3f65c73e20b87ecd/download","bank_billet_ids":[382118,382118,382119,382120,382121,382122,382261,382262,382263,382264,382264],"remittance_number":3,"sent_via_integration":null,"bank_billet_remittances":[{"id":347978,"our_code":"1002","occurrence":"02","remittance_id":2350,"bank_billet_id":382118,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Pedido
-        de Baixa","created_at":"2021-04-12T11:51:09-03:00"},{"id":347979,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382118,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
-        de Título","created_at":"2021-04-12T11:51:10-03:00"},{"id":347980,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382119,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
-        de Título","created_at":"2021-04-12T11:55:04-03:00"},{"id":347981,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382120,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
-        de Título","created_at":"2021-04-12T11:55:16-03:00"},{"id":347982,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382121,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
-        de Título","created_at":"2021-04-12T11:55:18-03:00"},{"id":347983,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382122,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
-        de Título","created_at":"2021-04-12T11:55:20-03:00"},{"id":348115,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382261,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
-        de Título","created_at":"2021-04-13T09:27:23-03:00"},{"id":348116,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382262,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
-        de Título","created_at":"2021-04-13T09:27:23-03:00"},{"id":348117,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382263,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
-        de Título","created_at":"2021-04-13T09:27:25-03:00"},{"id":348118,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382264,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
-        de Título","created_at":"2021-04-13T09:27:31-03:00"},{"id":348119,"our_code":"1034","occurrence":"34","remittance_id":2350,"bank_billet_id":382264,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Pago
-        diretamente ao beneficiário","created_at":"2021-04-13T09:30:20-03:00"}]}]'
-  recorded_at: Tue, 13 Apr 2021 17:18:39 GMT
+  - request:
+      method: get
+      uri: https://api-sandbox.kobana.com.br/v1/remittances
+      body:
+        encoding: US-ASCII
+        string: ''
+      headers:
+        User-Agent:
+          - email@minhaempresa.com.br
+        Authorization:
+          - Bearer BOLETOSIMPLES_API_TOKEN
+        Accept:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - Cowboy
+        Connection:
+          - keep-alive
+        X-Frame-Options:
+          - DENY
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Content-Type-Options:
+          - nosniff
+        X-Download-Options:
+          - noopen
+        X-Permitted-Cross-Domain-Policies:
+          - none
+        Referrer-Policy:
+          - strict-origin-when-cross-origin
+        Per-Page:
+          - '50'
+        Page:
+          - ''
+        Content-Type:
+          - application/json; charset=utf-8
+        X-Ratelimit-Limit:
+          - '60'
+        X-Ratelimit-Remaining:
+          - '48'
+        Etag:
+          - W/"c6dffee977e49ac44b9150d254522678"
+        Cache-Control:
+          - must-revalidate, private, max-age=0
+        X-Request-Id:
+          - c6ac7f05-59bb-472c-992a-f12624a66297
+        X-Runtime:
+          - '0.050576'
+        Date:
+          - Tue, 13 Apr 2021 17:18:39 GMT
+        X-Rack-Cache:
+          - miss
+        Strict-Transport-Security:
+          - max-age=2629746
+        Vary:
+          - Origin,Accept-Encoding
+        Transfer-Encoding:
+          - chunked
+        Via:
+          - 1.1 vegur
+      body:
+        encoding: UTF-8
+        string:
+          '[{"id":2350,"filename":"2104131.REM","created_via_api":false,"status":"processed","bank_billet_account_id":3547,"created_at":"2021-04-13T09:30:38-03:00","processed_at":"2021-04-13T09:30:39-03:00","url":"https://sandbox.boletosimples.com.br/remessas/0636d86fb51bd17d3f65c73e20b87ecd/download","bank_billet_ids":[382118,382118,382119,382120,382121,382122,382261,382262,382263,382264,382264],"remittance_number":3,"sent_via_integration":null,"bank_billet_remittances":[{"id":347978,"our_code":"1002","occurrence":"02","remittance_id":2350,"bank_billet_id":382118,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Pedido
+          de Baixa","created_at":"2021-04-12T11:51:09-03:00"},{"id":347979,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382118,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+          de Título","created_at":"2021-04-12T11:51:10-03:00"},{"id":347980,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382119,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+          de Título","created_at":"2021-04-12T11:55:04-03:00"},{"id":347981,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382120,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+          de Título","created_at":"2021-04-12T11:55:16-03:00"},{"id":347982,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382121,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+          de Título","created_at":"2021-04-12T11:55:18-03:00"},{"id":347983,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382122,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+          de Título","created_at":"2021-04-12T11:55:20-03:00"},{"id":348115,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382261,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+          de Título","created_at":"2021-04-13T09:27:23-03:00"},{"id":348116,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382262,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+          de Título","created_at":"2021-04-13T09:27:23-03:00"},{"id":348117,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382263,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+          de Título","created_at":"2021-04-13T09:27:25-03:00"},{"id":348118,"our_code":"1001","occurrence":"01","remittance_id":2350,"bank_billet_id":382264,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Entrada
+          de Título","created_at":"2021-04-13T09:27:31-03:00"},{"id":348119,"our_code":"1034","occurrence":"34","remittance_id":2350,"bank_billet_id":382264,"bank_billet_account_id":3547,"processed_at":"2021-04-13T09:30:40-03:00","occurrence_detail":"Pago
+          diretamente ao beneficiário","created_at":"2021-04-13T09:30:20-03:00"}]}]'
+    recorded_at: Tue, 13 Apr 2021 17:18:39 GMT
 recorded_with: VCR 6.0.0

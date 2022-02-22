@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billets
+    uri: https://api-sandbox.kobana.com.br/v1/bank_billets
     body:
       encoding: UTF-8
-      string: '{"bank_billet":{"amount":9.01,"description":"Despesas do contrato 0012","expire_at":"2022-01-01","customer_address":"Rua
+      string: '{"bank_billet":{"amount":9.01,"description":"Despesas do contrato 0012","expire_at":"2024-01-01","customer_address":"Rua
         quinhentos","customer_address_complement":"Sala 4","customer_address_number":"111","customer_city_name":"Rio
         de Janeiro","customer_cnpj_cpf":"34.565.715/0001-03","customer_email":"cliente@example.com","customer_neighborhood":"Sao
         Francisco","customer_person_name":"Joao da Silva","customer_person_type":"individual","customer_phone_number":"2112123434","customer_state":"RJ","customer_zipcode":"12312-123"}}'
@@ -25,10 +25,14 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Server:
-      - Cowboy
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Server:
+      - Cowboy
       X-Frame-Options:
       - DENY
       X-Xss-Protection:
@@ -41,46 +45,56 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
+      Expect-Ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Cross-Origin-Embedder-Policy:
+      - unsafe-none
+      Cross-Origin-Opener-Policy:
+      - unsafe-none
       Location:
-      - https://sandbox.boletosimples.com.br/api/v1/bank_billets/382369
-      Content-Type:
-      - application/json; charset=utf-8
+      - https://api-sandbox.kobana.com.br/api/v1/bank_billets/472529
       X-Ratelimit-Limit:
-      - '1000'
+      - '18000'
       X-Ratelimit-Remaining:
-      - '993'
+      - '17972'
       Etag:
-      - W/"bd19073eed4ab3aeb15a251e5af870ee"
+      - W/"1ef3d7869d8bf0227b135e317932e97a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 044c4197-9bfe-488e-bed4-752bb520bda8
+      - 399e78bb-9af5-42af-802e-49340b7af8de
       X-Runtime:
-      - '0.300482'
+      - '0.070999'
       Date:
-      - Tue, 13 Apr 2021 17:18:30 GMT
+      - Tue, 22 Feb 2022 17:30:25 GMT
       X-Rack-Cache:
       - invalidate, pass
       Strict-Transport-Security:
-      - max-age=2629746
+      - max-age=31556952; includeSubDomains; preload
       Vary:
       - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
+      X-Rack-Cors:
+      - miss; no-origin
       Via:
-      - 1.1 vegur
+      - 1.1 vegur, 1.1 ef571e66c5038660a5b767dcaa4205a4.cloudfront.net (CloudFront)
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - Qshb_PmQvg8_CR5ZW30mSu01cq7ANJdfKw5fTuE-pSXZtj_n3buzKQ==
     body:
       encoding: UTF-8
-      string: '{"id":382369,"expire_at":"2022-01-03","paid_at":null,"description":"Despesas
-        do contrato 0012","status":"generating","shorten_url":"https://sandbox.bole.to/3/ojkxyw","customer_person_name":"Joao
-        da Silva","customer_cnpj_cpf":"34.565.715/0001-03","customer_address":"Rua
+      string: '{"id":472529,"expire_at":"2024-01-02","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"generating","customer_person_name":"Joao da Silva","customer_cnpj_cpf":"34.565.715/0001-03","customer_address":"Rua
         quinhentos","customer_state":"RJ","customer_neighborhood":"Sao Francisco","customer_zipcode":"12312123","customer_address_number":"111","customer_address_complement":"Sala
-        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","customer_email_cc":null,"customer_ignore_email":null,"customer_mobile_local_code":null,"customer_mobile_number":null,"customer_nickname":null,"customer_notes":null,"created_via_api":true,"customer_city_name":"Rio
-        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://sandbox.bole.to/3/ojkxyw","formats":{"default":"https://sandbox.bole.to/3/ojkxyw","png":"https://sandbox.bole.to/3/ojkxyw.png?r=1618334310","pdf":"https://sandbox.bole.to/3/ojkxyw.pdf?r=1618334310","boleto_hibrido":"https://sandbox.bole.to/3/ojkxyw/boleto_hibrido?r=1618334310","boleto_pix":"https://sandbox.bole.to/3/ojkxyw/boleto_pix?r=1618334310","barcode":"https://sandbox.bole.to/3/ojkxyw/barcode","envelope":"https://sandbox.bole.to/3/ojkxyw/envelope","letter":"https://sandbox.bole.to/3/ojkxyw/letter","line":"https://sandbox.bole.to/3/ojkxyw/line","recibo":"https://sandbox.bole.to/3/ojkxyw/recibo"},"meta":null,"fine_for_delay":null,"fine_type":0,"fine_percentage":null,"fine_value":null,"days_for_fine":null,"late_payment_interest":null,"interest_type":0,"interest_daily_value":null,"interest_daily_percentage":null,"interest_monthly_percentage":null,"days_for_interest":null,"discount_type":0,"discount_limit_date":null,"discount_value":null,"discount_percentage":null,"days_for_revoke":null,"notes":null,"payment_count":1,"bank_billet_account_id":3547,"beneficiary_name":"J
-        Calçados","beneficiary_cnpj_cpf":"74.766.527/0001-68","beneficiary_address":"Praça
-        dos Três Poderes, 171,  - Zona Cívico-Administrativa, Brasília - DF, 70165900","beneficiary_assignor_code":"2332
-        / 12312-0","guarantor_name":null,"guarantor_cnpj_cpf":null,"payment_place":"Pagável
-        em qualquer banco até a data de vencimento.","instructions":null,"document_date":null,"document_type":"02","document_number":null,"acceptance":"N","processed_our_number":"109/00000067-1","processed_our_number_raw":"109000000671","bank_contract_slug":"itau-bs-109","agency_number":"2332","agency_digit":"3","account_number":"12312","account_digit":"2","extra1":null,"extra1_digit":null,"extra2":null,"extra2_digit":null,"line":"34191.09008
-        00006.712335 21231.200003 3 88540000000901","our_number":"00000067","customer_subscription_id":null,"installment_number":null,"installment_id":null,"carne_url":null,"bank_billet_layout_id":null,"created_at":"2021-04-13T14:18:30-03:00","updated_at":"2021-04-13T14:18:30-03:00","tags":[],"tag_list":"","document_type_label":"DM","addons":null,"ignore_email":false,"sue_code":null,"revoke_code":null,"first_instruction":null,"second_instruction":null,"guarantor_address_number":null,"guarantor_neighborhood":null,"guarantor_phone_number":null,"guarantor_city_name":null,"guarantor_state":null,"guarantor_zipcode":null,"guarantor_address":null,"guarantor_address_complement":null,"barcode":"34193885400000009011090000006712332123120000","registered_at":null,"prevent_registration":false,"customer_id":80707,"control_number":null,"divergent_payment_type":null,"divergent_payment_value_type":null,"divergent_payment_maximum_value":null,"divergent_payment_minimum_value":null,"divergent_payment_maximum_percentage":null,"divergent_payment_minimum_percentage":null,"divergent_payment_limit":null,"days_for_discount":null,"days_for_second_discount":null,"second_discount_percentage":null,"second_discount_value":null,"days_for_third_discount":null,"third_discount_percentage":null,"third_discount_value":null,"days_for_sue":null,"days_for_negativation":null,"interest_percentage":null,"interest_value":null,"interest_days_type":0,"customer_contact_person":null,"custom_attachment_name":null,"split_payment":false,"dispatch_type":1,"charge_type":1,"custom_data":null,"bank_billet_discharges":[],"bank_billet_remittances":[],"bank_billet_payments":[],"bank_billet_registrations":[],"bank_billet_split_accounts":[]}'
-  recorded_at: Tue, 13 Apr 2021 17:18:30 GMT
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","customer_email_cc":null,"customer_ignore_email":null,"customer_ignore_sms":null,"customer_mobile_local_code":null,"customer_mobile_number":null,"customer_nickname":null,"customer_notes":null,"created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":0.0,"amount":9.01,"url":"https://sandbox.bole.to/3/lodlme","formats":{"default":"https://sandbox.bole.to/3/lodlme","png":"https://sandbox.bole.to/3/lodlme.png","pdf":"https://sandbox.bole.to/3/lodlme.pdf","boleto_hibrido":"https://sandbox.bole.to/3/lodlme/boleto_hibrido","boleto_pix":"https://sandbox.bole.to/3/lodlme/boleto_pix","barcode":"https://sandbox.bole.to/3/lodlme/barcode","envelope":"https://sandbox.bole.to/3/lodlme/envelope","letter":"https://sandbox.bole.to/3/lodlme/letter","line":"https://sandbox.bole.to/3/lodlme/line","recibo":"https://sandbox.bole.to/3/lodlme/recibo"},"meta":null,"fine_for_delay":null,"fine_type":0,"fine_percentage":null,"fine_value":null,"days_for_fine":null,"late_payment_interest":null,"interest_type":0,"interest_daily_value":null,"interest_daily_percentage":null,"interest_monthly_percentage":null,"days_for_interest":null,"discount_type":0,"discount_limit_date":null,"discount_value":null,"discount_percentage":null,"days_for_revoke":null,"notes":null,"payment_count":1,"bank_billet_account_id":659,"beneficiary_name":"Kivanio
+        Pereira Barbosa","beneficiary_cnpj_cpf":"000.233.771-19","beneficiary_address":"Rua
+        Quatro, 9, 78058-330","beneficiary_assignor_code":"0001/123322-0","guarantor_name":null,"guarantor_cnpj_cpf":null,"payment_place":"Pagável
+        em qualquer banco até a data de vencimento.","instructions":null,"document_date":null,"document_type":"02","document_number":null,"acceptance":"N","processed_our_number":"14000000000000085-5","processed_our_number_raw":"140000000000000855","bank_contract_slug":"caixa-rg","agency_number":"2342","agency_digit":"2","account_number":"0012432","account_digit":"1","extra1":"0123322","extra1_digit":null,"extra2":null,"extra2_digit":null,"line":"10491.23324
+        20000.100048 00000.008581 1 95830000000901","our_number":"000000000000085","customer_subscription_id":null,"installment_total":null,"installment_number":null,"installment_id":null,"carne_url":null,"bank_billet_layout_id":null,"created_at":"2022-02-22T14:30:25-03:00","updated_at":"2022-02-22T14:30:25-03:00","tags":[],"tag_list":null,"document_type_label":"DM","addons":null,"ignore_email":false,"ignore_sms":false,"sue_code":null,"revoke_code":null,"first_instruction":null,"second_instruction":null,"guarantor_address_number":null,"guarantor_neighborhood":null,"guarantor_phone_number":null,"guarantor_city_name":null,"guarantor_state":null,"guarantor_zipcode":null,"guarantor_address":null,"guarantor_address_complement":null,"barcode":"10491958300000009011233220000100040000000858","registered_at":null,"prevent_registration":false,"customer_id":null,"control_number":null,"divergent_payment_type":null,"divergent_payment_value_type":null,"divergent_payment_maximum_value":null,"divergent_payment_minimum_value":null,"divergent_payment_maximum_percentage":null,"divergent_payment_minimum_percentage":null,"divergent_payment_limit":null,"days_for_discount":null,"days_for_second_discount":null,"second_discount_percentage":null,"second_discount_value":null,"days_for_third_discount":null,"third_discount_percentage":null,"third_discount_value":null,"days_for_sue":null,"days_for_negativation":null,"interest_percentage":null,"interest_value":null,"interest_days_type":0,"customer_contact_person":null,"custom_attachment_name":null,"split_payment":false,"dispatch_type":1,"charge_type":1,"custom_data":null,"issued_at":"2022-02-22T14:30:25-03:00","shorten_url":"https://sandbox.bole.to/3/lodlme","pix_enabled":false,"pix_qrcode":null,"password_protected_mode":null,"revoked_at":null,"bank_billet_discharges":[],"bank_billet_remittances":[],"bank_billet_payments":[],"bank_billet_registrations":[],"bank_billet_split_accounts":[],"pix":[]}'
+  recorded_at: Tue, 22 Feb 2022 17:30:25 GMT
 recorded_with: VCR 6.0.0

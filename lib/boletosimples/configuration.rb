@@ -5,8 +5,8 @@ module BoletoSimples
     attr_accessor :environment, :cache, :user_agent, :api_token, :debug
 
     BASE_URI = {
-      sandbox: 'https://sandbox.boletosimples.com.br/api/v1',
-      production: 'https://boletosimples.com.br/api/v1',
+      sandbox: 'https://api-sandbox.kobana.com.br/v1',
+      production: 'https://api.kobana.com.br/v1',
       development: 'http://localhost:5000/api/v1'
     }.freeze
 

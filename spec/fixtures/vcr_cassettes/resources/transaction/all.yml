@@ -1,74 +1,75 @@
 ---
 http_interactions:
-- request:
-    method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/transactions
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - email@minhaempresa.com.br
-      Authorization:
-      - Bearer BOLETOSIMPLES_API_TOKEN
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - Cowboy
-      Connection:
-      - keep-alive
-      X-Frame-Options:
-      - DENY
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      X-Download-Options:
-      - noopen
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      Per-Page:
-      - '50'
-      Page:
-      - ''
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '39'
-      Etag:
-      - W/"4642ec3d0b34807fa3dcb57d6ebca932"
-      Cache-Control:
-      - must-revalidate, private, max-age=0
-      X-Request-Id:
-      - a207601d-1426-45bc-aaeb-4d1413f507c3
-      X-Runtime:
-      - '0.039746'
-      Date:
-      - Tue, 13 Apr 2021 17:18:55 GMT
-      X-Rack-Cache:
-      - miss
-      Strict-Transport-Security:
-      - max-age=2629746
-      Vary:
-      - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '[{"id":526,"amount":-123.0,"created_at":"2021-04-13T09:34:52-03:00","description":"Upgrade
-        de Plano","kind":"plan_fee","processed_at":null,"sent_at":null,"status":"unprocessed","credit_at":"2021-04-13"}]'
-  recorded_at: Tue, 13 Apr 2021 17:18:55 GMT
+  - request:
+      method: get
+      uri: https://api-sandbox.kobana.com.br/v1/transactions
+      body:
+        encoding: US-ASCII
+        string: ''
+      headers:
+        User-Agent:
+          - email@minhaempresa.com.br
+        Authorization:
+          - Bearer BOLETOSIMPLES_API_TOKEN
+        Accept:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - Cowboy
+        Connection:
+          - keep-alive
+        X-Frame-Options:
+          - DENY
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Content-Type-Options:
+          - nosniff
+        X-Download-Options:
+          - noopen
+        X-Permitted-Cross-Domain-Policies:
+          - none
+        Referrer-Policy:
+          - strict-origin-when-cross-origin
+        Per-Page:
+          - '50'
+        Page:
+          - ''
+        Content-Type:
+          - application/json; charset=utf-8
+        X-Ratelimit-Limit:
+          - '60'
+        X-Ratelimit-Remaining:
+          - '39'
+        Etag:
+          - W/"4642ec3d0b34807fa3dcb57d6ebca932"
+        Cache-Control:
+          - must-revalidate, private, max-age=0
+        X-Request-Id:
+          - a207601d-1426-45bc-aaeb-4d1413f507c3
+        X-Runtime:
+          - '0.039746'
+        Date:
+          - Tue, 13 Apr 2021 17:18:55 GMT
+        X-Rack-Cache:
+          - miss
+        Strict-Transport-Security:
+          - max-age=2629746
+        Vary:
+          - Origin,Accept-Encoding
+        Transfer-Encoding:
+          - chunked
+        Via:
+          - 1.1 vegur
+      body:
+        encoding: UTF-8
+        string:
+          '[{"id":526,"amount":-123.0,"created_at":"2021-04-13T09:34:52-03:00","description":"Upgrade
+          de Plano","kind":"plan_fee","processed_at":null,"sent_at":null,"status":"unprocessed","credit_at":"2021-04-13"}]'
+    recorded_at: Tue, 13 Apr 2021 17:18:55 GMT
 recorded_with: VCR 6.0.0

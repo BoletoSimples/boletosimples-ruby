@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/email_deliveries
+    uri: https://api-sandbox.kobana.com.br/v1/email_deliveries
     body:
       encoding: US-ASCII
       string: ''

@@ -9,14 +9,14 @@ module BoletoSimples
   # Examples:
   #
   #   BoletoSimples::BankBillet.all
-  #   BoletoSimples::ResponseError: 401 POST https://sandbox.boletosimples.com.br/api/v1/bank_billets
+  #   BoletoSimples::ResponseError: 401 POST https://api-sandbox.kobana.com.br/v1/bank_billets
   #
   #   begin
   #     BoletoSimples::BankBillet.all
   #   rescue BoletoSimples::ResponseError => response
   #     response.status # => 401
   #     response.method # => "GET"
-  #     response.url # => "https://sandbox.boletosimples.com.br/api/v1/bank_billets"
+  #     response.url # => "https://api-sandbox.kobana.com.br/v1/bank_billets"
   #     response.body # => "{"error":"Você precisa se logar ou registrar antes de prosseguir."}"
   #     response.error_message # => "Você precisa se logar ou registrar antes de prosseguir."
   #   end

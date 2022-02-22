@@ -9,7 +9,7 @@ RSpec.describe BoletoSimples::Customer do
       VCR.use_cassette('resources/customer/create/valid') do
         @customer = described_class.create(
           person_name: 'Maria José',
-          cnpj_cpf: '54.872.822/0001-91',
+          cnpj_cpf: '84.232.027/0001-08',
           email: 'cliente@example.com',
           address: 'Rua quinhentos',
           city_name: 'Rio de Janeiro',
@@ -42,8 +42,13 @@ RSpec.describe BoletoSimples::Customer do
           end
 
           it {
-            expect(subject.response_errors).to eq([{ code: 422, status: 422,
-                                                     title: 'customer não pode ficar em branco' }])
+            expect(subject.response_errors).to eq({ address: ['não pode ficar em branco'],
+                                                    city_name: ['não pode ficar em branco'],
+                                                    cnpj_cpf: ['não é um CNPJ ou CPF válido'],
+                                                    neighborhood: ['não pode ficar em branco'],
+                                                    person_name: ['não pode ficar em branco'],
+                                                    state: ['não está incluído na lista'],
+                                                    zipcode: ['não pode ficar em branco'] })
           }
         end
 
@@ -56,7 +61,7 @@ RSpec.describe BoletoSimples::Customer do
 
           it {
             expect(subject.response_errors).to eq({ person_name: ['não pode ficar em branco'],
-                                                    cnpj_cpf: ['não pode ficar em branco'], zipcode: ['não pode ficar em branco'],
+                                                    cnpj_cpf: ['não é um CNPJ ou CPF válido'], zipcode: ['não pode ficar em branco'],
                                                     address: ['não pode ficar em branco'], neighborhood: ['não pode ficar em branco'],
                                                     city_name: ['não pode ficar em branco'], state: ['não está incluído na lista'] })
           }

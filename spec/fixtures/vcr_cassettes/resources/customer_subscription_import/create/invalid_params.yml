@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.boletosimples.com.br/api/v1/imports/customer_subscriptions
+    uri: https://api-sandbox.kobana.com.br/v1/imports/customer_subscriptions
     body:
       encoding: UTF-8
       string: '{"customer_subscription_import":{"source":""}}'
@@ -22,10 +22,14 @@ http_interactions:
       code: 422
       message: Unprocessable Entity
     headers:
-      Server:
-      - Cowboy
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Server:
+      - Cowboy
       X-Frame-Options:
       - DENY
       X-Xss-Protection:
@@ -38,32 +42,44 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
-      Content-Type:
-      - application/json; charset=utf-8
+      Expect-Ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Cross-Origin-Embedder-Policy:
+      - unsafe-none
+      Cross-Origin-Opener-Policy:
+      - unsafe-none
       X-Ratelimit-Limit:
-      - '1000'
+      - '18000'
       X-Ratelimit-Remaining:
-      - '998'
+      - '17966'
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - f95b83a5-aa00-4869-8e51-f7ff36ff2cca
+      - b54b032e-494b-4eb5-9188-054ab468cf95
       X-Runtime:
-      - '0.030666'
+      - '0.018397'
       Date:
-      - Tue, 13 Apr 2021 17:18:21 GMT
+      - Tue, 22 Feb 2022 17:30:30 GMT
       X-Rack-Cache:
       - invalidate, pass
       Strict-Transport-Security:
-      - max-age=2629746
+      - max-age=31556952; includeSubDomains; preload
       Vary:
       - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
+      X-Rack-Cors:
+      - miss; no-origin
       Via:
-      - 1.1 vegur
+      - 1.1 vegur, 1.1 d2c636aea3f69033bb2125c4038e1c48.cloudfront.net (CloudFront)
+      X-Cache:
+      - Error from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - 4R9b1LHH1dD0kTB0YljVqYtyz6-s6RiDtwh7xCkEVAbqwSia9_SwmA==
     body:
       encoding: UTF-8
       string: '{"errors":{"source":["não pode ficar em branco"]}}'
-  recorded_at: Tue, 13 Apr 2021 17:18:21 GMT
+  recorded_at: Tue, 22 Feb 2022 17:30:30 GMT
 recorded_with: VCR 6.0.0

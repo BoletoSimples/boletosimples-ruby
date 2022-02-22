@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/imports/customers
+    uri: https://api-sandbox.kobana.com.br/v1/imports/customers
     body:
       encoding: US-ASCII
       string: ''
@@ -20,10 +20,14 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Server:
+      - Cowboy
       X-Frame-Options:
       - DENY
       X-Xss-Protection:
@@ -36,39 +40,51 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
+      Expect-Ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Cross-Origin-Embedder-Policy:
+      - unsafe-none
+      Cross-Origin-Opener-Policy:
+      - unsafe-none
       Per-Page:
       - '50'
       Page:
       - ''
-      Content-Type:
-      - application/json; charset=utf-8
       X-Ratelimit-Limit:
-      - '60'
+      - '100'
       X-Ratelimit-Remaining:
-      - '55'
+      - '54'
       Etag:
-      - W/"b2fa3b7aea3069b3f91a25409d0357da"
+      - W/"99302283bf335bb8458a703a245d1597"
       Cache-Control:
       - must-revalidate, private, max-age=0
       X-Request-Id:
-      - a4954e35-0a78-44db-9bfc-e5f57ea14ecc
+      - aa441ad2-4138-4abc-9d00-7ff1f05f020f
       X-Runtime:
-      - '0.029875'
+      - '0.036888'
       Date:
-      - Tue, 13 Apr 2021 17:18:26 GMT
+      - Tue, 22 Feb 2022 17:30:45 GMT
       X-Rack-Cache:
       - miss
       Strict-Transport-Security:
-      - max-age=2629746
+      - max-age=31556952; includeSubDomains; preload
       Vary:
       - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
+      X-Rack-Cors:
+      - miss; no-origin
       Via:
-      - 1.1 vegur
+      - 1.1 vegur, 1.1 189ad47cf7c6f3a8b745cb053efec004.cloudfront.net (CloudFront)
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - 9LpscuaUQ3VLu0knktPEVCHZE8nugUR9UEJdm3SSgwsBRZwlO2i_VA==
     body:
       encoding: UTF-8
-      string: '[{"id":1054,"created_rows":0,"enqueued_at":"2021-04-13T14:18:22-03:00","started_at":null,"finished_at":null,"processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":null,"processed_rows":0,"total_rows":null,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"enqueued","created_via_api":true},{"id":1052,"created_rows":0,"enqueued_at":"2021-04-13T11:44:07-03:00","started_at":"2021-04-13T11:46:17-03:00","finished_at":"2021-04-13T11:46:18-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":1049,"created_rows":0,"enqueued_at":"2021-04-13T11:39:53-03:00","started_at":"2021-04-13T11:39:53-03:00","finished_at":"2021-04-13T11:39:54-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":1048,"created_rows":0,"enqueued_at":"2021-04-13T11:38:10-03:00","started_at":"2021-04-13T11:39:38-03:00","finished_at":"2021-04-13T11:39:39-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":1046,"created_rows":0,"enqueued_at":"2021-04-13T11:35:36-03:00","started_at":"2021-04-13T11:39:36-03:00","finished_at":"2021-04-13T11:39:37-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":1044,"created_rows":0,"enqueued_at":"2021-04-13T11:26:17-03:00","started_at":"2021-04-13T11:39:35-03:00","finished_at":"2021-04-13T11:39:35-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":1041,"created_rows":0,"enqueued_at":"2021-04-13T11:10:03-03:00","started_at":"2021-04-13T11:12:08-03:00","finished_at":"2021-04-13T11:12:08-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":"ERR
-        max number of clients reached","processed_rows":0,"total_rows":null,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"fatal_error","created_via_api":true},{"id":1039,"created_rows":0,"enqueued_at":"2021-04-13T10:57:26-03:00","started_at":"2021-04-13T10:57:26-03:00","finished_at":"2021-04-13T10:57:27-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":1038,"created_rows":0,"enqueued_at":"2021-04-13T10:55:38-03:00","started_at":"2021-04-13T10:57:01-03:00","finished_at":"2021-04-13T10:57:02-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":1036,"created_rows":0,"enqueued_at":"2021-04-13T10:05:24-03:00","started_at":"2021-04-13T10:07:35-03:00","finished_at":"2021-04-13T10:07:37-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":1035,"created_rows":0,"enqueued_at":"2021-04-13T10:00:20-03:00","started_at":"2021-04-13T10:02:04-03:00","finished_at":"2021-04-13T10:02:05-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":1032,"created_rows":0,"enqueued_at":"2021-04-13T09:27:06-03:00","started_at":"2021-04-13T09:28:53-03:00","finished_at":"2021-04-13T09:28:54-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":1030,"created_rows":0,"enqueued_at":"2021-04-12T11:55:23-03:00","started_at":"2021-04-12T11:57:07-03:00","finished_at":"2021-04-12T11:57:08-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":1029,"created_rows":0,"enqueued_at":"2021-04-09T11:17:02-03:00","started_at":"2021-04-09T11:19:25-03:00","finished_at":"2021-04-09T11:19:27-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":1026,"created_rows":0,"enqueued_at":"2021-04-09T10:01:56-03:00","started_at":"2021-04-09T10:03:37-03:00","finished_at":"2021-04-09T10:03:39-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true}]'
-  recorded_at: Tue, 13 Apr 2021 17:18:26 GMT
+      string: '[{"id":1280,"created_rows":0,"enqueued_at":null,"started_at":null,"finished_at":null,"processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":null,"processed_rows":0,"total_rows":null,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"pending","created_via_api":true},{"id":1278,"created_rows":0,"enqueued_at":null,"started_at":"2022-02-22T14:27:22-03:00","finished_at":"2022-02-22T14:27:23-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":"ERR
+        max number of clients reached","processed_rows":0,"total_rows":null,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"fatal_error","created_via_api":true},{"id":1025,"created_rows":0,"enqueued_at":"2021-04-09T09:51:10-03:00","started_at":"2021-04-09T09:51:55-03:00","finished_at":"2021-04-09T09:51:55-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":1022,"created_rows":0,"enqueued_at":"2021-04-09T09:12:03-03:00","started_at":"2021-04-09T09:14:32-03:00","finished_at":"2021-04-09T09:14:34-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true},{"id":844,"created_rows":0,"enqueued_at":"2020-10-06T09:17:21-03:00","started_at":"2020-10-06T09:17:22-03:00","finished_at":"2020-10-06T09:17:23-03:00","processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":[],"processed_rows":0,"total_rows":0,"updated_rows":0,"source_file_name":"customers.csv","source_file_size":190,"status":"done","created_via_api":true}]'
+  recorded_at: Tue, 22 Feb 2022 17:30:45 GMT
 recorded_with: VCR 6.0.0

@@ -37,4 +37,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'test-prof'
   gem.add_development_dependency 'vcr'
   gem.add_development_dependency 'webmock'
+  gem.metadata['rubygems_mfa_required'] = 'true'
 end

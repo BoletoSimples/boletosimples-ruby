@@ -5,7 +5,7 @@
 
 [gem]: https://rubygems.org/gems/boletosimples
 
-Biblioteca Ruby para acessar informações do [Boleto Simples](http://boletosimples.com.br) através da [API](http://api.boletosimples.com.br).
+Biblioteca Ruby para acessar informações da [Kobana](https://www.kobana.com.br) através da [API](https://api.kobana.com.br).
 
 ## Instalação
 
@@ -23,15 +23,15 @@ Ou instale você mesmo:
 
 ## Configuração
 
-Saiba mais sobre o [Token de API ](https://api.boletosimples.com.br/authentication/token/)
+Saiba mais sobre o [Token de API ](https://developers.kobana.com.br/reference/token-de-acesso)
 
 ```ruby
 require 'boletosimples'
 
 BoletoSimples.configure do |c|
   c.environment = :production # defaut :sandbox
-  # production - https://boletosimples.com.br/conta/api/tokens
-  # sandbox - https://sandbox.boletosimples.com.br/conta/api/tokens
+  # production - https://app.kobana.com.br/conta/api/tokens
+  # sandbox - https://app-sandbox.kobana.com.br/conta/api/tokens
   c.api_token = 'api-token'
   c.user_agent = 'email@minhaempresa.com.br' #Colocar um e-mail válido para contatos técnicos relacionado ao uso da API.
   # c.debug = true
@@ -50,7 +50,7 @@ ENV['BOLETOSIMPLES_DEBUG']
 
 ### Configurando cache
 
-É altamente recomendável utilizar o cache para evitar chegar no [limite de requisições](http://api.boletosimples.com.br/#limite-de-requisicoes)
+É altamente recomendável utilizar o cache para evitar chegar no [limite de requisições](https://developers.kobana.com.br/reference/limite-de-requisições)
 
 Para isso recomendamos a utilização da gem [Dalli](https://github.com/mperham/dalli)
 

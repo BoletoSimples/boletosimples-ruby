@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions
+    uri: https://api-sandbox.kobana.com.br/v1/customer_subscriptions
     body:
       encoding: UTF-8
       string: '{"customer_subscription":{"amount":1120.4,"cycle":"monthly","description":"Hospedagem","customer_address":"Rua
@@ -25,10 +25,14 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Server:
-      - Cowboy
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Server:
+      - Cowboy
       X-Frame-Options:
       - DENY
       X-Xss-Protection:
@@ -41,40 +45,52 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
+      Expect-Ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Cross-Origin-Embedder-Policy:
+      - unsafe-none
+      Cross-Origin-Opener-Policy:
+      - unsafe-none
       Location:
-      - https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/2640
-      Content-Type:
-      - application/json; charset=utf-8
+      - https://api-sandbox.kobana.com.br/api/v1/customer_subscriptions/3201
       X-Ratelimit-Limit:
-      - '1000'
+      - '18000'
       X-Ratelimit-Remaining:
-      - '977'
+      - '17961'
       Etag:
-      - W/"272cc1f6114191e648710a01905bcd61"
+      - W/"e8d9ffd24772e55c7d7d6c230dbc3a2f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9fea6eb5-9ff8-409c-af9f-929c9ff6235d
+      - ca7127e6-78f9-4fee-9a39-001c7f5e4954
       X-Runtime:
-      - '0.184483'
+      - '0.077451'
       Date:
-      - Tue, 13 Apr 2021 17:18:56 GMT
+      - Tue, 22 Feb 2022 17:30:36 GMT
       X-Rack-Cache:
       - invalidate, pass
       Strict-Transport-Security:
-      - max-age=2629746
+      - max-age=31556952; includeSubDomains; preload
       Vary:
       - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
+      X-Rack-Cors:
+      - miss; no-origin
       Via:
-      - 1.1 vegur
+      - 1.1 vegur, 1.1 3f72a8b28c744ea2f627e9f8a8ac8282.cloudfront.net (CloudFront)
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - fP3zFZplXcWBWvsbd1AY3Rbj4Vb7LHUckehRDOabxRq3UC9eWVAyjQ==
     body:
       encoding: UTF-8
-      string: '{"id":2640,"amount":1120.4,"cycle":"monthly","next_billing":"2021-05-13","end_at":null,"instructions":null,"customer_id":80703,"customer_person_name":"Joao
+      string: '{"id":3201,"amount":1120.4,"cycle":"monthly","next_billing":"2022-03-22","end_at":null,"instructions":null,"customer_id":93340,"customer_person_name":"Joao
         da Silva","customer_cnpj_cpf":"18.033.842/0001-05","customer_address":"Rua
         quinhentos","customer_state":"RJ","customer_neighborhood":"Sao Francisco","customer_zipcode":"12312123","customer_address_number":"111","customer_address_complement":"Sala
         4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","customer_city_name":"Rio
-        de Janeiro","customer_email_cc":null,"customer_ignore_email":null,"customer_mobile_local_code":null,"customer_mobile_number":null,"customer_nickname":null,"customer_notes":null,"description":"Hospedagem","created_at":"2021-04-13T14:18:56-03:00","updated_at":"2021-04-13T14:18:56-03:00","created_via_api":true,"days_in_advance":7,"bank_billet_account_id":3547,"fine_for_delay":null,"fine_type":0,"fine_percentage":null,"fine_value":null,"days_for_fine":null,"late_payment_interest":null,"interest_type":0,"interest_daily_value":null,"interest_daily_percentage":null,"interest_monthly_percentage":null,"days_for_interest":null,"discount_type":0,"days_for_discount":null,"discount_value":null,"discount_percentage":null,"email":null,"bank_billet_layout_id":null,"bank_billet_ids":[],"notes":null,"payment_count":1,"tags":[],"tag_list":"","prevent_registration":false,"divergent_payment_type":null,"divergent_payment_value_type":null,"divergent_payment_maximum_value":null,"divergent_payment_minimum_value":null,"divergent_payment_maximum_percentage":null,"divergent_payment_minimum_percentage":null,"divergent_payment_limit":null,"days_for_second_discount":null,"second_discount_percentage":null,"second_discount_value":null,"days_for_third_discount":null,"third_discount_percentage":null,"third_discount_value":null,"days_for_revoke":null,"days_for_sue":null,"days_for_negativation":null,"interest_percentage":null,"interest_value":null,"interest_days_type":0,"customer_contact_person":null,"custom_attachment_name":null,"guarantor_name":null,"guarantor_cnpj_cpf":null,"guarantor_address_number":null,"guarantor_neighborhood":null,"guarantor_phone_number":null,"guarantor_city_name":null,"guarantor_state":null,"guarantor_zipcode":null,"guarantor_address":null,"guarantor_address_complement":null}'
-  recorded_at: Tue, 13 Apr 2021 17:18:56 GMT
+        de Janeiro","customer_email_cc":null,"customer_ignore_email":null,"customer_ignore_sms":null,"customer_mobile_local_code":null,"customer_mobile_number":null,"customer_nickname":null,"customer_notes":null,"description":"Hospedagem","created_at":"2022-02-22T14:30:36-03:00","updated_at":"2022-02-22T14:30:36-03:00","created_via_api":true,"days_in_advance":7,"bank_billet_account_id":659,"fine_for_delay":null,"fine_type":0,"fine_percentage":null,"fine_value":null,"days_for_fine":null,"late_payment_interest":null,"interest_type":0,"interest_daily_value":null,"interest_daily_percentage":null,"interest_monthly_percentage":null,"days_for_interest":null,"discount_type":0,"days_for_discount":null,"discount_value":null,"discount_percentage":null,"email":null,"bank_billet_layout_id":null,"bank_billet_ids":[],"notes":null,"payment_count":1,"tags":[],"tag_list":null,"prevent_registration":false,"divergent_payment_type":null,"divergent_payment_value_type":null,"divergent_payment_maximum_value":null,"divergent_payment_minimum_value":null,"divergent_payment_maximum_percentage":null,"divergent_payment_minimum_percentage":null,"divergent_payment_limit":null,"days_for_second_discount":null,"second_discount_percentage":null,"second_discount_value":null,"days_for_third_discount":null,"third_discount_percentage":null,"third_discount_value":null,"days_for_revoke":null,"days_for_sue":null,"days_for_negativation":null,"interest_percentage":null,"interest_value":null,"interest_days_type":0,"customer_contact_person":null,"custom_attachment_name":null,"guarantor_name":null,"guarantor_cnpj_cpf":null,"guarantor_address_number":null,"guarantor_neighborhood":null,"guarantor_phone_number":null,"guarantor_city_name":null,"guarantor_state":null,"guarantor_zipcode":null,"guarantor_address":null,"guarantor_address_complement":null}'
+  recorded_at: Tue, 22 Feb 2022 17:30:36 GMT
 recorded_with: VCR 6.0.0

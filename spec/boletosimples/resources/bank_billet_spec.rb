@@ -10,7 +10,7 @@ RSpec.describe BoletoSimples::BankBillet do
         @bank_billet = described_class.create(
           amount: 9.01,
           description: 'Despesas do contrato 0012',
-          expire_at: '2022-01-01',
+          expire_at: '2024-01-01',
           customer_address: 'Rua quinhentos',
           customer_address_complement: 'Sala 4',
           customer_address_number: '111',
@@ -60,7 +60,7 @@ RSpec.describe BoletoSimples::BankBillet do
 
           it {
             expect(subject.response_errors).to eq({ customer_person_name: ['não pode ficar em branco'],
-                                                    customer_cnpj_cpf: ['não pode ficar em branco'],
+                                                    customer_cnpj_cpf: ['não é um CNPJ ou CPF válido'],
                                                     customer_zipcode: ['não pode ficar em branco'],
                                                     expire_at: ['não pode ficar em branco', 'não é uma data válida'],
                                                     customer_address: ['não pode ficar em branco'],

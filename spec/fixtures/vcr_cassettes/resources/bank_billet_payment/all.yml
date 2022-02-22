@@ -1,75 +1,76 @@
 ---
 http_interactions:
-- request:
-    method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_payments
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - email@minhaempresa.com.br
-      Authorization:
-      - Bearer BOLETOSIMPLES_API_TOKEN
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - Cowboy
-      Connection:
-      - keep-alive
-      X-Frame-Options:
-      - DENY
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      X-Download-Options:
-      - noopen
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      Per-Page:
-      - '50'
-      Page:
-      - ''
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '46'
-      Etag:
-      - W/"ca124465a697c6cc89fd806a70928df0"
-      Cache-Control:
-      - must-revalidate, private, max-age=0
-      X-Request-Id:
-      - 236ba38b-f38e-4f45-8c07-fac86c6cfba6
-      X-Runtime:
-      - '0.053624'
-      Date:
-      - Tue, 13 Apr 2021 17:18:41 GMT
-      X-Rack-Cache:
-      - miss
-      Strict-Transport-Security:
-      - max-age=2629746
-      Vary:
-      - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '[{"id":5796,"bank_billet_id":382262,"bank_billet_account_id":3547,"discharge_id":null,"paid_at":"2021-04-13","paid_amount":1120.4,"bank_rate":null,"paid_bank":null,"paid_agency":null,"created_at":"2021-04-13T09:30:30-03:00","credit_at":null,"direct":false,"created_via_api":false,"line_parsed":null,"our_number":"00000017","customer_person_name":"Joao
-        da Silva","expire_at":"2022-10-17","amount":1120.4},{"id":5795,"bank_billet_id":382264,"bank_billet_account_id":3547,"discharge_id":null,"paid_at":"2021-04-13","paid_amount":1120.4,"bank_rate":null,"paid_bank":null,"paid_agency":null,"created_at":"2021-04-13T09:30:19-03:00","credit_at":null,"direct":true,"created_via_api":false,"line_parsed":null,"our_number":"00000019","customer_person_name":"Joao
-        da Silva","expire_at":"2021-05-13","amount":1120.4}]'
-  recorded_at: Tue, 13 Apr 2021 17:18:41 GMT
+  - request:
+      method: get
+      uri: https://api-sandbox.kobana.com.br/v1/bank_billet_payments
+      body:
+        encoding: US-ASCII
+        string: ''
+      headers:
+        User-Agent:
+          - email@minhaempresa.com.br
+        Authorization:
+          - Bearer BOLETOSIMPLES_API_TOKEN
+        Accept:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - Cowboy
+        Connection:
+          - keep-alive
+        X-Frame-Options:
+          - DENY
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Content-Type-Options:
+          - nosniff
+        X-Download-Options:
+          - noopen
+        X-Permitted-Cross-Domain-Policies:
+          - none
+        Referrer-Policy:
+          - strict-origin-when-cross-origin
+        Per-Page:
+          - '50'
+        Page:
+          - ''
+        Content-Type:
+          - application/json; charset=utf-8
+        X-Ratelimit-Limit:
+          - '60'
+        X-Ratelimit-Remaining:
+          - '46'
+        Etag:
+          - W/"ca124465a697c6cc89fd806a70928df0"
+        Cache-Control:
+          - must-revalidate, private, max-age=0
+        X-Request-Id:
+          - 236ba38b-f38e-4f45-8c07-fac86c6cfba6
+        X-Runtime:
+          - '0.053624'
+        Date:
+          - Tue, 13 Apr 2021 17:18:41 GMT
+        X-Rack-Cache:
+          - miss
+        Strict-Transport-Security:
+          - max-age=2629746
+        Vary:
+          - Origin,Accept-Encoding
+        Transfer-Encoding:
+          - chunked
+        Via:
+          - 1.1 vegur
+      body:
+        encoding: UTF-8
+        string:
+          '[{"id":5796,"bank_billet_id":382262,"bank_billet_account_id":3547,"discharge_id":null,"paid_at":"2021-04-13","paid_amount":1120.4,"bank_rate":null,"paid_bank":null,"paid_agency":null,"created_at":"2021-04-13T09:30:30-03:00","credit_at":null,"direct":false,"created_via_api":false,"line_parsed":null,"our_number":"00000017","customer_person_name":"Joao
+          da Silva","expire_at":"2022-10-17","amount":1120.4},{"id":5795,"bank_billet_id":382264,"bank_billet_account_id":3547,"discharge_id":null,"paid_at":"2021-04-13","paid_amount":1120.4,"bank_rate":null,"paid_bank":null,"paid_agency":null,"created_at":"2021-04-13T09:30:19-03:00","credit_at":null,"direct":true,"created_via_api":false,"line_parsed":null,"our_number":"00000019","customer_person_name":"Joao
+          da Silva","expire_at":"2021-05-13","amount":1120.4}]'
+    recorded_at: Tue, 13 Apr 2021 17:18:41 GMT
 recorded_with: VCR 6.0.0

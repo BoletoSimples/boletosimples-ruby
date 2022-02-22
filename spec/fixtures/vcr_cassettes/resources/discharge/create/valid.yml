@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.boletosimples.com.br/api/v1/discharges
+    uri: https://api-sandbox.kobana.com.br/v1/discharges
     body:
       encoding: UTF-8
-      string: "-------------RubyMultipartPost-b54f557c3434e9dd5ea8f333d6da7fa3\r\nContent-Disposition:
+      string: "-------------RubyMultipartPost-24dceadd63421cea19ac03a1adccc41e\r\nContent-Disposition:
         form-data; name=\"discharge[file]\"; filename=\"discharge.RET\"\r\nContent-Length:
         1206\r\nContent-Type: text/plain\r\nContent-Transfer-Encoding: binary\r\n\r\n02RETORNO01COBRANCA
         \      16511300049999999999            SISTEMAS S.A      033SANTANDER      20032000000000009483012
@@ -14,14 +14,14 @@ http_interactions:
         \   0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
         N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C
         \          325000002\r\n9201033          000025050000053763329700000518                                                  000000000000000000000000000000
-        \         000000000000000000000000000000                                                                                                                                                                                                                                325000632\r\n\r\n-------------RubyMultipartPost-b54f557c3434e9dd5ea8f333d6da7fa3--\r\n"
+        \         000000000000000000000000000000                                                                                                                                                                                                                                325000632\r\n\r\n-------------RubyMultipartPost-24dceadd63421cea19ac03a1adccc41e--\r\n"
     headers:
       User-Agent:
       - email@minhaempresa.com.br
       Authorization:
       - Bearer BOLETOSIMPLES_API_TOKEN
       Content-Type:
-      - multipart/form-data; boundary=-----------RubyMultipartPost-b54f557c3434e9dd5ea8f333d6da7fa3
+      - multipart/form-data; boundary=-----------RubyMultipartPost-24dceadd63421cea19ac03a1adccc41e
       Content-Length:
       - '1507'
       Accept:
@@ -33,10 +33,14 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Server:
-      - Cowboy
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Server:
+      - Cowboy
       X-Frame-Options:
       - DENY
       X-Xss-Protection:
@@ -49,36 +53,48 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
+      Expect-Ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Cross-Origin-Embedder-Policy:
+      - unsafe-none
+      Cross-Origin-Opener-Policy:
+      - unsafe-none
       Location:
-      - https://sandbox.boletosimples.com.br/api/v1/discharges/3192
-      Content-Type:
-      - application/json; charset=utf-8
+      - https://api-sandbox.kobana.com.br/api/v1/discharges/3322
       X-Ratelimit-Limit:
-      - '1000'
+      - '18000'
       X-Ratelimit-Remaining:
-      - '983'
+      - '17951'
       Etag:
-      - W/"e077f7fad4f8c1d2e95d90396adb0b16"
+      - W/"0c52841befe661e2d2d6c6f2a63f6e2b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 797fe79a-7db2-4e07-86a7-0e05dd8945be
+      - 59ba292a-6b9b-4a5b-bb95-32e1ad9f9c72
       X-Runtime:
-      - '0.076282'
+      - '0.053394'
       Date:
-      - Tue, 13 Apr 2021 17:18:46 GMT
+      - Tue, 22 Feb 2022 17:30:48 GMT
       X-Rack-Cache:
       - invalidate, pass
       Strict-Transport-Security:
-      - max-age=2629746
+      - max-age=31556952; includeSubDomains; preload
       Vary:
       - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
+      X-Rack-Cors:
+      - miss; no-origin
       Via:
-      - 1.1 vegur
+      - 1.1 vegur, 1.1 3b888dcc047b71c0685c3b793d031fb2.cloudfront.net (CloudFront)
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - ppOm9LD1aGK6UpXHaANtpXCPPrithFvEo7riYnf9EYMfaT-98cRnRA==
     body:
       encoding: UTF-8
-      string: '{"id":3192,"filename":"discharge.RET","processed_at":null,"created_via_api":true,"status":"unprocessed","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[]}'
-  recorded_at: Tue, 13 Apr 2021 17:18:46 GMT
+      string: '{"id":3322,"filename":"discharge.RET","processed_at":null,"created_via_api":true,"status":"unprocessed","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[]}'
+  recorded_at: Tue, 22 Feb 2022 17:30:48 GMT
 recorded_with: VCR 6.0.0

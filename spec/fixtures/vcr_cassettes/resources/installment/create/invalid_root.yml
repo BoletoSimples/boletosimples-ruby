@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.boletosimples.com.br/api/v1/installments
+    uri: https://api-sandbox.kobana.com.br/v1/installments
     body:
       encoding: UTF-8
       string: '{"installment":{}}'
@@ -22,10 +22,14 @@ http_interactions:
       code: 422
       message: Unprocessable Entity
     headers:
-      Server:
-      - Cowboy
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Server:
+      - Cowboy
       X-Frame-Options:
       - DENY
       X-Xss-Protection:
@@ -38,32 +42,44 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
-      Content-Type:
-      - application/json; charset=utf-8
+      Expect-Ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Cross-Origin-Embedder-Policy:
+      - unsafe-none
+      Cross-Origin-Opener-Policy:
+      - unsafe-none
       X-Ratelimit-Limit:
-      - '1000'
+      - '18000'
       X-Ratelimit-Remaining:
-      - '984'
+      - '17947'
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - b79be165-5970-4b8a-8c9f-08ee89e9d173
+      - 664795bc-6b4f-410f-a0a1-f9addb2eb434
       X-Runtime:
-      - '0.023672'
+      - '0.012875'
       Date:
-      - Tue, 13 Apr 2021 17:18:45 GMT
+      - Tue, 22 Feb 2022 17:30:52 GMT
       X-Rack-Cache:
       - invalidate, pass
       Strict-Transport-Security:
-      - max-age=2629746
+      - max-age=31556952; includeSubDomains; preload
       Vary:
       - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
+      X-Rack-Cors:
+      - miss; no-origin
       Via:
-      - 1.1 vegur
+      - 1.1 vegur, 1.1 2feed206ccd80c991a2378002008d9f0.cloudfront.net (CloudFront)
+      X-Cache:
+      - Error from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - HVUORc0RG76Xfl9yfL38K477qSy68tQ3JHFi-EZmFMAD0yjx9d7jrw==
     body:
       encoding: UTF-8
       string: '{"errors":[{"title":"installment não pode ficar em branco","status":422,"code":422}]}'
-  recorded_at: Tue, 13 Apr 2021 17:18:45 GMT
+  recorded_at: Tue, 22 Feb 2022 17:30:52 GMT
 recorded_with: VCR 6.0.0

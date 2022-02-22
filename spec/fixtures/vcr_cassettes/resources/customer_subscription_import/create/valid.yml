@@ -2,18 +2,18 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.boletosimples.com.br/api/v1/imports/customer_subscriptions
+    uri: https://api-sandbox.kobana.com.br/v1/imports/customer_subscriptions
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        LS0tLS0tLS0tLS0tLVJ1YnlNdWx0aXBhcnRQb3N0LTdlY2U3Njk0ZTUyODZkZTEwOGUyZTU2ODIyYTQwYmNiDQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3JtLWRhdGE7IG5hbWU9ImN1c3RvbWVyX3N1YnNjcmlwdGlvbl9pbXBvcnRbc291cmNlXSI7IGZpbGVuYW1lPSJjdXN0b21lcl9zdWJzY3JpcHRpb25zLmNzdiINCkNvbnRlbnQtTGVuZ3RoOiAyMzkNCkNvbnRlbnQtVHlwZTogdGV4dC9jc3YNCkNvbnRlbnQtVHJhbnNmZXItRW5jb2Rpbmc6IGJpbmFyeQ0KDQpJRCxJRCBkbyBDbGllbnRlLElEIGRhIENhcnRlaXJhLElEIGRvIE1vZGVsbyxDTlBKL0NQRiBkbyBDbGllbnRlLENpY2xvIGRhIEFzc2luYXR1cmEsUXVhbnRpYSAqLFByaW1laXJhIENvYnJhbsOnYSxBbnRlY2Vkw6puY2lhLFBhcmFyIGVtLERlbW9uc3RyYXRpdm8gKixJbnN0cnXDp8O1ZXMgcGFyYSBvIENhaXhhLE11bHRhIHBvciBBdHJhc28sSnVyb3MgZGUgTW9yYSBNZW5zYWwsRS1tYWlsLE9ic2VydmHDp8O1ZXMNCg0KLS0tLS0tLS0tLS0tLVJ1YnlNdWx0aXBhcnRQb3N0LTdlY2U3Njk0ZTUyODZkZTEwOGUyZTU2ODIyYTQwYmNiLS0NCg==
+        LS0tLS0tLS0tLS0tLVJ1YnlNdWx0aXBhcnRQb3N0LWM5NmY1NWU0MTdhNTQ3YzY4OWQ2MzM5YjQ0MTc0ZGY0DQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3JtLWRhdGE7IG5hbWU9ImN1c3RvbWVyX3N1YnNjcmlwdGlvbl9pbXBvcnRbc291cmNlXSI7IGZpbGVuYW1lPSJjdXN0b21lcl9zdWJzY3JpcHRpb25zLmNzdiINCkNvbnRlbnQtTGVuZ3RoOiAyMzkNCkNvbnRlbnQtVHlwZTogdGV4dC9jc3YNCkNvbnRlbnQtVHJhbnNmZXItRW5jb2Rpbmc6IGJpbmFyeQ0KDQpJRCxJRCBkbyBDbGllbnRlLElEIGRhIENhcnRlaXJhLElEIGRvIE1vZGVsbyxDTlBKL0NQRiBkbyBDbGllbnRlLENpY2xvIGRhIEFzc2luYXR1cmEsUXVhbnRpYSAqLFByaW1laXJhIENvYnJhbsOnYSxBbnRlY2Vkw6puY2lhLFBhcmFyIGVtLERlbW9uc3RyYXRpdm8gKixJbnN0cnXDp8O1ZXMgcGFyYSBvIENhaXhhLE11bHRhIHBvciBBdHJhc28sSnVyb3MgZGUgTW9yYSBNZW5zYWwsRS1tYWlsLE9ic2VydmHDp8O1ZXMNCg0KLS0tLS0tLS0tLS0tLVJ1YnlNdWx0aXBhcnRQb3N0LWM5NmY1NWU0MTdhNTQ3YzY4OWQ2MzM5YjQ0MTc0ZGY0LS0NCg==
     headers:
       User-Agent:
       - email@minhaempresa.com.br
       Authorization:
       - Bearer BOLETOSIMPLES_API_TOKEN
       Content-Type:
-      - multipart/form-data; boundary=-----------RubyMultipartPost-7ece7694e5286de108e2e56822a40bcb
+      - multipart/form-data; boundary=-----------RubyMultipartPost-c96f55e417a547c689d6339b44174df4
       Content-Length:
       - '571'
       Accept:
@@ -25,10 +25,14 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Server:
-      - Cowboy
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Server:
+      - Cowboy
       X-Frame-Options:
       - DENY
       X-Xss-Protection:
@@ -41,36 +45,48 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
+      Expect-Ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Cross-Origin-Embedder-Policy:
+      - unsafe-none
+      Cross-Origin-Opener-Policy:
+      - unsafe-none
       Location:
-      - https://sandbox.boletosimples.com.br/api/v1/imports/customer_subscriptions/1053
-      Content-Type:
-      - application/json; charset=utf-8
+      - https://api-sandbox.kobana.com.br/api/v1/imports/customer_subscriptions/1279
       X-Ratelimit-Limit:
-      - '1000'
+      - '18000'
       X-Ratelimit-Remaining:
-      - '999'
+      - '17967'
       Etag:
-      - W/"b99d66a320d3419430f8bb66bf777696"
+      - W/"792b77874b2044afb755dcf78adbe6e5"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 38bae327-df59-4c7e-aa89-ff240e1ea2ed
+      - 2e5c8b62-883c-48c2-8a4f-19bf2802426c
       X-Runtime:
-      - '1.498103'
+      - '0.142736'
       Date:
-      - Tue, 13 Apr 2021 17:18:17 GMT
+      - Tue, 22 Feb 2022 17:30:29 GMT
       X-Rack-Cache:
       - invalidate, pass
       Strict-Transport-Security:
-      - max-age=2629746
+      - max-age=31556952; includeSubDomains; preload
       Vary:
       - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
+      X-Rack-Cors:
+      - miss; no-origin
       Via:
-      - 1.1 vegur
+      - 1.1 vegur, 1.1 a18ddfb379d1a4a5c2e721a55509e380.cloudfront.net (CloudFront)
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - zIRK8IEAiq2_UBGdaBfEb7-_WuJHRDAxc99OtF8mp6Hcw5X9l5bX_A==
     body:
       encoding: UTF-8
-      string: '{"id":1053,"created_rows":0,"enqueued_at":"2021-04-13T14:18:16-03:00","started_at":null,"finished_at":null,"processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":null,"processed_rows":0,"total_rows":null,"updated_rows":0,"source_file_name":"customer_subscriptions.csv","source_file_size":239,"status":"enqueued","created_via_api":true}'
-  recorded_at: Tue, 13 Apr 2021 17:18:17 GMT
+      string: '{"id":1279,"created_rows":0,"enqueued_at":null,"started_at":null,"finished_at":null,"processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":null,"processed_rows":0,"total_rows":null,"updated_rows":0,"source_file_name":"customer_subscriptions.csv","source_file_size":239,"status":"pending","created_via_api":true}'
+  recorded_at: Tue, 22 Feb 2022 17:30:29 GMT
 recorded_with: VCR 6.0.0

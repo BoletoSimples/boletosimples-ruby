@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/discharges
+    uri: https://api-sandbox.kobana.com.br/v1/discharges
     body:
       encoding: US-ASCII
       string: ''
@@ -20,10 +20,14 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Server:
+      - Cowboy
       X-Frame-Options:
       - DENY
       X-Xss-Protection:
@@ -36,60 +40,54 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
+      Expect-Ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Cross-Origin-Embedder-Policy:
+      - unsafe-none
+      Cross-Origin-Opener-Policy:
+      - unsafe-none
       Per-Page:
       - '50'
       Page:
       - ''
-      Content-Type:
-      - application/json; charset=utf-8
       X-Ratelimit-Limit:
-      - '60'
+      - '100'
       X-Ratelimit-Remaining:
-      - '42'
+      - '50'
       Etag:
-      - W/"001838ec1bd26b15664667cef54ce761"
+      - W/"fe3882beb9651f767e50c83a910947d0"
       Cache-Control:
       - must-revalidate, private, max-age=0
       X-Request-Id:
-      - fc091652-c165-432f-a018-89585bd3f2d3
+      - 9705a886-a031-437e-be4c-f7f592fca3e9
       X-Runtime:
-      - '0.050491'
+      - '0.021086'
       Date:
-      - Tue, 13 Apr 2021 17:18:48 GMT
+      - Tue, 22 Feb 2022 17:30:50 GMT
       X-Rack-Cache:
       - miss
       Strict-Transport-Security:
-      - max-age=2629746
+      - max-age=31556952; includeSubDomains; preload
       Vary:
       - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
+      X-Rack-Cors:
+      - miss; no-origin
       Via:
-      - 1.1 vegur
+      - 1.1 vegur, 1.1 a1b25087bb9d630ebf78c28557294564.cloudfront.net (CloudFront)
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - vaamYGJoqixbY-i7CkFxt-Z_B-_mgdZPxIAc8wzrKTWlHZ7GXspADg==
     body:
       encoding: UTF-8
-      string: '[{"id":3192,"filename":"discharge.RET","processed_at":null,"created_via_api":true,"status":"unprocessed","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[]},{"id":3191,"filename":"discharge.RET","processed_at":"2021-04-13T11:44:18-03:00","created_via_api":true,"status":"unrecognized","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[{"id":19809,"occurrence":"10","date_of_occurrence":"2020-03-20","discharge_id":3191,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","paid_at":"2020-03-20","cnpj_cpf":"78796613000141","discount":"0","bank_rate":"30","credit_at":"2020-03-20","error_code":"00","event_type":"10","our_number":"04958535","billet_fine":"0","paid_amount":"0","other_credit":"0","value_rebate":"0","agency_number":"6519","credit_amount":"0","account_number":"90009999","conta_cobranca":"90009999","control_number":"","banco_recebedor":"033","document_number":"495853","agencia_recebedora":"1651"},"line_raw":{"line_raw":"1027879661300014165199000999990009999                         04958535                                     510200320495853    0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C           325000002"},"processed_at":"2021-04-13T11:44:18-03:00","occurrence_detail":"Título
-        Baixado Conforme Instrução Ou Por Título Protestado 11 = Em Ser","occurrence_error_detail":null,"our_occurrence":"2074","bank_billet_account_id":null,"bank_number":"033","created_at":"2021-04-13T11:44:18-03:00","kind":"400"}]},{"id":3190,"filename":"discharge.RET","processed_at":"2021-04-13T11:40:02-03:00","created_via_api":true,"status":"unrecognized","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[{"id":19808,"occurrence":"10","date_of_occurrence":"2020-03-20","discharge_id":3190,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","paid_at":"2020-03-20","cnpj_cpf":"78796613000141","discount":"0","bank_rate":"30","credit_at":"2020-03-20","error_code":"00","event_type":"10","our_number":"04958535","billet_fine":"0","paid_amount":"0","other_credit":"0","value_rebate":"0","agency_number":"6519","credit_amount":"0","account_number":"90009999","conta_cobranca":"90009999","control_number":"","banco_recebedor":"033","document_number":"495853","agencia_recebedora":"1651"},"line_raw":{"line_raw":"1027879661300014165199000999990009999                         04958535                                     510200320495853    0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C           325000002"},"processed_at":"2021-04-13T11:40:03-03:00","occurrence_detail":"Título
-        Baixado Conforme Instrução Ou Por Título Protestado 11 = Em Ser","occurrence_error_detail":null,"our_occurrence":"2074","bank_billet_account_id":null,"bank_number":"033","created_at":"2021-04-13T11:40:03-03:00","kind":"400"}]},{"id":3189,"filename":"discharge.RET","processed_at":"2021-04-13T11:35:30-03:00","created_via_api":true,"status":"unrecognized","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[{"id":19807,"occurrence":"10","date_of_occurrence":"2020-03-20","discharge_id":3189,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","paid_at":"2020-03-20","cnpj_cpf":"78796613000141","discount":"0","bank_rate":"30","credit_at":"2020-03-20","error_code":"00","event_type":"10","our_number":"04958535","billet_fine":"0","paid_amount":"0","other_credit":"0","value_rebate":"0","agency_number":"6519","credit_amount":"0","account_number":"90009999","conta_cobranca":"90009999","control_number":"","banco_recebedor":"033","document_number":"495853","agencia_recebedora":"1651"},"line_raw":{"line_raw":"1027879661300014165199000999990009999                         04958535                                     510200320495853    0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C           325000002"},"processed_at":"2021-04-13T11:35:31-03:00","occurrence_detail":"Título
-        Baixado Conforme Instrução Ou Por Título Protestado 11 = Em Ser","occurrence_error_detail":null,"our_occurrence":"2074","bank_billet_account_id":null,"bank_number":"033","created_at":"2021-04-13T11:35:31-03:00","kind":"400"}]},{"id":3188,"filename":"discharge.RET","processed_at":"2021-04-13T11:26:08-03:00","created_via_api":true,"status":"unrecognized","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[{"id":19806,"occurrence":"10","date_of_occurrence":"2020-03-20","discharge_id":3188,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","paid_at":"2020-03-20","cnpj_cpf":"78796613000141","discount":"0","bank_rate":"30","credit_at":"2020-03-20","error_code":"00","event_type":"10","our_number":"04958535","billet_fine":"0","paid_amount":"0","other_credit":"0","value_rebate":"0","agency_number":"6519","credit_amount":"0","account_number":"90009999","conta_cobranca":"90009999","control_number":"","banco_recebedor":"033","document_number":"495853","agencia_recebedora":"1651"},"line_raw":{"line_raw":"1027879661300014165199000999990009999                         04958535                                     510200320495853    0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C           325000002"},"processed_at":"2021-04-13T11:26:08-03:00","occurrence_detail":"Título
-        Baixado Conforme Instrução Ou Por Título Protestado 11 = Em Ser","occurrence_error_detail":null,"our_occurrence":"2074","bank_billet_account_id":null,"bank_number":"033","created_at":"2021-04-13T11:26:08-03:00","kind":"400"}]},{"id":3187,"filename":"discharge.RET","processed_at":"2021-04-13T11:22:11-03:00","created_via_api":true,"status":"unrecognized","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[{"id":19805,"occurrence":"10","date_of_occurrence":"2020-03-20","discharge_id":3187,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","paid_at":"2020-03-20","cnpj_cpf":"78796613000141","discount":"0","bank_rate":"30","credit_at":"2020-03-20","error_code":"00","event_type":"10","our_number":"04958535","billet_fine":"0","paid_amount":"0","other_credit":"0","value_rebate":"0","agency_number":"6519","credit_amount":"0","account_number":"90009999","conta_cobranca":"90009999","control_number":"","banco_recebedor":"033","document_number":"495853","agencia_recebedora":"1651"},"line_raw":{"line_raw":"1027879661300014165199000999990009999                         04958535                                     510200320495853    0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C           325000002"},"processed_at":"2021-04-13T11:22:11-03:00","occurrence_detail":"Título
-        Baixado Conforme Instrução Ou Por Título Protestado 11 = Em Ser","occurrence_error_detail":null,"our_occurrence":"2074","bank_billet_account_id":null,"bank_number":"033","created_at":"2021-04-13T11:22:11-03:00","kind":"400"}]},{"id":3186,"filename":"discharge.RET","processed_at":"2021-04-13T11:10:39-03:00","created_via_api":true,"status":"unrecognized","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[{"id":19804,"occurrence":"10","date_of_occurrence":"2020-03-20","discharge_id":3186,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","paid_at":"2020-03-20","cnpj_cpf":"78796613000141","discount":"0","bank_rate":"30","credit_at":"2020-03-20","error_code":"00","event_type":"10","our_number":"04958535","billet_fine":"0","paid_amount":"0","other_credit":"0","value_rebate":"0","agency_number":"6519","credit_amount":"0","account_number":"90009999","conta_cobranca":"90009999","control_number":"","banco_recebedor":"033","document_number":"495853","agencia_recebedora":"1651"},"line_raw":{"line_raw":"1027879661300014165199000999990009999                         04958535                                     510200320495853    0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C           325000002"},"processed_at":"2021-04-13T11:10:39-03:00","occurrence_detail":"Título
-        Baixado Conforme Instrução Ou Por Título Protestado 11 = Em Ser","occurrence_error_detail":null,"our_occurrence":"2074","bank_billet_account_id":null,"bank_number":"033","created_at":"2021-04-13T11:10:39-03:00","kind":"400"}]},{"id":3185,"filename":"discharge.RET","processed_at":"2021-04-13T11:05:50-03:00","created_via_api":true,"status":"unrecognized","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[{"id":19803,"occurrence":"10","date_of_occurrence":"2020-03-20","discharge_id":3185,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","paid_at":"2020-03-20","cnpj_cpf":"78796613000141","discount":"0","bank_rate":"30","credit_at":"2020-03-20","error_code":"00","event_type":"10","our_number":"04958535","billet_fine":"0","paid_amount":"0","other_credit":"0","value_rebate":"0","agency_number":"6519","credit_amount":"0","account_number":"90009999","conta_cobranca":"90009999","control_number":"","banco_recebedor":"033","document_number":"495853","agencia_recebedora":"1651"},"line_raw":{"line_raw":"1027879661300014165199000999990009999                         04958535                                     510200320495853    0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C           325000002"},"processed_at":"2021-04-13T11:05:50-03:00","occurrence_detail":"Título
-        Baixado Conforme Instrução Ou Por Título Protestado 11 = Em Ser","occurrence_error_detail":null,"our_occurrence":"2074","bank_billet_account_id":null,"bank_number":"033","created_at":"2021-04-13T11:05:50-03:00","kind":"400"}]},{"id":3184,"filename":"discharge.RET","processed_at":"2021-04-13T10:55:36-03:00","created_via_api":true,"status":"unrecognized","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[{"id":19802,"occurrence":"10","date_of_occurrence":"2020-03-20","discharge_id":3184,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","paid_at":"2020-03-20","cnpj_cpf":"78796613000141","discount":"0","bank_rate":"30","credit_at":"2020-03-20","error_code":"00","event_type":"10","our_number":"04958535","billet_fine":"0","paid_amount":"0","other_credit":"0","value_rebate":"0","agency_number":"6519","credit_amount":"0","account_number":"90009999","conta_cobranca":"90009999","control_number":"","banco_recebedor":"033","document_number":"495853","agencia_recebedora":"1651"},"line_raw":{"line_raw":"1027879661300014165199000999990009999                         04958535                                     510200320495853    0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C           325000002"},"processed_at":"2021-04-13T10:55:37-03:00","occurrence_detail":"Título
-        Baixado Conforme Instrução Ou Por Título Protestado 11 = Em Ser","occurrence_error_detail":null,"our_occurrence":"2074","bank_billet_account_id":null,"bank_number":"033","created_at":"2021-04-13T10:55:37-03:00","kind":"400"}]},{"id":3183,"filename":"discharge.RET","processed_at":"2021-04-13T09:59:46-03:00","created_via_api":true,"status":"unrecognized","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[{"id":19801,"occurrence":"10","date_of_occurrence":"2020-03-20","discharge_id":3183,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","paid_at":"2020-03-20","cnpj_cpf":"78796613000141","discount":"0","bank_rate":"30","credit_at":"2020-03-20","error_code":"00","event_type":"10","our_number":"04958535","billet_fine":"0","paid_amount":"0","other_credit":"0","value_rebate":"0","agency_number":"6519","credit_amount":"0","account_number":"90009999","conta_cobranca":"90009999","control_number":"","banco_recebedor":"033","document_number":"495853","agencia_recebedora":"1651"},"line_raw":{"line_raw":"1027879661300014165199000999990009999                         04958535                                     510200320495853    0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C           325000002"},"processed_at":"2021-04-13T09:59:46-03:00","occurrence_detail":"Título
-        Baixado Conforme Instrução Ou Por Título Protestado 11 = Em Ser","occurrence_error_detail":null,"our_occurrence":"2074","bank_billet_account_id":null,"bank_number":"033","created_at":"2021-04-13T09:59:46-03:00","kind":"400"}]},{"id":3182,"filename":"discharge.RET","processed_at":"2021-04-13T09:27:07-03:00","created_via_api":true,"status":"unrecognized","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[{"id":19800,"occurrence":"10","date_of_occurrence":"2020-03-20","discharge_id":3182,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","paid_at":"2020-03-20","cnpj_cpf":"78796613000141","discount":"0","bank_rate":"30","credit_at":"2020-03-20","error_code":"00","event_type":"10","our_number":"04958535","billet_fine":"0","paid_amount":"0","other_credit":"0","value_rebate":"0","agency_number":"6519","credit_amount":"0","account_number":"90009999","conta_cobranca":"90009999","control_number":"","banco_recebedor":"033","document_number":"495853","agencia_recebedora":"1651"},"line_raw":{"line_raw":"1027879661300014165199000999990009999                         04958535                                     510200320495853    0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C           325000002"},"processed_at":"2021-04-13T09:27:09-03:00","occurrence_detail":"Título
-        Baixado Conforme Instrução Ou Por Título Protestado 11 = Em Ser","occurrence_error_detail":null,"our_occurrence":"2074","bank_billet_account_id":null,"bank_number":"033","created_at":"2021-04-13T09:27:09-03:00","kind":"400"}]},{"id":3181,"filename":"discharge.RET","processed_at":"2021-04-12T11:55:06-03:00","created_via_api":true,"status":"unrecognized","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[{"id":19799,"occurrence":"10","date_of_occurrence":"2020-03-20","discharge_id":3181,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","paid_at":"2020-03-20","cnpj_cpf":"78796613000141","discount":"0","bank_rate":"30","credit_at":"2020-03-20","error_code":"00","event_type":"10","our_number":"04958535","billet_fine":"0","paid_amount":"0","other_credit":"0","value_rebate":"0","agency_number":"6519","credit_amount":"0","account_number":"90009999","conta_cobranca":"90009999","control_number":"","banco_recebedor":"033","document_number":"495853","agencia_recebedora":"1651"},"line_raw":{"line_raw":"1027879661300014165199000999990009999                         04958535                                     510200320495853    0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C           325000002"},"processed_at":"2021-04-12T11:55:07-03:00","occurrence_detail":"Título
-        Baixado Conforme Instrução Ou Por Título Protestado 11 = Em Ser","occurrence_error_detail":null,"our_occurrence":"2074","bank_billet_account_id":null,"bank_number":"033","created_at":"2021-04-12T11:55:07-03:00","kind":"400"}]}]'
-  recorded_at: Tue, 13 Apr 2021 17:18:48 GMT
+      string: '[{"id":3322,"filename":"discharge.RET","processed_at":"2022-02-22T14:30:48-03:00","created_via_api":true,"status":"unrecognized","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[{"id":21255,"occurrence":"10","date_of_occurrence":"2020-03-20","discharge_id":3322,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","paid_at":"2020-03-20","cnpj_cpf":"78796613000141","discount":"0","bank_rate":"30","credit_at":"2020-03-20","error_code":"00","event_type":"10","our_number":"0495853","billet_fine":"0","paid_amount":"0","other_credit":"0","value_rebate":"0","agency_number":"6519","credit_amount":"0","account_number":"90009999","conta_cobranca":"90009999","control_number":"","banco_recebedor":"033","document_number":"495853","agencia_recebedora":"1651","processed_our_number_raw":"04958535"},"line_raw":{"line_raw":"1027879661300014165199000999990009999                         04958535                                     510200320495853    0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C           325000002"},"processed_at":"2022-02-22T14:30:48-03:00","occurrence_detail":"Título
+        Baixado Conforme Instrução Ou Por Título Protestado 11 = Em Ser","occurrence_error_detail":null,"our_occurrence":"2074","bank_billet_account_id":null,"bank_number":"033","created_at":"2022-02-22T14:30:48-03:00","kind":"400"}]},{"id":3321,"filename":"discharge.RET","processed_at":"2022-02-22T14:26:40-03:00","created_via_api":true,"status":"unrecognized","bank_billet_account_id":null,"created_via_integration":null,"bank_billet_discharges":[{"id":21254,"occurrence":"10","date_of_occurrence":"2020-03-20","discharge_id":3321,"bank_billet_id":null,"occurrence_error":"00","line_parsed":{"iof":"0","paid_at":"2020-03-20","cnpj_cpf":"78796613000141","discount":"0","bank_rate":"30","credit_at":"2020-03-20","error_code":"00","event_type":"10","our_number":"0495853","billet_fine":"0","paid_amount":"0","other_credit":"0","value_rebate":"0","agency_number":"6519","credit_amount":"0","account_number":"90009999","conta_cobranca":"90009999","control_number":"","banco_recebedor":"033","document_number":"495853","agencia_recebedora":"1651","processed_our_number_raw":"04958535"},"line_raw":{"line_raw":"1027879661300014165199000999990009999                         04958535                                     510200320495853    0495853500          12111900000000300350331651901000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        N 200320                 SOLUCOES DIGITAIS L 00000000000000000000000000000000000000000C           325000002"},"processed_at":"2022-02-22T14:26:40-03:00","occurrence_detail":"Título
+        Baixado Conforme Instrução Ou Por Título Protestado 11 = Em Ser","occurrence_error_detail":null,"our_occurrence":"2074","bank_billet_account_id":null,"bank_number":"033","created_at":"2022-02-22T14:26:40-03:00","kind":"400"}]}]'
+  recorded_at: Tue, 22 Feb 2022 17:30:50 GMT
 recorded_with: VCR 6.0.0

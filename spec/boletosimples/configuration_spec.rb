@@ -14,7 +14,7 @@
 
 #     it do
 #       expect(subject.environment).to eq(:sandbox)
-#       expect(subject.base_uri).to eq('https://sandbox.boletosimples.com.br/api/v1')
+#       expect(subject.base_uri).to eq('https://api-sandbox.kobana.com.br/v1')
 #       expect(subject.cache).to be_nil
 #       expect(subject.user_agent).to be_nil
 #     end
@@ -31,7 +31,7 @@
 
 #     it do
 #       expect(subject.environment).to eq(:production)
-#       expect(subject.base_uri).to eq('https://boletosimples.com.br/api/v1')
+#       expect(subject.base_uri).to eq('https://api.kobana.com.br/v1')
 #       expect(subject.user_agent).to eq('email@minhaempresa.com.br')
 #     end
 
@@ -59,7 +59,7 @@
 #     it do
 #       expect(subject.environment).to eq(:production)
 #       expect(subject.user_agent).to eq('Meu agent')
-#       expect(subject.base_uri).to eq('https://boletosimples.com.br/api/v1')
+#       expect(subject.base_uri).to eq('https://api.kobana.com.br/v1')
 #     end
 
 #     describe 'cache' do

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts
+    uri: https://api-sandbox.kobana.com.br/v1/bank_billet_accounts
     body:
       encoding: US-ASCII
       string: ''
@@ -20,10 +20,14 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Server:
+      - Cowboy
       X-Frame-Options:
       - DENY
       X-Xss-Protection:
@@ -36,136 +40,76 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
+      Expect-Ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Cross-Origin-Embedder-Policy:
+      - unsafe-none
+      Cross-Origin-Opener-Policy:
+      - unsafe-none
       Per-Page:
       - '50'
       Page:
       - ''
-      Content-Type:
-      - application/json; charset=utf-8
       X-Ratelimit-Limit:
-      - '60'
+      - '100'
       X-Ratelimit-Remaining:
-      - '40'
+      - '67'
       Etag:
-      - W/"5e44eb383cb6312c8ddc693defeed0ca"
+      - W/"0d216390e489b1e45d12ca2effce665c"
       Cache-Control:
       - must-revalidate, private, max-age=0
       X-Request-Id:
-      - 33c01007-821c-4d75-b860-1ac5dd77d379
+      - 5a9af2b1-0bcd-4cd7-8fa3-8860a06c9eb1
       X-Runtime:
-      - '0.101580'
+      - '0.040335'
       Date:
-      - Tue, 13 Apr 2021 17:18:54 GMT
+      - Tue, 22 Feb 2022 17:30:33 GMT
       X-Rack-Cache:
       - miss
       Strict-Transport-Security:
-      - max-age=2629746
+      - max-age=31556952; includeSubDomains; preload
       Vary:
       - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
+      X-Rack-Cors:
+      - miss; no-origin
       Via:
-      - 1.1 vegur
+      - 1.1 vegur, 1.1 a18ddfb379d1a4a5c2e721a55509e380.cloudfront.net (CloudFront)
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - 868pKEv2oDzUe9dGgMu2b-jMB2F3sBYrtdM8eylrYQa602RGdZItmg==
     body:
       encoding: UTF-8
-      string: '[{"id":3547,"bank_contract_slug":"itau-bs-109","next_our_number":70,"agency_number":"2332","agency_digit":"3","account_number":"12312","account_digit":"2","extra1":null,"extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"J
-        Calçados","beneficiary_cnpj_cpf":"74.766.527/0001-68","beneficiary_address":"Praça
-        dos Três Poderes, 171,  - Zona Cívico-Administrativa, Brasília - DF, 70165900","name":"Itaú
-        109  CC: 12312-2 ","status":"active","bank_contract":{"bank":{"code":"itau","name":"Itaú","number":"341"},"slug":"itau-bs-109","code":"109","sufix":"bs-109","variation":null,"name":"109"},"integration":false,"created_via_api":false,"homologated_at":"2021-04-09T09:43:18-03:00","next_remittance_number":3,"configuration":null,"default":true,"custom_name":"Itaú
-        109  CC: 12312-2 ","kind":"cnab400","beneficiary_address_street":"Praça dos
-        Três Poderes","beneficiary_address_street_number":"171","beneficiary_address_complement":"","beneficiary_address_city":"Brasília","beneficiary_address_neighborhood":"Zona
-        Cívico-Administrativa","beneficiary_address_state":"DF","beneficiary_address_zipcode":"70165900","allow_expiration_on_weekends":false},{"id":3548,"bank_contract_slug":"caixa-rg","next_our_number":1,"agency_number":"1231","agency_digit":"1","account_number":"3123123","account_digit":"3","extra1":"1234134","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":"4324123","beneficiary_name":"J
-        Calçados S.A.","beneficiary_cnpj_cpf":"74.766.527/0001-68","beneficiary_address":"Praça
-        dos Três Poderes, ,  - Zona Cívico-Administrativa, Brasília - DF, 70165900","name":"Caixa
-        Econômica Federal RG  CC: 3123123-3 1234134","status":"active","bank_contract":{"bank":{"code":"caixa","name":"Caixa
+      string: '[{"id":659,"bank_contract_slug":"caixa-rg","next_our_number":86,"agency_number":"2342","agency_digit":"2","account_number":"0012432","account_digit":"1","extra1":"0123322","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":"0567888","beneficiary_name":"Kivanio
+        Pereira Barbosa","beneficiary_cnpj_cpf":"000.233.771-19","beneficiary_address":"Rua
+        Quatro, 9, 78058-330","name":"Caixa Econômica Federal RG  CC: 0012432-1 0123322","status":"active","bank_contract":{"bank":{"code":"caixa","name":"Caixa
         Econômica Federal","number":"104"},"slug":"caixa-rg","code":"1","sufix":"rg","variation":null,"name":"1
-        - Com Registro"},"integration":false,"created_via_api":false,"homologated_at":"2021-04-09T09:44:10-03:00","next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Caixa
-        Econômica Federal RG  CC: 3123123-3 1234134","kind":"cnab400","beneficiary_address_street":"Praça
-        dos Três Poderes","beneficiary_address_street_number":"","beneficiary_address_complement":"","beneficiary_address_city":"Brasília","beneficiary_address_neighborhood":"Zona
-        Cívico-Administrativa","beneficiary_address_state":"DF","beneficiary_address_zipcode":"70165900","allow_expiration_on_weekends":false},{"id":3549,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
+        - Com Registro"},"integration":false,"created_via_api":false,"homologated_at":"2017-05-24T10:11:14-03:00","next_remittance_number":3,"configuration":null,"default":true,"custom_name":"Caixa
+        Econômica Federal RG  CC: 0012432-1 123322","kind":"cnab400","beneficiary_address_street":null,"beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":null,"beneficiary_address_neighborhood":null,"beneficiary_address_state":null,"beneficiary_address_zipcode":null,"allow_expiration_on_weekends":false},{"id":2898,"bank_contract_slug":"sofisa-bs-121","next_our_number":5,"agency_number":"1234","agency_digit":"4","account_number":"000423423","account_digit":"1","extra1":"2341234","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":"00000000002341241234","beneficiary_name":"Kivanio
+        Pereira Barbosa","beneficiary_cnpj_cpf":"000.233.771-19","beneficiary_address":"Rua
+        Quatro, 9, 78058330","name":"Sofisa 121  CC: 000423423-1 2341234","status":"active","bank_contract":{"bank":{"code":"sofisa","name":"Sofisa","number":"637"},"slug":"sofisa-bs-121","code":"121","sufix":"bs-121","variation":null,"name":"121"},"integration":false,"created_via_api":false,"homologated_at":"2019-12-06T14:37:01-03:00","next_remittance_number":3,"configuration":null,"default":false,"custom_name":"Sofisa
+        121  CC: 423423-1 2341234","kind":"cnab240","beneficiary_address_street":null,"beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":null,"beneficiary_address_neighborhood":null,"beneficiary_address_state":null,"beneficiary_address_zipcode":null,"allow_expiration_on_weekends":false},{"id":2950,"bank_contract_slug":"abc-bs-110","next_our_number":7,"agency_number":"0001","agency_digit":"9","account_number":"000314341","account_digit":"2","extra1":"3413412","extra1_digit":null,"extra2":"000005353","extra2_digit":null,"extra3":"00000002341234124312","beneficiary_name":"Kivanio
+        Pereira Barbosa","beneficiary_cnpj_cpf":"38.666.457/0001-02","beneficiary_address":"Rua
+        Quatro, 9, 78058330","name":"ABC Brasil 110  CC: 000314341-2 3413412","status":"active","bank_contract":{"bank":{"code":"abc","name":"ABC
+        Brasil","number":"246"},"slug":"abc-bs-110","code":"110","sufix":"bs-110","variation":null,"name":"110"},"integration":false,"created_via_api":false,"homologated_at":"2020-01-09T10:59:17-03:00","next_remittance_number":3,"configuration":null,"default":false,"custom_name":"ABC
+        Brasil 110  CC: 314341-2 3413412","kind":"cnab240","beneficiary_address_street":null,"beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":null,"beneficiary_address_neighborhood":null,"beneficiary_address_state":null,"beneficiary_address_zipcode":null,"allow_expiration_on_weekends":false},{"id":4363,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
         S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
-        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
+        S, Moema, São Paulo, SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
         1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
         - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
         02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
         S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
-        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false},{"id":3551,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
+        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false},{"id":4364,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
         S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
-        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
-        1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
-        - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
-        02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
-        S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
-        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false},{"id":3553,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
-        S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
-        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
-        1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
-        - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
-        02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
-        S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
-        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false},{"id":3554,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
-        S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
-        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
-        1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
-        - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
-        02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
-        S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
-        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false},{"id":3555,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
-        S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
-        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
-        1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
-        - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
-        02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
-        S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
-        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false},{"id":3556,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
-        S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
-        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
-        1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
-        - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
-        02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
-        S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
-        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false},{"id":3557,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
-        S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
-        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
-        1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
-        - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
-        02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
-        S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
-        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false},{"id":3558,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
-        S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
-        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
-        1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
-        - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
-        02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
-        S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
-        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false},{"id":3559,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
-        S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
-        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
-        1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
-        - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
-        02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
-        S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
-        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false},{"id":3560,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
-        S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
-        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
-        1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
-        - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
-        02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
-        S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
-        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false},{"id":3561,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
-        S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
-        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
-        1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
-        - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
-        02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
-        S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
-        Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false},{"id":3562,"bank_contract_slug":"sicoob-02","next_our_number":1,"agency_number":"4327","agency_digit":"3","account_number":"00003666","account_digit":"8","extra1":"1234567","extra1_digit":null,"extra2":null,"extra2_digit":null,"extra3":null,"beneficiary_name":"XPTO
-        S.A.","beneficiary_cnpj_cpf":"22.622.867/0001-11","beneficiary_address":"Rua
-        S, ,  - Moema, São Paulo - SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
+        S, Moema, São Paulo, SP, 04524030","name":"Bancoob/Sicoob 02  CC: 00003666-8
         1234567","status":"pending","bank_contract":{"bank":{"code":"sicoob","name":"Bancoob/Sicoob","number":"756"},"slug":"sicoob-02","code":"2","sufix":"02","variation":null,"name":"1/02
         - Simples Sem Registro"},"integration":false,"created_via_api":true,"homologated_at":null,"next_remittance_number":1,"configuration":null,"default":false,"custom_name":"Bancoob/Sicoob
         02  CC: 3666-8 1234567","kind":"cnab400","beneficiary_address_street":"Rua
         S","beneficiary_address_street_number":null,"beneficiary_address_complement":null,"beneficiary_address_city":"São
         Paulo","beneficiary_address_neighborhood":"Moema","beneficiary_address_state":"SP","beneficiary_address_zipcode":"04524030","allow_expiration_on_weekends":false}]'
-  recorded_at: Tue, 13 Apr 2021 17:18:54 GMT
+  recorded_at: Tue, 22 Feb 2022 17:30:33 GMT
 recorded_with: VCR 6.0.0

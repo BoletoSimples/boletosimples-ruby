@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.boletosimples.com.br/api/v1/sms_deliveries
+    uri: https://api-sandbox.kobana.com.br/v1/sms_deliveries
     body:
       encoding: US-ASCII
       string: ''
@@ -20,10 +20,14 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Server:
+      - Cowboy
       X-Frame-Options:
       - DENY
       X-Xss-Protection:
@@ -36,38 +40,50 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
+      Expect-Ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Cross-Origin-Embedder-Policy:
+      - unsafe-none
+      Cross-Origin-Opener-Policy:
+      - unsafe-none
       Per-Page:
       - '50'
       Page:
       - ''
-      Content-Type:
-      - application/json; charset=utf-8
       X-Ratelimit-Limit:
-      - '60'
+      - '100'
       X-Ratelimit-Remaining:
-      - '59'
+      - '65'
       Etag:
       - W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
       Cache-Control:
       - must-revalidate, private, max-age=0
       X-Request-Id:
-      - 53c3e015-ffb8-415a-89c0-c3270a2f33d8
+      - cbec91a3-978d-42cb-b2bb-565f5590dc71
       X-Runtime:
-      - '0.029776'
+      - '0.015958'
       Date:
-      - Tue, 13 Apr 2021 17:18:15 GMT
+      - Tue, 22 Feb 2022 17:30:35 GMT
       X-Rack-Cache:
       - miss
       Strict-Transport-Security:
-      - max-age=2629746
+      - max-age=31556952; includeSubDomains; preload
       Vary:
       - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
+      X-Rack-Cors:
+      - miss; no-origin
       Via:
-      - 1.1 vegur
+      - 1.1 vegur, 1.1 bc5ca942c588917a31bb32f85c8bfee4.cloudfront.net (CloudFront)
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - un9F55L6pkrBF7iWLwA7UrPFXU82QUr7_uyCQ2a9cjEGrFcLtMaxmA==
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Tue, 13 Apr 2021 17:18:15 GMT
+  recorded_at: Tue, 22 Feb 2022 17:30:35 GMT
 recorded_with: VCR 6.0.0

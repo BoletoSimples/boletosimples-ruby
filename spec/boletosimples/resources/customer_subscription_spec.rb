@@ -61,7 +61,7 @@ RSpec.describe BoletoSimples::CustomerSubscription do
 
           it {
             expect(subject.response_errors).to eq({ customer_person_name: ['não pode ficar em branco'],
-                                                    customer_cnpj_cpf: ['não pode ficar em branco'],
+                                                    customer_cnpj_cpf: ['não é um CNPJ ou CPF válido'],
                                                     customer_zipcode: ['não pode ficar em branco'],
                                                     amount: ['não pode ficar em branco'],
                                                     customer_address: ['não pode ficar em branco'],

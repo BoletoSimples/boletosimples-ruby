@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0
+
+### Changes
+
+- Update URLs based on new API: https://developers.kobana.com.br/reference/endpoints-1
+
 ## 1.0.4
 
 ### Changes

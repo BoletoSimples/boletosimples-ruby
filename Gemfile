@@ -4,8 +4,11 @@ source 'https://rubygems.org'
 
 gemspec
 
-group :development do
+group :development, :test do
   gem 'pry'
+end
+
+group :development do
   gem 'rubocop'
   gem 'rubocop-packaging'
   gem 'rubocop-performance'

@@ -12,6 +12,7 @@ RSpec.describe BoletoSimples::LastRequest do
       expect(subject).to be_kind_of(described_class)
       expect(subject.body).to be_kind_of(Array)
       expect(subject.body.first).to be_kind_of(Hash)
+      expect(subject.request_headers).to be_kind_of(Hash)
       expect(subject.response_headers).to be_kind_of(Hash)
       expect(subject.total).to be_kind_of(Integer)
       expect(subject.ratelimit_limit).to be_kind_of(Integer)

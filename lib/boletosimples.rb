@@ -32,6 +32,7 @@ module BoletoSimples
 
   module Middleware
     autoload :UserAgent, 'boletosimples/middlewares/user_agent'
+    autoload :CustomHeaders, 'boletosimples/middlewares/custom_headers'
     autoload :RaiseError, 'boletosimples/middlewares/raise_error'
     autoload :LastRequest, 'boletosimples/middlewares/last_request'
     autoload :Debug, 'boletosimples/middlewares/debug'

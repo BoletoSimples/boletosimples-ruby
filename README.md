@@ -35,6 +35,7 @@ BoletoSimples.configure do |c|
   c.api_token = 'api-token'
   c.user_agent = 'email@minhaempresa.com.br' #Colocar um e-mail válido para contatos técnicos relacionado ao uso da API.
   # c.debug = true
+  # c.custom_headers = { 'X-CUSTOM' => 'CONTENT' }
 end
 ```
 

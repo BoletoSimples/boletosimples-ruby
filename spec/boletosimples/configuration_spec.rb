@@ -1,72 +1,89 @@
 # # frozen_string_literal: true
 
-# require 'spec_helper'
+require 'spec_helper'
 
-# RSpec.describe BoletoSimples::Configuration do
-#   describe 'defaults' do
-#     subject { described_class.new }
+RSpec.describe BoletoSimples::Configuration do
+  describe 'defaults' do
+    subject { described_class.new }
 
-#     before do
-#       stub_env('BOLETOSIMPLES_ENV', nil)
-#       stub_env('BOLETOSIMPLES_USER_AGENT', nil)
-#       subject.setup_her
-#     end
+    before do
+      stub_env('BOLETOSIMPLES_ENV', nil)
+      stub_env('BOLETOSIMPLES_USER_AGENT', nil)
+      subject.setup_her
+    end
 
-#     it do
-#       expect(subject.environment).to eq(:sandbox)
-#       expect(subject.base_uri).to eq('https://api-sandbox.kobana.com.br/v1')
-#       expect(subject.cache).to be_nil
-#       expect(subject.user_agent).to be_nil
-#     end
-#   end
+    after do
+      BoletoSimples.configure
+    end
 
-#   describe 'environment variables' do
-#     subject { BoletoSimples.configuration }
+    it do
+      expect(subject.environment).to eq(:sandbox)
+      expect(subject.base_uri).to eq('https://api-sandbox.kobana.com.br/v1')
+      expect(subject.cache).to be_nil
+      expect(subject.user_agent).to be_nil
+      expect(subject.custom_headers).to eq({})
+    end
+  end
 
-#     before do
-#       stub_env('BOLETOSIMPLES_ENV', 'production')
-#       stub_env('BOLETOSIMPLES_USER_AGENT', 'email@minhaempresa.com.br')
-#       BoletoSimples.configure
-#     end
+  describe 'environment variables' do
+    subject { BoletoSimples.configuration }
 
-#     it do
-#       expect(subject.environment).to eq(:production)
-#       expect(subject.base_uri).to eq('https://api.kobana.com.br/v1')
-#       expect(subject.user_agent).to eq('email@minhaempresa.com.br')
-#     end
+    before do
+      stub_env('BOLETOSIMPLES_ENV', 'production')
+      stub_env('BOLETOSIMPLES_USER_AGENT', 'email@minhaempresa.com.br')
+      BoletoSimples.configure
+    end
 
-#     describe 'cache' do
-#       it do
-#         expect(subject.cache).to be_nil
-#         expect(Her::API.default_api.connection.builder.handlers).not_to include(Faraday::HttpCache)
-#       end
-#     end
-#   end
+    after do
+      BoletoSimples.configure
+    end
 
-#   describe 'configuration' do
-#     subject { BoletoSimples.configuration }
+    it do
+      expect(subject.environment).to eq(:production)
+      expect(subject.base_uri).to eq('https://api.kobana.com.br/v1')
+      expect(subject.user_agent).to eq('email@minhaempresa.com.br')
+    end
 
-#     let(:cache_object) { double('Dalli') }
+    describe 'cache' do
+      it do
+        expect(subject.cache).to be_nil
+        expect(Her::API.default_api.connection.builder.handlers).not_to include(Faraday::HttpCache)
+      end
+    end
+  end
 
-#     before do
-#       BoletoSimples.configure do |c|
-#         c.environment = :production
-#         c.cache = cache_object
-#         c.user_agent = 'Meu agent'
-#       end
-#     end
+  describe 'configuration' do
+    subject { BoletoSimples.configuration }
 
-#     it do
-#       expect(subject.environment).to eq(:production)
-#       expect(subject.user_agent).to eq('Meu agent')
-#       expect(subject.base_uri).to eq('https://api.kobana.com.br/v1')
-#     end
+    let(:cache_object) { double('Dalli') }
 
-#     describe 'cache' do
-#       it do
-#         expect(subject.cache).to eq(cache_object)
-#         expect(Her::API.default_api.connection.builder.handlers).to include(Faraday::HttpCache)
-#       end
-#     end
-#   end
-# end
+    before do
+      BoletoSimples.configure do |c|
+        c.environment = :production
+        c.cache = cache_object
+        c.user_agent = 'Meu agent'
+        c.custom_headers = {
+          'X-CUSTOM' => 'CONTENT'
+        }
+      end
+    end
+
+    after do
+      BoletoSimples.configure
+    end
+
+    it do
+      expect(subject.environment).to eq(:production)
+      expect(subject.user_agent).to eq('Meu agent')
+      expect(subject.custom_headers).to eq({ 'X-CUSTOM' => 'CONTENT' })
+      expect(subject.base_uri).to eq('https://api.kobana.com.br/v1')
+    end
+
+    describe 'cache' do
+      it do
+        expect(subject.cache).to eq(cache_object)
+        expect(Her::API.default_api.connection.builder.handlers).to include(Faraday::HttpCache)
+      end
+    end
+  end
+end

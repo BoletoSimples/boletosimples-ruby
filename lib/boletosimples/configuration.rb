@@ -2,7 +2,7 @@
 
 module BoletoSimples
   class Configuration
-    attr_accessor :environment, :cache, :user_agent, :api_token, :debug
+    attr_accessor :environment, :cache, :user_agent, :custom_headers, :api_token, :debug
 
     BASE_URI = {
       sandbox: 'https://api-sandbox.kobana.com.br/v1',
@@ -11,11 +11,12 @@ module BoletoSimples
     }.freeze
 
     def initialize
-      @environment = (ENV['BOLETOSIMPLES_ENV'] || :sandbox).to_sym
-      @api_token = ENV['BOLETOSIMPLES_API_TOKEN']
-      @user_agent = ENV['BOLETOSIMPLES_USER_AGENT']
+      @environment = ENV.fetch('BOLETOSIMPLES_ENV', :sandbox).to_sym
+      @api_token = ENV.fetch('BOLETOSIMPLES_API_TOKEN', nil)
+      @user_agent = ENV.fetch('BOLETOSIMPLES_USER_AGENT', nil)
+      @custom_headers = {}
       @cache = nil
-      @debug = ENV['BOLETOSIMPLES_DEBUG']
+      @debug = ENV.fetch('BOLETOSIMPLES_DEBUG', nil)
     end
 
     def base_uri
@@ -35,6 +36,7 @@ module BoletoSimples
         # Request
         c.use BoletoSimples::Middleware::UserAgent
         c.use BoletoSimples::Middleware::Bearer if api_token?
+        c.use BoletoSimples::Middleware::CustomHeaders
         c.use Faraday::Request::Multipart
         c.use FaradayMiddleware::EncodeJson
         c.use Her::Middleware::AcceptJSON

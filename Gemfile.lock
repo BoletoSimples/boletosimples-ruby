@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    boletosimples (2.0.0)
+    boletosimples (2.0.1)
       faraday-http-cache (~> 2.2.0)
       faraday_middleware (~> 1.0)
       her (~> 1.1)
